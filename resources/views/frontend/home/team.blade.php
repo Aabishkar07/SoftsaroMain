@@ -1,86 +1,100 @@
-<div class="container-fluid py-5 mb-5 team">
-    <div class="container">
-        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-            <h5 class="text-primary">Our Team</h5>
-            <h1>Meet our expert Team</h1>
-        </div>
-        <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay=".5s">
-            <div class="rounded team-item">
-                <div class="team-content">
-                    <div class="team-img-icon">
-                        <div class="team-img rounded-circle">
-                            <img src="img/team-1.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                        </div>
-                        <div class="team-name text-center py-3">
-                            <h4 class="">Full Name</h4>
-                            <p class="m-0">Designation</p>
-                        </div>
-                        <div class="team-icon d-flex justify-content-center pb-4">
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+    <!-- Team Section -->
+    <section id="team" class="team section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Team</h2>
+          <p>CHECK OUR TEAM</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+            <div class="row gy-5 justify-content-center">
+              <!-- Centered Top Two Members -->
+              <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="member">
+                  <div class="pic"><img src="{{ asset('img/team/sujan.png') }}" class="img-fluid grayscale" alt=""></div>
+                  <div class="member-info">
+                    <h4>Sujan Adhikari</h4>
+                    <span class="fs-6">Chairman</span>
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter-x text-black"></i></a>
+                      <a href="https://www.linkedin.com/in/sujanadhikari1111/" target="_blank"><i class="bi bi-linkedin text-black"></i></a>
                     </div>
+                  </div>
                 </div>
-            </div>
-            <div class="rounded team-item">
-                <div class="team-content">
-                    <div class="team-img-icon">
-                        <div class="team-img rounded-circle">
-                            <img src="img/team-2.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                        </div>
-                        <div class="team-name text-center py-3">
-                            <h4 class="">Full Name</h4>
-                            <p class="m-0">Designation</p>
-                        </div>
-                        <div class="team-icon d-flex justify-content-center pb-4">
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="member">
+                  <div class="pic"><img src="{{ asset('img/team/santosh.png') }}" class="img-fluid grayscale" alt=""></div>
+                  <div class="member-info">
+                    <h4>Santosh Rajbanshi</h4>
+                    <span class="fs-6">Chief Executive Officer</span>
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter-x text-black"></i></a>
+                      <a target="_blank" href="https://www.linkedin.com/in/santosh-rajbanshi-878552152/"><i class="bi bi-linkedin text-black"></i></a>
                     </div>
+                  </div>
                 </div>
-            </div>
-            <div class="rounded team-item">
-                <div class="team-content">
-                    <div class="team-img-icon">
-                        <div class="team-img rounded-circle">
-                            <img src="img/team-3.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                        </div>
-                        <div class="team-name text-center py-3">
-                            <h4 class="">Full Name</h4>
-                            <p class="m-0">Designation</p>
-                        </div>
-                        <div class="team-icon d-flex justify-content-center pb-4">
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+              </div>
+            </div><!-- End Centered Top Two Members -->
+
+            <div class="row gy-5 justify-content-center mt-2">
+              <!-- Centered Bottom Three Members -->
+              <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="member">
+                  <div class="pic"><img src="{{ asset('img/team/anup.jpg') }}" class="img-fluid grayscale" alt=""></div>
+                  <div class="member-info">
+                    <h4>Anup Kasula</h4>
+                    <span class="fs-6">FullStack Developer</span>
+                    <div class="social">
+                      <a target="_blank" href="https://www.anupkasula.com.np/"><i class="bi bi-globe text-black"></i></a>
+                      <a target="_blank" href="https://www.linkedin.com/in/anup-kasula/"><i class="bi bi-linkedin text-black"></i></a>
                     </div>
+                  </div>
                 </div>
-            </div>
-            <div class="rounded team-item">
-                <div class="team-content">
-                    <div class="team-img-icon">
-                        <div class="team-img rounded-circle">
-                            <img src="img/team-4.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                        </div>
-                        <div class="team-name text-center py-3">
-                            <h4 class="">Full Name</h4>
-                            <p class="m-0">Designation</p>
-                        </div>
-                        <div class="team-icon d-flex justify-content-center pb-4">
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="member">
+                  <div class="pic"><img src="{{ asset('img/team/Aabishkar.png') }}" class="img-fluid grayscale" alt=""></div>
+                  <div class="member-info">
+                    <h4>Aabishkar Shrestha</h4>
+                    <span class="fs-6">FullStack Developer</span>
+                    <div class="social">
+                        <a target="_blank" href="https://www.aabishkarshrestha.com.np/"><i class="bi bi-globe text-black"></i></a>
+                      <a href="https://www.linkedin.com/in/aabishkar-shrestha-550545247/" target="_blank"><i class="bi bi-linkedin text-black"></i></a>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+              </div>
+
+              <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="member">
+                  <div class="pic"><img src="{{ asset('img/team/rohan.png') }}" class="img-fluid grayscale" alt=""></div>
+                  <div class="member-info">
+                    <h4>Rohan Shrestha</h4>
+                    <span class="fs-6">UI/UX & Graphic Designer</span>
+                    <div class="social">
+                        <a target="_blank" href="https://www.rohanshrestha2005.com.np/"><i class="bi bi-globe text-black"></i></a>
+                      <a target="_blank" href="https://www.linkedin.com/in/rohan-shrestha-33153030a/"><i class="bi bi-linkedin text-black"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Centered Bottom Three Members -->
+
+            <style>
+              .grayscale {
+                filter: grayscale(100%);
+                transition: 0.3s ease-in-out;
+                cursor: pointer;
+              }
+              .grayscale:hover {
+                filter: grayscale(0%);
+              }
+            </style>
+          </div>
+
+
+      </section><!-- /Team Section -->

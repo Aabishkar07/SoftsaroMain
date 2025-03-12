@@ -1,21 +1,36 @@
-<div class="container-fluid py-5 my-5">
-    <div class="container pt-5">
-        <div class="row g-5">
-            <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
-                <div class="h-100 position-relative">
-                    <img src="img/about-1.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
-                    <div class="position-absolute w-75" style="top: 25%; left: 25%;">
-                        <img src="img/about-2.jpg" class="img-fluid w-100 rounded" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
-                <h5 class="text-primary">About Us</h5>
-                <h1 class="mb-4">About HighTech Agency And It's Innovative IT Solutions</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus. Etiam gravida justo nec erat vestibulum, et malesuada augue laoreet.</p>
-                <p class="mb-4">Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus.</p>
-                <a href="" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>
-            </div>
+   <!-- About Section -->
+   <section id="about" class="about section">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <h3>About Us – Build <span style="color: #6a68AF"> Trust </span> & <span style="color: #6a68AF"> Credibility </span></h3>
+          <img src="{{ asset('img/about.jpg') }}" class="img-fluid rounded-4 mb-4" alt="">
+          <p class="fs-5">Softsaro is a technology-driven company dedicated to providing innovative solutions that help businesses scale and succeed in the digital world. We prioritize creativity, collaboration, and customer satisfaction in every project we undertake.</p>
+          <p class="fs-5">With a focus on continuous improvement and staying at the forefront of technology, we offer a wide range of solutions designed to drive efficiency, growth, and transformation. Whether you're looking to create a cutting-edge website, develop a mobile app, or enhance your brand's online presence, Softsaro is your trusted partner in navigating the digital landscape.</p>
         </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+          <div class="content ps-0 ps-lg-5">
+            <p class=" fs-5 text-b">
+                Our team of skilled professionals is committed to delivering high-quality services that are customized to meet the unique needs of our clients.
+            </p>
+            <ul class="fs-5">
+              <li><i style="color:#6a68AF" class="bi bi-check-circle-fill"></i> <span> Our Mission: To empower businesses with technology-driven solutions.</span></li>
+              <li><i style="color:#6a68AF" class="bi bi-check-circle-fill"></i> <span> Our Vision: To be a global leader in IT innovation.</span></li>
+              <li><i style="color:#6a68AF" class="bi bi-check-circle-fill"></i> <span>Our Values: Creativity, Integrity, Excellence, and Customer-Centricity.</span></li>
+            </ul>
+            <p class="fs-5">At Softsaro, we don’t just build products; we help businesses transform in the digital age. Whether you’re an established company looking to modernize or a startup ready to make your mark, we’re here to help you succeed.</p>
+
+
+            <div class="position-relative mt-4">
+              <img src="{{ asset('img/about-2.jpg') }}" class="img-fluid rounded-4" alt="">
+              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-</div>
+
+  </section><!-- /About Section -->
+

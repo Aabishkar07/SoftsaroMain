@@ -1,94 +1,38 @@
-<div class="container-fluid testimonial py-5 mb-5">
-    <div class="container">
-        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-            <h5 class="text-primary">Our Testimonial</h5>
-            <h1>Our Client Saying!</h1>
-        </div>
-        <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay=".5s">
-            <div class="testimonial-item border p-4">
-                <div class="d-flex align-items-center">
-                    <div class="">
-                        <img src="img/testimonial-1.jpg" alt="">
-                    </div>
-                    <div class="ms-4">
-                        <h4 class="text-secondary">Client Name</h4>
-                        <p class="m-0 pb-3">Profession</p>
-                        <div class="d-flex pe-5">
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-top mt-4 pt-3">
-                    <p class="mb-0">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum aliquam dolor eget urna. Nam volutpat libero sit amet leo cursus, ac viverra eros morbi quis quam mi.</p>
-                </div>
+   <!-- Testimonials Section -->
+   <section id="testimonials" class="testimonials section dark-background">
+
+    <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+
+
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{{ asset('img/team/santosh.png') }}" class="testimonial-img" alt="">
+              <h2>Santosh Rajbanshi</h2>
+              <h3>CEO &amp; Founder</h3>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span class="fs-5">At Softsaro Nepal, we are committed to delivering innovative solutions that drive business success. Our passion for technology and excellence ensures that we help you stay ahead in a rapidly evolving digital world.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
             </div>
-            <div class="testimonial-item border p-4">
-                <div class=" d-flex align-items-center">
-                    <div class="">
-                        <img src="img/testimonial-2.jpg" alt="">
-                    </div>
-                    <div class="ms-4">
-                        <h4 class="text-secondary">Client Name</h4>
-                        <p class="m-0 pb-3">Profession</p>
-                        <div class="d-flex pe-5">
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-top mt-4 pt-3">
-                    <p class="mb-0">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum aliquam dolor eget urna. Nam volutpat libero sit amet leo cursus, ac viverra eros morbi quis quam mi.</p>
-                </div>
-            </div>
-            <div class="testimonial-item border p-4">
-                <div class=" d-flex align-items-center">
-                    <div class="">
-                        <img src="img/testimonial-3.jpg" alt="">
-                    </div>
-                    <div class="ms-4">
-                        <h4 class="text-secondary">Client Name</h4>
-                        <p class="m-0 pb-3">Profession</p>
-                        <div class="d-flex pe-5">
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-top mt-4 pt-3">
-                    <p class="mb-0">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum aliquam dolor eget urna. Nam volutpat libero sit amet leo cursus, ac viverra eros morbi quis quam mi.</p>
-                </div>
-            </div>
-            <div class="testimonial-item border p-4">
-                <div class=" d-flex align-items-center">
-                    <div class="">
-                        <img src="img/testimonial-4.jpg" alt="">
-                    </div>
-                    <div class="ms-4">
-                        <h4 class="text-secondary">Client Name</h4>
-                        <p class="m-0 pb-3">Profession</p>
-                        <div class="d-flex pe-5">
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                            <i class="fas fa-star me-1 text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-top mt-4 pt-3">
-                    <p class="mb-0">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum aliquam dolor eget urna. Nam volutpat libero sit amet leo cursus, ac viverra eros morbi quis quam mi.</p>
-                </div>
-            </div>
-        </div>
+          </div><!-- End testimonial item -->
+
+
+
+
+
+      </div>
+
     </div>
-</div>
+
+  </section><!-- /Testimonials Section -->
+
+
