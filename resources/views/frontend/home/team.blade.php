@@ -43,7 +43,7 @@
               <!-- Centered Bottom Three Members -->
               <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="member">
-                  <div class="pic"><img src="{{ asset('img/team/anup.jpg') }}" class="img-fluid grayscale" alt=""></div>
+                  <div class="pic"><img src="{{ asset('img/team/anup.png') }}" class="img-fluid grayscale" alt=""></div>
                   <div class="member-info">
                     <h4>Anup Kasula</h4>
                     <span class="fs-6">FullStack Developer</span>

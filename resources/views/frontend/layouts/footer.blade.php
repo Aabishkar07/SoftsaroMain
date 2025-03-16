@@ -10,8 +10,8 @@
                 <h4>Useful Links</h4>
                 <ul class="list-unstyled fs-6">
                     <li><i class="bi bi-chevron-right text-white"></i> <a href="/">Home</a></li>
-                    <li><i class="bi bi-chevron-right text-white"></i> <a href="#about">About us</a></li>
-                    <li><i class="bi bi-chevron-right text-white"></i> <a href="#services">Services</a></li>
+                    <li><i class="bi bi-chevron-right text-white"></i> <a href="{{ route('aboutus') }}">About us</a></li>
+                    <li><i class="bi bi-chevron-right text-white"></i> <a href="{{ route('services') }}">Services</a></li>
                     <li><i class="bi bi-chevron-right text-white"></i> <a href="{{ route('termsandcondition') }}">Terms and Condition</a></li>
                     <li><i class="bi bi-chevron-right text-white"></i> <a href="{{ route('privacypolicy') }}">Privacy policy</a></li>
                 </ul>

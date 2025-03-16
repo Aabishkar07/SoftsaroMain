@@ -4,9 +4,10 @@
 
 @include('frontend.home.landing')
 @include('frontend.home.about')
-@include('frontend.home.fact')
+@include('frontend.home.porject')
 @include('frontend.home.service')
-{{-- @include('frontend.home.porject') --}}
+
+@include('frontend.home.fact')
 @include('frontend.home.feature')
 @include('frontend.home.moreservices')
 

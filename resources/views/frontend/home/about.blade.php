@@ -5,7 +5,7 @@
       <div class="row gy-4">
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
           <h3>About Us – Build <span style="color: #6a68AF"> Trust </span> & <span style="color: #6a68AF"> Credibility </span></h3>
-          <img src="{{ asset('img/about.jpg') }}" class="img-fluid rounded-4 mb-4" alt="">
+          <img src="{{ asset('img/grow.jpg') }}" class="img-fluid rounded-4 mb-4" alt="">
           <p class="fs-5">Softsaro is a technology-driven company dedicated to providing innovative solutions that help businesses scale and succeed in the digital world. We prioritize creativity, collaboration, and customer satisfaction in every project we undertake.</p>
           <p class="fs-5">With a focus on continuous improvement and staying at the forefront of technology, we offer a wide range of solutions designed to drive efficiency, growth, and transformation. Whether you're looking to create a cutting-edge website, develop a mobile app, or enhance your brand's online presence, Softsaro is your trusted partner in navigating the digital landscape.</p>
         </div>
@@ -24,7 +24,7 @@
 
             <div class="position-relative mt-4">
               <img src="{{ asset('img/about-2.jpg') }}" class="img-fluid rounded-4" alt="">
-              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+              {{-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a> --}}
             </div>
           </div>
         </div>

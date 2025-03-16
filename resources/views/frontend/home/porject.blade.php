@@ -10,29 +10,14 @@
     <div class="container" data-aos="fade-up">
       <div class="owl-carousel owl-theme">
 
-        <div class="item client-logo">
-          <img src="{{ asset('img/clients/client-1.png') }}" class="img-fluid" alt="">
-        </div>
+        @foreach ($clients as $key=>$client )
 
         <div class="item client-logo">
-          <img src="{{ asset('img/clients/client-2.png') }}" class="img-fluid" alt="">
+          <img src="{{ asset('uploads/'. $client->featured_image) }}" class="img-fluid" alt="">
         </div>
+        @endforeach
 
-        <div class="item client-logo">
-          <img src="{{ asset('img/clients/client-3.png') }}" class="img-fluid" alt="">
-        </div>
 
-        <div class="item client-logo">
-          <img src="{{ asset('img/clients/client-4.png') }}" class="img-fluid" alt="">
-        </div>
-
-        <div class="item client-logo">
-          <img src="{{ asset('img/clients/client-5.png') }}" class="img-fluid" alt="">
-        </div>
-
-        <div class="item client-logo">
-          <img src="{{ asset('img/clients/client-6.png') }}" class="img-fluid" alt="">
-        </div>
 
       </div>
     </div>
