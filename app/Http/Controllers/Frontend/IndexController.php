@@ -24,8 +24,9 @@ class IndexController extends Controller
 
     public function aboutus()
     {
+        $clients=Partner::get();
 
-        return view("frontend.about.index");
+        return view("frontend.about.index",compact('clients'));
     }
 
 
