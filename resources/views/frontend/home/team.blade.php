@@ -4,7 +4,7 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Team</h2>
-          <p>CHECK OUR TEAM</p>
+          <p style="color:#6a68AF">CHECK OUR TEAM</p>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -15,9 +15,8 @@
                   <div class="pic"><img src="{{ asset('img/team/sujan.png') }}" class="img-fluid grayscale" alt=""></div>
                   <div class="member-info">
                     <h4>Sujan Adhikari</h4>
-                    <span class="fs-6">Chairman</span>
+                    <span class="">Chairman</span>
                     <div class="social">
-                      <a href=""><i class="bi bi-twitter-x text-black"></i></a>
                       <a href="https://www.linkedin.com/in/sujanadhikari1111/" target="_blank"><i class="bi bi-linkedin text-black"></i></a>
                     </div>
                   </div>
@@ -29,9 +28,8 @@
                   <div class="pic"><img src="{{ asset('img/team/santosh.png') }}" class="img-fluid grayscale" alt=""></div>
                   <div class="member-info">
                     <h4>Santosh Rajbanshi</h4>
-                    <span class="fs-6">Chief Executive Officer</span>
+                    <span class="">Chief Executive Officer</span>
                     <div class="social">
-                      <a href=""><i class="bi bi-twitter-x text-black"></i></a>
                       <a target="_blank" href="https://www.linkedin.com/in/santosh-rajbanshi-878552152/"><i class="bi bi-linkedin text-black"></i></a>
                     </div>
                   </div>
@@ -46,7 +44,7 @@
                   <div class="pic"><img src="{{ asset('img/team/anup.png') }}" class="img-fluid grayscale" alt=""></div>
                   <div class="member-info">
                     <h4>Anup Kasula</h4>
-                    <span class="fs-6">FullStack Developer</span>
+                    <span class="">FullStack Developer</span>
                     <div class="social">
                       <a target="_blank" href="https://www.anupkasula.com.np/"><i class="bi bi-globe text-black"></i></a>
                       <a target="_blank" href="https://www.linkedin.com/in/anup-kasula/"><i class="bi bi-linkedin text-black"></i></a>
@@ -57,10 +55,10 @@
 
               <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="member">
-                  <div class="pic"><img src="{{ asset('img/team/Aabishkar.png') }}" class="img-fluid grayscale" alt=""></div>
+                  <div class="pic"><img src="{{ asset('img/team/aabishkar.png') }}" class="img-fluid grayscale" alt=""></div>
                   <div class="member-info">
                     <h4>Aabishkar Shrestha</h4>
-                    <span class="fs-6">FullStack Developer</span>
+                    <span class="">FullStack Developer</span>
                     <div class="social">
                         <a target="_blank" href="https://www.aabishkarshrestha.com.np/"><i class="bi bi-globe text-black"></i></a>
                       <a href="https://www.linkedin.com/in/aabishkar-shrestha-550545247/" target="_blank"><i class="bi bi-linkedin text-black"></i></a>
@@ -74,7 +72,7 @@
                   <div class="pic"><img src="{{ asset('img/team/rohan.png') }}" class="img-fluid grayscale" alt=""></div>
                   <div class="member-info">
                     <h4>Rohan Shrestha</h4>
-                    <span class="fs-6">UI/UX & Graphic Designer</span>
+                    <span class="">UI/UX & Graphic Designer</span>
                     <div class="social">
                         <a target="_blank" href="https://www.rohanshrestha2005.com.np/"><i class="bi bi-globe text-black"></i></a>
                       <a target="_blank" href="https://www.linkedin.com/in/rohan-shrestha-33153030a/"><i class="bi bi-linkedin text-black"></i></a>

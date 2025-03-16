@@ -3,6 +3,7 @@
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -18,3 +19,17 @@ Route::get('/teams', [IndexController::class, 'team'])->name('teams');
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/migrate', function () {
+    Artisan::call('migrate');
+    return 'Migration has been successfully';
+});
+Route::get('/clear', function () {
+    Artisan::call('optimize:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:cache');
+    Artisan::call('config:cache');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    return 'Application all kind of cache has been cleared';
+});

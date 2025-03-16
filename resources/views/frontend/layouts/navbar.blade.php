@@ -5,11 +5,15 @@
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <img src="{{ asset('img/softsaro white logo.png') }}" style="width: 200px; height: auto; max-height: 80px;" alt="Softsaro Logo">
         </a>
-
+        <style>
+            #navmenu a {
+              text-decoration: none !important;
+            }
+          </style>
 
       <nav id="navmenu" class="navmenu">
         <ul class="fs-6">
-          <li><a  href="/" class="fs-6">Home</a></li>
+          <li><a  href="/"  class=" fs-6 {{ Route::is('/') ? 'active' : '' }}">Home</a></li>
           <li><a class="fs-6 {{ Route::is('aboutus') ? 'active' : '' }}" href="{{ route('aboutus') }}">About</a></li>
 
 

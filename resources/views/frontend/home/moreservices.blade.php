@@ -4,7 +4,7 @@
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
       <h2>Why</h2>
-      <p>Why Choose Us?</p>
+      <p style="color:#6a68AF">Why Choose Us?</p>
     </div><!-- End Section Title -->
 
     <div class="container">

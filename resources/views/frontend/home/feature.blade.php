@@ -7,25 +7,25 @@
         <li class="nav-item col-3">
           <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
             <i class="bi bi-binoculars"></i>
-            <h4 class="d-none d-lg-block">Innovative Solutions</h4>
+            <h4 class="d-none d-lg-block text-black">Innovative Solutions</h4>
           </a>
         </li>
         <li class="nav-item col-3">
           <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
             <i class="bi bi-box-seam"></i>
-            <h4 class="d-none d-lg-block">Our Approach</h4>
+            <h4 class="d-none d-lg-block text-black">Our Approach</h4>
           </a>
         </li>
         <li class="nav-item col-3">
           <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
             <i class="bi bi-brightness-high"></i>
-            <h4 class="d-none d-lg-block">Success Stories</h4>
+            <h4 class="d-none d-lg-block text-black">Success Stories</h4>
           </a>
         </li>
         <li class="nav-item col-3">
           <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
             <i class="bi bi-command"></i>
-            <h4 class="d-none d-lg-block">Get In Touch</h4>
+            <h4 class="d-none d-lg-block text-black">Get In Touch</h4>
           </a>
         </li>
       </ul><!-- End Tab Nav -->
