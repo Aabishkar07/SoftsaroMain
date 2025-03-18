@@ -1,5 +1,5 @@
 @if (Session::has('poperror'))
-    <div id="toast-error" class="position-fixed bottom-0 end-0 mb-4 me-4 toast show z-50" role="alert" aria-live="assertive" aria-atomic="true">
+    <div id="toast-error" style="z-index: 999;"  class="position-fixed bottom-0 end-0 mb-4 me-4 toast show z-50" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-danger text-white">
             <strong class="me-auto">Error</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -11,7 +11,7 @@
 @endif
 
 @if (Session::has('popsuccess'))
-    <div id="toast-success" class="position-fixed bottom-0 end-0 mb-4 me-4 toast show z-50" role="alert" aria-live="assertive" aria-atomic="true">
+    <div style="z-index: 999;" id="toast-success" class="position-fixed  bottom-0 end-0 mb-4 me-4 toast show z-999" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-success text-white">
             <strong class="me-auto">Success</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
