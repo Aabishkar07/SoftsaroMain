@@ -39,12 +39,12 @@
                                 <th class="px-5 py-3 font-semibold text-left ">
                                     Name</th>
 
-                                    <th class="px-5 py-3 font-semibold text-left ">
-                                        Email</th>
-                                    <th class="px-5 py-3 font-semibold text-left ">
-                                        Product</th>
-                                        <th class="px-5 py-3 font-semibold text-left ">
-                                            Contact</th>
+                                <th class="px-5 py-3 font-semibold text-left ">
+                                    Email</th>
+                                <th class="px-5 py-3 font-semibold text-left ">
+                                    Product</th>
+                                <th class="px-5 py-3 font-semibold text-left ">
+                                    Contact</th>
 
                                 <th class="px-5 py-3 font-semibold text-left ">
                                     Created at</th>
@@ -83,9 +83,22 @@
                                     <td>
                                         <div class="flex items-center p-2">
 
+                                            <!-- View Button -->
+                                            <button type="button" onclick="viewItem({{ $data->id }})"
+                                                class="flex px-2 py-1 mx-2 text-white bg-blue-500 hover:bg-blue-600 rounded-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon icon-tabler icon-tabler-eye" width="24" height="24"
+                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M12 4c-5 0 -9 4 -9 8s4 8 9 8s9 -4 9 -8s-4 -8 -9 -8z"></path>
+                                                    <path d="M15 12c0 1.5 -1.5 3 -3 3s-3 -1.5 -3 -3s1.5 -3 3 -3s3 1.5 3 3z">
+                                                    </path>
+                                                </svg>
+                                            </button>
 
-
-                                            <form method="POST" action="{{ route('admin.productenquire.destroy', $data->id) }}"
+                                            <form method="POST"
+                                                action="{{ route('admin.productenquire.destroy', $data->id) }}"
                                                 id="delete-form-{{ $data->id }}">
                                                 @csrf
                                                 @method('delete')
@@ -107,6 +120,53 @@
                                             </form>
 
                                         </div>
+
+                                        <!-- Modal for Viewing Contact Details -->
+                                        <div id="view-modal-{{ $data->id }}"
+                                            class=" max-sm:p-4 fixed z-[999] inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50 hidden"
+                                            onclick="closeViewModalIfClickedOutside(event, {{ $data->id }})">
+                                            <div class="bg-white max-h-[60vh] overflow-auto text-gray-600 p-6 rounded-lg w-96 shadow-lg"
+                                                onclick="event.stopPropagation()">
+                                                <h3 class="text-2xl font-semibold text-center mb-4">Product Enquire Details
+                                                </h3>
+                                                <div class="space-y-2">
+                                                    <p><strong>Name:</strong> {{ $data->name }}</p>
+                                                    <p><strong>Email:</strong> {{ $data->email }}</p>
+                                                    <p><strong>Product:</strong> {{ $data->productname->title ?? '' }}</p>
+                                                    <p><strong>Phone:</strong> {{ $data->number }}</p>
+                                                    <p><strong>Message:</strong> {{ $data->message }}</p>
+                                                </div>
+                                                <div class="mt-4 ">
+                                                    <button onclick="closeViewModal({{ $data->id }})"
+                                                        class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">
+                                                        Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <script>
+                                            // Show View Modal
+                                            function viewItem(contactId) {
+                                                const modal = document.getElementById(`view-modal-${contactId}`);
+                                                modal.classList.remove('hidden');
+                                            }
+
+                                            // Close View Modal
+                                            function closeViewModal(contactId) {
+                                                const modal = document.getElementById(`view-modal-${contactId}`);
+                                                modal.classList.add('hidden');
+                                            }
+
+                                            // Close View Modal when clicking outside the modal content
+                                            function closeViewModalIfClickedOutside(event, contactId) {
+                                                // Close modal if the click is outside the modal content (on the background overlay)
+                                                if (event.target === event.currentTarget) {
+                                                    closeViewModal(contactId);
+                                                }
+                                            }
+                                        </script>
+
                                     </td>
 
                                 </tr>
