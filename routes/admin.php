@@ -37,6 +37,9 @@ use Illuminate\Support\Facades\Route;
     Route::resource('store', StoreController::class);
     Route::resource('product', ProductController::class);
     Route::resource('productenquire', ProductEnquireController::class);
+    Route::get('contacts', [ContactController::class, 'contact'])->name('contact');
+    Route::delete('contactdelete/{contact}', [ContactController::class, 'contactdelete'])->name('contactdelete');
+
 
     // Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     // Route::resource('setting', OtherSettingController::class);
