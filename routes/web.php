@@ -20,6 +20,7 @@ Route::get('/teams', [IndexController::class, 'team'])->name('teams');
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 Route::get('/store', [IndexController::class, 'store'])->name('store');
 Route::get('/store/{slug}', [IndexController::class, 'storesingle'])->name('storesingle');
+Route::post('/storeproduct', [IndexController::class, 'storeproduct'])->name('storeproduct');
 
 Route::get('/enquire', [EnquireController::class, 'enquire'])->name('enquire');
 Route::post('/enquire', [EnquireController::class, 'enquirestore'])->name('enquire.store');
