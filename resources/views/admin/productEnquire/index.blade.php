@@ -20,7 +20,7 @@
 
     <div class="flex items-center">
         <div class="flex-1">
-            <h2 class="w-full text-2xl font-bold text-secondary "> Product Enquire</h2>
+            <h2 class="w-full text-2xl font-bold text-secondary "> Products Enquire</h2>
         </div>
         <div class="text-right ">
         </div>
