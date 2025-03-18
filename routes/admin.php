@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PopupController as AdminPopupController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductEnquireController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\StoreController;
 use App\Http\Controllers\Admin\TestimonialController;
@@ -34,6 +35,8 @@ use Illuminate\Support\Facades\Route;
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::resource('partners', PartnerController::class);
     Route::resource('store', StoreController::class);
+    Route::resource('product', ProductController::class);
+    Route::resource('productenquire', ProductEnquireController::class);
 
     // Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     // Route::resource('setting', OtherSettingController::class);

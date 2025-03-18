@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Partner;
+use App\Models\Product;
+use App\Models\ProductEnquire;
 use App\Models\Store;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
@@ -57,13 +59,42 @@ class IndexController extends Controller
         return view("frontend.store.index", compact('stores'));
     }
 
+
+    public function storeproduct(Request $request){
+
+
+        ProductEnquire::create([
+        'name'=> $request->name,
+        'email' => $request->email,
+        'message' => $request->message,
+        'number' => $request->number,
+        'product_id'=>$request->product_id,
+        ]);
+
+        // $mailData = [
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'subject' => $request->subject,
+        //     'message' => $request->message,
+        //     'phone' => $request->phone,
+        // ];
+
+        // Mail::to('aaviscar09@gmail.com')->send(new MailContact($mailData));
+
+
+        return redirect()->back()->with('popsuccess', 'Your enquiry has been submitted successfully! Our team will contact you shortly.');
+    }
+
         public function storesingle($slug)
         {
 
-            $store = Store::where('slug', $slug)->firstOrFail(); // Find by slug
 
 
-            return view('frontend.store.single', compact('store'));
+            $store = Store::where('slug', $slug)->firstOrFail();
+
+            $product = Product::where('service_id', $store->id)->get();
+
+            return view('frontend.store.single', compact('store','product'));
         }
 
 

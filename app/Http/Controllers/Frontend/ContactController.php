@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Mail\Contact as MailContact;
 use App\Models\Contact;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
+
+// use Mail;
 
 class ContactController extends Controller
 {
