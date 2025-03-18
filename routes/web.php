@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\EnquireController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
@@ -17,6 +18,11 @@ Route::get('/aboutus', [IndexController::class, 'aboutus'])->name('aboutus');
 Route::get('/services', [IndexController::class, 'services'])->name('services');
 Route::get('/teams', [IndexController::class, 'team'])->name('teams');
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
+Route::get('/store', [IndexController::class, 'store'])->name('store');
+Route::get('/store/{slug}', [IndexController::class, 'storesingle'])->name('storesingle');
+
+Route::get('/enquire', [EnquireController::class, 'enquire'])->name('enquire');
+Route::post('/enquire', [EnquireController::class, 'enquirestore'])->name('enquire.store');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 

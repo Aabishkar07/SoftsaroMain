@@ -41,6 +41,11 @@
         </div>
 
         <div class="col-lg-6">
+            @if(session('popsuccess'))
+            <div class="alert alert-success">
+                {{ session('popsuccess') }}
+            </div>
+        @endif
           <form action="{{ route('contact.store') }}" method="post" class="" data-aos="fade-up" data-aos-delay="500">
             @csrf
             <div class="row gy-4">
