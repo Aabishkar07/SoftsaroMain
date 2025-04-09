@@ -12,7 +12,7 @@
             Partner with our IT company for expert-driven strategies and innovative solutions.
         </p>
         <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
-            <a href="#about" class="btn btn-lg text-white" style="background-color: #6a68AF" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
+            <a href="{{ route('contact') }}" class="btn btn-lg text-white" style="background-color: #6a68AF" data-aos="zoom-in" data-aos-delay="400">Get In Touch</a>
         </div>
     </div>
 </div>

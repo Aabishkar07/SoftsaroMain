@@ -34,6 +34,8 @@
           </div><!-- End Portfolio Item -->
 
 
+
+
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
             <div class="portfolio-content h-100">
               <img src="{{ asset('img/portfolio/sajhaapp.jpg') }}" class="img-fluid" alt="">
@@ -45,7 +47,45 @@
             </div>
           </div><!-- End Portfolio Item -->
 
+<!-- End Portfolio Item -->
 
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/simrik.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Simrik Cooperative</h4>
+                <p>Real State</p>
+                <a href="{{ asset('img/portfolio/simrik.jpg') }}" title="Simrik Cooperative" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://simrikcoop.com.np/" target="_blank" title="Simrik Cooperative" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/adsaro.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Adsaro</h4>
+                <p>Advertising Company</p>
+                <a href="{{ asset('img/portfolio/adsaro.jpg') }}" title="Adsaro" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://adsaro.com/" target="_blank"title="Adsaro" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/sajha courier.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Sajha Courrier</h4>
+                <p>Logistic System</p>
+                <a href="{{ asset('img/portfolio/sajha courier.jpg') }}" title="Sajha Courrier" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://sayumiglobal.com" target="_blank" title="Sajha Courrier" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
@@ -59,6 +99,20 @@
             </div>
           </div><!-- End Portfolio Item -->
 
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/zogad.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Zogad</h4>
+                <p>Marketplace</p>
+                <a href="{{ asset('img/portfolio/zogad.jpg') }}" title="Zogad" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://zogad.com/" target="_blank" title="Zogad" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-graphics">
             <div class="portfolio-content h-100">
               <img src="{{ asset('img/portfolio/softsarographics.jpg') }}" class="img-fluid" alt="">
@@ -69,6 +123,31 @@
               </div>
             </div>
           </div><!-- End Portfolio Item -->
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/kosish.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Kosish Loksewa</h4>
+                <p>Eductaional Website</p>
+                <a href="{{ asset('img/portfolio/kosish.jpg') }}" title="Kosish Loksewa" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://www.loksewakosishonline.com/" target="_blank" title="Kosish Loksewa" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/sajha app.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Sajha Courrier</h4>
+                <p>Logistic Application</p>
+                <a href="{{ asset('img/portfolio/sajha app.jpg') }}" title="Sajha Courrier" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
               <img src="{{ asset('img/portfolio/sayumi.jpg') }}" class="img-fluid" alt="">
@@ -178,6 +257,33 @@
             </div>
           </div><!-- End Portfolio Item -->
 
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/tcorp.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Tcorp</h4>
+                <p>Ecommerce</p>
+                <a href="{{ asset('img/portfolio/tcorp.jpg') }}" title="Tcorp" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://tcorptrade.com/" target="_blank" title="Tcorp" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/mero gantabya.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Mero Gantabya</h4>
+                <p>Booking Sysytem</p>
+                <a href="{{ asset('img/portfolio/mero gantabya.jpg') }}" title="Mero Gantabya" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://www.merogantabya.com/" target="_blank" title="Mero Gantabya" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
+
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
               <img src="{{ asset('img/portfolio/buyfresh.jpg') }}" class="img-fluid" alt="">
@@ -190,6 +296,17 @@
             </div>
           </div><!-- End Portfolio Item -->
 
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/marketlab.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Market Lab</h4>
+                <p>Booking Sysytem</p>
+                <a href="{{ asset('img/portfolio/marketlab.jpg') }}" title="Market Lab" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://marketlab.com.np/" target="_blank" title="Market Lab" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
@@ -226,6 +343,46 @@
               </div>
             </div>
           </div><!-- End Portfolio Item -->
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/travelbee.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Travel Bee</h4>
+                <p>Travel Website</p>
+                <a href="{{ asset('img/portfolio/travelbee.jpg') }}" title="Travel Bee" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://travelbee.com.np/" target="_blank"title="Travel Bee" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/swissatrek.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Swissa Trek</h4>
+                <p>Travel Website</p>
+                <a href="{{ asset('img/portfolio/swissatrek.jpg') }}" title="Swissa Trek" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://www.swissatrek.com/" target="_blank"title="Swissa Trek" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-content h-100">
+              <img src="{{ asset('img/portfolio/plant variety.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Plant Variety</h4>
+                <p>Marketplace</p>
+                <a href="{{ asset('img/portfolio/plant variety.jpg') }}" title="Plant Variety" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://plantvariety.com.np/" target="_blank"title="Plant Variety" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-graphics">
             <div class="portfolio-content h-100">

@@ -40,7 +40,7 @@
 
 
 
-        <div class="mt-5  m-3  p-4 rounded shadow"
+        {{-- <div class="mt-5  m-3  p-4 rounded shadow"
         style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-left: 5px solid #6a68AF;">
          <h5 class="fw-bold text-primary mb-3">📌 Note: <span class="text-black  fw-norma">Optional boosting service available for Facebook/Instagram:</span></h5>
          <p class="text-dark"></p>
@@ -63,7 +63,7 @@
                  </tbody>
              </table>
          </div>
-     </div>
+     </div> --}}
 
 
 

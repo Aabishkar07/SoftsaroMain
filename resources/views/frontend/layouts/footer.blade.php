@@ -31,7 +31,7 @@
                 <div class="footer-contact pt-3">
                     <p class="fs-6 mb-1">Trade Tower 5th Floor</p>
                     <p class="fs-6 mb-1">Kathmandu, Nepal</p>
-                    <p class="fs-6 mb-1"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+                    <p class="fs-6 mb-1"><strong>Phone:</strong> <span>9818439664</span></p>
                     <p class="fs-6"><strong>Email:</strong> <span>info@softsaro.com</span></p>
                 </div>
                 <div class="social-links d-flex justify-content-center justify-content-lg-start mt-4">
