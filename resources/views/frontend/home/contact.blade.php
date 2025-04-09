@@ -25,7 +25,7 @@
               <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
                 <i class="bi bi-telephone"></i>
                 <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <p>9818439664</p>
               </div>
             </div><!-- End Info Item -->
 
