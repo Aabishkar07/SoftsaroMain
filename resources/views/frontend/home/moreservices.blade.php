@@ -16,7 +16,7 @@
             <i class="bi bi-person-circle icon flex-shrink-0"></i>
             <div>
                 <h4 class="title">Experienced Team</h4>
-                <p class="description fs-5">Our team of experts brings years of experience and in-depth knowledge to every project we handle.</p>
+                <p class="description fs-6">Our team of experts brings years of experience and in-depth knowledge to every project we handle.</p>
             </div>
           </div>
         </div><!-- End Service Item -->
@@ -26,7 +26,7 @@
             <i class="bi bi-gear icon flex-shrink-0"></i>
             <div>
                 <h4 class="title">Tailored Solutions</h4>
-                <p class="description fs-5">We customize solutions to meet your specific business needs, ensuring optimal outcomes.</p>
+                <p class="description fs-6">We customize solutions to meet your specific business needs, ensuring optimal outcomes.</p>
             </div>
           </div>
         </div><!-- End Service Item -->
@@ -36,7 +36,7 @@
             <i class="bi bi-laptop icon flex-shrink-0"></i>
             <div>
                 <h4 class="title">Cutting-Edge Technologies</h4>
-                <p class="description fs-5">We leverage the latest tools and technologies to provide innovative solutions that drive success.</p>
+                <p class="description fs-6">We leverage the latest tools and technologies to provide innovative solutions that drive success.</p>
             </div>
           </div>
         </div><!-- End Service Item -->
@@ -46,7 +46,7 @@
             <i class="bi bi-bar-chart-line icon flex-shrink-0"></i>
             <div>
                 <h4 class="title">Proven Track Record</h4>
-                <p class="description fs-5">Our portfolio of successful projects showcases our ability to deliver results that exceed expectations.</p>
+                <p class="description fs-6">Our portfolio of successful projects showcases our ability to deliver results that exceed expectations.</p>
             </div>
           </div>
         </div><!-- End Service Item -->
@@ -56,7 +56,7 @@
             <i class="bi bi-people icon flex-shrink-0"></i>
             <div>
                 <h4 class="title">Collaborative Approach</h4>
-                <p class="description fs-5">We believe in working closely with clients, ensuring transparent communication and collaborative decision-making.</p>
+                <p class="description fs-6">We believe in working closely with clients, ensuring transparent communication and collaborative decision-making.</p>
             </div>
           </div>
         </div><!-- End Service Item -->
@@ -66,7 +66,7 @@
             <i class="bi bi-life-preserver icon flex-shrink-0"></i>
             <div>
                 <h4 class="title">Ongoing Support</h4>
-                <p class="description fs-5">We provide post-deployment support to ensure your business continues to thrive long after project completion.</p>
+                <p class="description fs-6">We provide post-deployment support to ensure your business continues to thrive long after project completion.</p>
             </div>
           </div>
         </div><!-- End Service Item -->
