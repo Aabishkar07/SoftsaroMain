@@ -111,10 +111,11 @@
                 Contact us today for a free consultation. We’re excited to be part of your journey to growth and success!
               </p>
               <ul class="fs-5">
-                <li></i> <span>Phone: [Your Phone Number]
+                <li></i> <span>Phone: 9818439664
                 </span></li>
                 <li></i> <span>Email: info@softsaro.com</span></li>
-                <li></i> <span>Location: Trade Tower , Kathmandu
+                <li></i> <span>Location: Trade Tower 5th Floor
+Kathmandu, Nepal
                 </span></li>
               </ul>
             </div>
