@@ -28,12 +28,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-// Route::get('login', [AuthController::class, "index"])->name('login');
-// Route::post('login', [AuthController::class, 'store'])->name('store');
+Route::get('login', [AuthController::class, "index"])->name('login');
+Route::post('login', [AuthController::class, 'store'])->name('store');
 
-// Route::middleware(["admin"])->group(function () {
+Route::middleware(["admin"])->group(function () {
 
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+        Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::resource('partners', PartnerController::class);
     Route::resource('store', StoreController::class);
     Route::resource('product', ProductController::class);
@@ -66,5 +67,5 @@ use Illuminate\Support\Facades\Route;
     // Route::resource('pages', PageController::class);
     // Route::resource('faqs', FaqController::class);
     // Route::resource('gallery', GalleryController::class);
-// }
-// );
+}
+);
