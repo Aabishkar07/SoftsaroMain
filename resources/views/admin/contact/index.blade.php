@@ -180,9 +180,9 @@
 
                 </div>
             </div>
-            {{-- <div class="z-0 mt-3">
-                {{ $partners->links('vendor.pagination.tailwind') }}
-            </div> --}}
+            <div class="z-0 mt-3">
+                {{ $contacts->links('vendor.pagination.tailwind') }}
+            </div>
         </div>
     </div>
 @endsection

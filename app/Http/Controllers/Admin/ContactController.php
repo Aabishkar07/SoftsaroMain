@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     public function contact()
     {
-        $contacts = Contact::latest()->get();
+        $contacts = Contact::latest()->paginate(20);
         return view("admin.contact.index", compact("contacts"));
     }
     public function contactdelete($contact)

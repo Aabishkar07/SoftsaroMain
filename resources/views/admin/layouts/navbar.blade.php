@@ -10,7 +10,7 @@
         </div>
         <div class=" md:col-span-1 lg:col-span-2">
             <div class="flex items-center text-2xl font-bold text-green-700 gap-x-2">
-                <img src="{{ asset('img/softsaroorg1 (2) (1).png') }}" alt="logo" class='w-36' />
+                <img src="{{ asset('img/softsarologo.png') }}" alt="logo" class='w-36' />
             </div>
         </div>
 

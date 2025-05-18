@@ -20,166 +20,139 @@
 
     <div class="flex items-center">
         <div class="flex-1">
-            <h2 class="w-full text-2xl font-bold text-secondary "> Products Enquire</h2>
+
+            <div class="text-gray-700 text-xl font-medium p-2">Emails ({{ count($emails) }})</div>
         </div>
         <div class="text-right ">
+            <div class="text-right ">
+                <a href="{{ route('admin.emailmarketing.create') }}"
+                    class="flex items-center px-3 py-2 mb-1 mr-1  font-bold text-white uppercase transition-all ease-linear bg-[#6a68AF] border border-[#6a68AF] rounded outline-none hover:bg-transparent hover:text-[#6a68AF] focus:outline-none duration-400 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 5l0 14"></path>
+                        <path d="M5 12l14 0"></path>
+                    </svg>
+                    Add Email</a>
+            </div>
         </div>
     </div>
 
 
-    <div class="py-3 ">
-        <div class="mt-1">
-            {{-- -mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto z-[0] max-h-screen overflow-y-auto --}}
-            <div class="relative mt-10 text-white bg-[#6a68AF] shadow data-tablerounded-lg ">
-                <div class="overflow-x-auto ">
-                    {{-- max-h-screen min-w-full shadow rounded-lg z-[0] overflow-y-hidden --}}
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="">
-                            <tr>
-                                <th class="px-5 py-3 font-semibold text-left ">
-                                    Name</th>
 
-                                <th class="px-5 py-3 font-semibold text-left ">
-                                    Email</th>
-                                <th class="px-5 py-3 font-semibold text-left ">
-                                    Product</th>
-                                <th class="px-5 py-3 font-semibold text-left ">
-                                    Contact</th>
-
-                                <th class="px-5 py-3 font-semibold text-left ">
-                                    Created at</th>
-
-                                <th class="px-5 py-3 font-semibold text-left ">
-                                    Actions</th>
-                            </tr>
-                        </thead>
+    <div class="flex flex-col mt-2">
 
 
+        <div class="grid ">
 
-                        @foreach ($datas as $key => $data)
-                            <tbody class="bg-white divide-y divide-gray-200 ">
-                                <tr>
-                                    <td class="px-5 py-3 ">
-                                        <p class="text-gray-900 ">{{ $data->name }}</p>
-                                    </td>
-                                    <td class="px-5 py-3 ">
-                                        <p class="text-gray-900 ">{{ $data->email }}</p>
-                                    </td>
-                                    <td class="px-5 py-3 ">
-                                        <p class="text-gray-900 ">{{ $data->productname->title ?? '' }}</p>
-                                    </td>
+            <form class="" method="post" action="
+            {{ route('admin.newsletter.create') }}
+             ">
+                @csrf
+                <div class="bg-white ">
 
-                                    <td class="px-5 py-3 ">
-                                        <p class="text-gray-900 ">{{ $data->number }}</p>
-                                    </td>
+                    <div class=" border-gray-200 rounded-lg overflow-hidden">
+                        <div class="relative  text-white bg-[#151265] shadow data-tablerounded-lg flex ">
+                            <div class="px-5 py-3 font-semibold text-left">
+                                <input type="checkbox" id="checkall">
+                            </div>
+                            <div class=" px-5 py-3 font-semibold text-left">
+                                SN</div>
+                            <div class="flex-1 py-3 px-6 text-left  leading-4 font-medium  uppercase tracking-wider">
+                                Name</div>
+                            <div class="flex-1 py-3 px-6 text-left  leading-4 font-medium  uppercase tracking-wider">
+                                Email</div>
+                            <div class="flex-1 py-3 px-6 text-left  leading-4 font-medium  uppercase tracking-wider">
+                                Created_at</div>
+                        </div>
+                        <div class="overflow-y-auto max-h-[60vh]">
 
-                                    <td class="w-48 px-5 py-3 text-sm">
-                                        <p class="text-gray-900 ">
-                                            {{ $data->created_at->format('jS M Y') }}
-                                        </p>
-                                    </td>
+                            @foreach ($emails as $key => $user)
+                                <div class="flex border-t border-gray-200">
+                                    <div class="py-4 px-5 text-center whitespace-no-wrap">
+                                        <input type="checkbox" name="email[]"  value="{{ $user->email }}">
+                                    </div>
+                                    <div class=" py-3 px-3 whitespace-no-wrap text-sm text-gray-500">{{ $key + 1 }}
+                                    </div>
+                                    <div class="flex-1 py-3 px-6 whitespace-no-wrap text-sm text-gray-500">
+                                        {{ $user->name }}
+                                    </div>
+                                    <div class="flex-1 py-3 px-6 whitespace-no-wrap text-sm text-gray-500">
+                                        {{ $user->email }}
+                                    </div>
+                                    <div class="flex-1 py-3 px-6 whitespace-no-wrap text-sm text-gray-500">
+                                        {{ $user->created_at->format('jS M Y') }}
+                                    </div>
 
 
-                                    <td>
-                                        <div class="flex items-center p-2">
-
-                                            <!-- View Button -->
-                                            <button type="button" onclick="viewItem({{ $data->id }})"
-                                                class="flex px-2 py-1 mx-2 text-white bg-blue-500 hover:bg-blue-600 rounded-md">
+                                    {{-- <div class="flex items-center p-2">
+                                        <form method="POST" action="{{ route('admin.productenquire.destroy', $user->id) }}"
+                                            id="delete-form-{{ $user->id }}">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="button" onclick="deleteItem({{ $user->id }})"
+                                                class="flex px-2 py-1 mx-2 text-white bg-red-500 rounded-md">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-eye" width="24" height="24"
+                                                    class="icon icon-tabler icon-tabler-trash" width="24" height="24"
                                                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                    <path d="M12 4c-5 0 -9 4 -9 8s4 8 9 8s9 -4 9 -8s-4 -8 -9 -8z"></path>
-                                                    <path d="M15 12c0 1.5 -1.5 3 -3 3s-3 -1.5 -3 -3s1.5 -3 3 -3s3 1.5 3 3z">
-                                                    </path>
+                                                    <path d="M4 7l16 0"></path>
+                                                    <path d="M10 11l0 6"></path>
+                                                    <path d="M14 11l0 6"></path>
+                                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
                                                 </svg>
                                             </button>
+                                        </form>
 
-                                            <form method="POST"
-                                                action="{{ route('admin.productenquire.destroy', $data->id) }}"
-                                                id="delete-form-{{ $data->id }}">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="button" onclick="deleteItem({{ $data->id }})"
-                                                    class="flex px-2 py-1 mx-2 text-white bg-red-500 rounded-md">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        class="icon icon-tabler icon-tabler-trash" width="24"
-                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                        <path d="M4 7l16 0"></path>
-                                                        <path d="M10 11l0 6"></path>
-                                                        <path d="M14 11l0 6"></path>
-                                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                                                    </svg>
-                                                </button>
-                                            </form>
+                                    </div> --}}
 
-                                        </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
 
-                                        <!-- Modal for Viewing Contact Details -->
-                                        <div id="view-modal-{{ $data->id }}"
-                                            class=" max-sm:p-4 fixed z-[999] inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50 hidden"
-                                            onclick="closeViewModalIfClickedOutside(event, {{ $data->id }})">
-                                            <div class="bg-white max-h-[60vh] overflow-auto text-gray-600 p-6 rounded-lg w-96 shadow-lg"
-                                                onclick="event.stopPropagation()">
-                                                <h3 class="text-2xl font-semibold text-center mb-4">Product Enquire Details
-                                                </h3>
-                                                <div class="space-y-2">
-                                                    <p><strong>Name:</strong> {{ $data->name }}</p>
-                                                    <p><strong>Email:</strong> {{ $data->email }}</p>
-                                                    <p><strong>Product:</strong> {{ $data->productname->title ?? '' }}</p>
-                                                    <p><strong>Phone:</strong> {{ $data->number }}</p>
-                                                    <p><strong>Message:</strong> {{ $data->message }}</p>
-                                                </div>
-                                                <div class="mt-4 ">
-                                                    <button onclick="closeViewModal({{ $data->id }})"
-                                                        class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">
-                                                        Close
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <script>
-                                            // Show View Modal
-                                            function viewItem(contactId) {
-                                                const modal = document.getElementById(`view-modal-${contactId}`);
-                                                modal.classList.remove('hidden');
-                                            }
-
-                                            // Close View Modal
-                                            function closeViewModal(contactId) {
-                                                const modal = document.getElementById(`view-modal-${contactId}`);
-                                                modal.classList.add('hidden');
-                                            }
-
-                                            // Close View Modal when clicking outside the modal content
-                                            function closeViewModalIfClickedOutside(event, contactId) {
-                                                // Close modal if the click is outside the modal content (on the background overlay)
-                                                if (event.target === event.currentTarget) {
-                                                    closeViewModal(contactId);
-                                                }
-                                            }
-                                        </script>
-
-                                    </td>
-
-                                </tr>
-                            </tbody>
-                        @endforeach
-
-                    </table>
-
+                    <div class="bg-sky-500 flex justify-center rounded-md mt-6 mb-4 mx-6">
+                        <button class="text-white py-3 w-full">Send Email</button>
+                    </div>
                 </div>
-            </div>
-            {{-- <div class="z-0 mt-3">
-                {{ $partners->links('vendor.pagination.tailwind') }}
-            </div> --}}
+            </form>
+
         </div>
+
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#checkall').change(function() {
+                $(this).closest('form').find('input[type="checkbox"]').prop('checked', $(this).prop(
+                    'checked'));
+            });
+            $('#checkalls').change(function() {
+                $(this).closest('form').find('input[type="checkbox"]').prop('checked', $(this).prop(
+                    'checked'));
+            });
+        });
+    </script>
+    <script>
+        function deleteSingleImages(imageId) {
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You will not be able to recover this Property!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('delete-forms-' + imageId).submit();
+                }
+            });
+        }
+    </script>
 @endsection

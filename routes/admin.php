@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BrochureController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\NoticeController;
@@ -39,6 +40,9 @@ use Illuminate\Support\Facades\Route;
     Route::resource('productenquire', ProductEnquireController::class);
     Route::get('contacts', [ContactController::class, 'contact'])->name('contact');
     Route::delete('contactdelete/{contact}', [ContactController::class, 'contactdelete'])->name('contactdelete');
+    Route::resource('emailmarketing', EmailController::class);
+    Route::post('/createnewsletter', [EmailController::class, "newslettercreate"])->name('newsletter.create');
+    Route::post('/newsletteremail', [EmailController::class, 'email'])->name('newsletter.email');
 
 
     // Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
