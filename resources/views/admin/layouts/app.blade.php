@@ -21,7 +21,7 @@
             @include('admin.layouts.navbar')
         </div>
         @include('admin.layouts.sidebar')
-        <main :class="sidebarOpen ? 'ml-64' : 'ml-0'" class="flex-1 bg-gray-100 w-full mt-10 mb-2 overflow-x-hidden ">
+        <main :class="sidebarOpen ? 'ml-64' : 'ml-0'" class="flex-1  w-full mt-10 mb-2 overflow-x-hidden ">
             <div class="w-full px-6 py-8 max-sm:px-4 mt-7">
                 @yield('body')
             </div>
