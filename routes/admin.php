@@ -41,7 +41,8 @@ Route::middleware(["admin"])->group(function () {
     Route::resource('productenquire', ProductEnquireController::class);
     Route::get('contacts', [ContactController::class, 'contact'])->name('contact');
     Route::delete('contactdelete/{contact}', [ContactController::class, 'contactdelete'])->name('contactdelete');
-    Route::resource('emailmarketing', EmailController::class);
+    Route::resource('csvs', EmailController::class);
+    Route::get('csvs/getemail/{getemail}', [EmailController::class, "getemail"])->name('getemail');
     Route::post('/createnewsletter', [EmailController::class, "newslettercreate"])->name('newsletter.create');
     Route::post('/newsletteremail', [EmailController::class, 'email'])->name('newsletter.email');
 

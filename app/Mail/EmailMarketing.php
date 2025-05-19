@@ -33,7 +33,7 @@ class EmailMarketing extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Softsaro Nepal',
+            subject: $this->mysubject,
         );
     }
 

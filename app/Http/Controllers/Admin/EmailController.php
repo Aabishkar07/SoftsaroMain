@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\EmailMarketing;
+use App\Models\csv;
 use App\Models\Email;
 use Illuminate\Http\Request;
 use Mail;
@@ -16,8 +17,8 @@ class EmailController extends Controller
      */
     public function index()
     {
-        $emails = Email::latest()->get();
-        return view('admin.emailmarketing.index', compact('emails'));
+        $csvs = csv::latest()->get();
+        return view('admin.emailmarketing.csv', compact('csvs'));
     }
 
     /**
@@ -27,20 +28,82 @@ class EmailController extends Controller
     {
         return view("admin.emailmarketing.create");
     }
+    public function getemail(csv $getemail)
+    {
+        if (!$getemail) {
+            return redirect()->back()->with('poperror', 'File Not Found');
+        }
+
+        $filePath = public_path("uploads/" . $getemail->file); // use public_path for accessible files
+        $parsedDatas = [];
+
+        if (file_exists($filePath)) {
+            if (($handle = fopen($filePath, 'r')) !== false) {
+                $header = fgetcsv($handle); // Read the header row
+                while (($row = fgetcsv($handle)) !== false) {
+                    $parsedDatas[] = array_combine($header, $row);
+                }
+                fclose($handle);
+            }
+        } else {
+            return redirect()->back()->with('poperror', 'CSV file not found at path: ' . $filePath);
+        }
+
+        // Optional: Debug output
+        // dd($parsedData);
+
+        return view("admin.emailmarketing.getmail", compact('parsedDatas'));
+    }
+
 
     /**
      * Store a newly created resource in storage.
      */
+
+    function randomString($length)
+    {
+        return substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length);
+    }
+
+    public function fileUpload($file)
+    {
+        $destinationPath = public_path() . '/uploads/';
+        $randomString = $this->randomString(8);
+        $extension = $file->getClientOriginalExtension();
+        $imageName = $randomString . '.' . $extension;
+        $file->move($destinationPath, $imageName);
+        return $imageName;
+    }
+
     public function store(Request $request)
     {
         $request->validate([
-            'csv_file' => 'required|mimes:csv,txt|max:2048',
+            'filename' => 'required',
+            'csv_file' => 'required',
+            // 'csv_file' => 'required|mimes:csv',
+        ]);
+
+        $csv_image = $this->fileUpload($request->csv_file);
+
+        csv::create([
+            'filename' => $request->filename,
+            'file' => $csv_image,
+        ]);
+
+        return redirect()->route("admin.csvs.index")->with('success', 'CSV Successfully Added!');
+    }
+
+    public function oldstore(Request $request)
+    {
+        $request->validate([
+            'filename' => 'required',
+            'csv' => 'required|mimes:csv',
         ]);
 
         $file = fopen($request->file('csv_file'), 'r');
 
-        $header = fgetcsv($file); // Reads the first row as header
-        $header = array_map('trim', $header); // Clean whitespace
+        $header = fgetcsv($file);
+        $header = array_map('trim', $header);
 
         while ($row = fgetcsv($file)) {
             $data = array_combine($header, $row);
@@ -75,10 +138,19 @@ class EmailController extends Controller
     {
 
         $emails = $request->email;
+
         return view('admin.emailmarketing.newsletter', compact('emails'));
 
     }
+    public function imageDelete($filePath)
+    {
+        $destinationPath = public_path('uploads/');
 
+        if (file_exists($destinationPath . $filePath)) {
+            unlink($destinationPath . $filePath);
+        }
+        return "true";
+    }
     public function email(Request $request)
     {
         $mysubject = $request->input('subject');
@@ -87,9 +159,9 @@ class EmailController extends Controller
 
         foreach ($emails as $email) {
             Mail::to($email)->send(new EmailMarketing($content, $mysubject));
-        }
+        }   
 
-        return redirect()->route("admin.emailmarketing.index")->with("popsuccess", "Email Send Successfully");
+        return redirect()->route("admin.csvs.index")->with("popsuccess", "Email Send Successfully");
     }
 
     /**
@@ -119,8 +191,13 @@ class EmailController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(csv $csv)
     {
-        //
+        // dd($csv);
+        if ($csv->file) {
+            $this->imageDelete($csv->file);
+        }
+        $csv->delete();
+        return redirect()->route("admin.csvs.index")->with("popsuccess", "Product Deleted");
     }
 }

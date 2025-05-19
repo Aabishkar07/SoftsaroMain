@@ -2,63 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftsaroNepal</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoftsaroNepal - Notification</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <style>
-        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background: #edf2f7;
+            color: #2d3748;
         }
 
         .container {
-            width: 90%;
             max-width: 700px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
 
-        /* Header Styles */
         .header {
             text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
         }
 
         .header img {
-            width: 140px;
-            margin-bottom: 10px;
-        }
-
-        .header h1 {
-            font-size: 22px;
-            color: #222;
-            margin: 0;
-        }
-
-        /* Content Styles */
-        .content {
-            padding: 20px 0;
-            font-size: 16px;
-            line-height: 1.7;
-            color: #555;
-        }
-
-        .content p {
+            width: 100px;
             margin-bottom: 15px;
         }
 
+        .header h1 {
+            font-size: 26px;
+            margin: 0;
+            color: #1a202c;
+        }
+
+        .divider {
+            width: 60px;
+            height: 4px;
+            background-color: #ff2d55;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #4a5568;
+            padding: 20px 0;
+        }
+
+        .content p {
+            margin-bottom: 18px;
+        }
+
         .content a {
-            color: #ff2953;
-            font-weight: bold;
+            color: #e53e3e;
+            font-weight: 600;
             text-decoration: none;
         }
 
@@ -66,49 +69,53 @@
             text-decoration: underline;
         }
 
-        /* Footer Styles */
         .footer {
             text-align: center;
-            padding-top: 20px;
-            border-top: 2px solid #eee;
+            padding-top: 30px;
             font-size: 14px;
-            color: #777;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
         }
 
         .social-icons {
-            margin-top: 15px;
+            margin-top: 18px;
         }
 
         .social-icons a {
-            margin: 0 8px;
+            margin: 0 10px;
             display: inline-block;
+            background: #f7fafc;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
 
         .social-icons img {
-            width: 28px;
-            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
         }
 
-        .social-icons a:hover img {
-            transform: scale(1.1);
+        .social-icons a:hover {
+            transform: translateY(-2px);
+            background-color: #edf2f7;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .container {
-                padding: 20px;
+                padding: 25px 20px;
             }
 
             .header h1 {
-                font-size: 20px;
+                font-size: 22px;
             }
 
             .content {
-                font-size: 14px;
+                font-size: 15px;
             }
 
             .footer {
-                font-size: 12px;
+                font-size: 13px;
             }
         }
     </style>
@@ -117,41 +124,36 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://softsaro.com/img/softsarologo.png" alt="Softsaro Logo">
+            <img src="https://softsaro.com/img/softsarologo.png" alt="Softsaro Logo" />
             <h1>{{ $mysubject }}</h1>
+            <div class="divider"></div>
         </div>
 
         <div class="content">
-            {{-- <p>
-                <b>
-                    Hello {{ $subscriber->name }} ,
-                </b>
-            </p> --}}
-            <p>
-                {!! $content !!}
-            </p>
+            <p>Dear Sir/Madam,</p>
+            <p>{!! $content !!}</p>
         </div>
 
         <div class="footer">
             <p>&copy; 2025 SoftsaroNepal. All rights reserved.</p>
             <div class="social-icons">
-                <a href="https://www.facebook.com/softsaronepal" target="_blank">
+                <a href="https://www.facebook.com/softsaronepal" target="_blank" title="Facebook">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png"
-                        alt="Facebook">
+                        alt="Facebook" />
                 </a>
-                <a href="https://www.instagram.com/softsaronepal/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                <a href="https://www.instagram.com/softsaronepal/" target="_blank" title="Instagram">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
                 </a>
-                <a href="https://www.linkedin.com/company/softsaro/" target="_blank">
+                <a href="https://www.linkedin.com/company/softsaro/" target="_blank" title="LinkedIn">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                        alt="LinkedIn">
+                        alt="LinkedIn" />
                 </a>
-                <a href="https://www.youtube.com/@softsaronepal" target="_blank">
+                <a href="https://www.youtube.com/@softsaronepal" target="_blank" title="YouTube">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
-                        alt="YouTube">
+                        alt="YouTube" />
                 </a>
-                <a href="https://www.tiktok.com/@softsaronepal" target="_blank">
-                    <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok">
+                <a href="https://www.tiktok.com/@softsaronepal" target="_blank" title="TikTok">
+                    <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok" />
                 </a>
             </div>
         </div>

@@ -84,9 +84,9 @@
 
                     <span class="mx-3"> Product Enquire</span>
                 </a>
-                <a class="{{ request()->segment(2) == 'emailmarketing' ? ' bg-[#6a68AF] text-white flex items-center px-6 py-2  mr-3 flex-1 mt-2 item ' : 'mr-3 flex-1 mt-2 item hover:bg-[#6a68AF] hover:text-white flex items-center px-6 py-2  text-gray-600' }} "
+                <a class="{{ request()->segment(2) == 'csvs' ? ' bg-[#6a68AF] text-white flex items-center px-6 py-2  mr-3 flex-1 mt-2 item ' : 'mr-3 flex-1 mt-2 item hover:bg-[#6a68AF] hover:text-white flex items-center px-6 py-2  text-gray-600' }} "
                     href="
-                    {{ route('admin.emailmarketing.index') }}
+                    {{ route('admin.csvs.index') }}
                      ">
                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="1.25">
                         <path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z"></path>
@@ -97,7 +97,7 @@
                         <path d="M4 16h3"></path>
                       </svg>
 
-                    <span class="mx-3"> Email Marketing</span>
+                    <span class="mx-3"> Email Marketing (CSV file)</span>
                 </a>
 
                 <a class="{{ request()->segment(2) == 'contacts' ? ' bg-[#6a68AF] text-white flex items-center px-6 py-2  mr-3 flex-1 mt-2 item ' : 'mr-3 flex-1 mt-2 item hover:bg-[#6a68AF] hover:text-white flex items-center px-6 py-2  text-gray-600' }} "

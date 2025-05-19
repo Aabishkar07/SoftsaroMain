@@ -7,7 +7,21 @@
         <input type="hidden" value="subscriber" name='type'>
 
         <div class="bg-white px-6 py-6">
-            <h1 class="text-2xl">Send Email </h1>
+            <div class="flex-1 py-3">
+                <span class="w-full text-2xl font-bold text-secondary ">
+                    <a href=" {{ route('admin.csvs.index') }}">
+                        CSVs
+                    </a>
+                    /
+                    <span class="">
+                        Sendmail
+                    </span>
+                    /
+                    <span class="text-[#201baf] font-bold">
+                        Mails
+                    </span>
+                </span>
+            </div>
 
             <label for="to" class="block mt-4 text-sm font-semibold">To:</label>
             <div class="pt-2">
