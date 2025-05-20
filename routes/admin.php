@@ -45,6 +45,7 @@ Route::middleware(["admin"])->group(function () {
     Route::get('csvs/getemail/{getemail}', [EmailController::class, "getemail"])->name('getemail');
     Route::post('/createnewsletter', [EmailController::class, "newslettercreate"])->name('newsletter.create');
     Route::post('/newsletteremail', [EmailController::class, 'email'])->name('newsletter.email');
+Route::get('/admin/contacts/export', [ContactController::class, 'export'])->name('admin.contacts.export');
 
 
     // Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

@@ -44,36 +44,6 @@ return redirect()->back()->with('popsuccess', 'Feedback Submitted Sucessfully');
 
 
 
-public function export()
-{
-    $contacts = \App\Models\Contact::all();
 
-    $headers = [
-        'Content-Type' => 'text/csv',
-        'Content-Disposition' => 'attachment; filename="contacts.csv"',
-    ];
-
-    $columns = ['Name', 'Email', 'Phone', 'Subject', 'Message', 'Date'];
-
-    $callback = function () use ($contacts, $columns) {
-        $file = fopen('php://output', 'w');
-        fputcsv($file, $columns);
-
-        foreach ($contacts as $contact) {
-            fputcsv($file, [
-                $contact->name,
-                $contact->email,
-                $contact->phone,
-                $contact->subject,
-                $contact->message,
-                $contact->created_at->format('Y-m-d H:i:s'),
-            ]);
-        }
-
-        fclose($file);
-    };
-
-    return response()->stream($callback, 200, $headers);
-}
 
 }
