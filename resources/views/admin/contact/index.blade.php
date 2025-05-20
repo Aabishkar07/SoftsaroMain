@@ -22,6 +22,10 @@
         <div class="flex-1">
             <h2 class="w-full text-2xl font-bold text-secondary ">Contacts</h2>
         </div>
+        <a href="{{ route('admin.contacts.export') }}"
+            class="inline-block px-4 py-2 mb-4 text-white bg-green-600 rounded hover:bg-green-700">
+            Download CSV
+        </a>
     </div>
 
 

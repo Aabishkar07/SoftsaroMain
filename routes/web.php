@@ -24,7 +24,7 @@ Route::post('/storeproduct', [IndexController::class, 'storeproduct'])->name('st
 
 Route::get('/enquire', [EnquireController::class, 'enquire'])->name('enquire');
 Route::post('/enquire', [EnquireController::class, 'enquirestore'])->name('enquire.store');
-
+Route::get('/admin/contacts/export', [ContactController::class, 'export'])->name('admin.contacts.export');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/migrate', function () {
