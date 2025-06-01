@@ -39,8 +39,9 @@ Route::middleware(["admin"])->group(function () {
     Route::resource('store', StoreController::class);
     Route::resource('product', ProductController::class);
     Route::resource('banner', BannerController::class);
-
     Route::resource('productenquire', ProductEnquireController::class);
+Route::get('/settings', [ContactController::class, 'setting'])->name('setting');
+Route::post('/settingdetails', [ContactController::class, 'settingdetails'])->name('settingdetails');
     Route::get('contacts', [ContactController::class, 'contact'])->name('contact');
     Route::delete('contactdelete/{contact}', [ContactController::class, 'contactdelete'])->name('contactdelete');
     Route::resource('csvs', EmailController::class);
