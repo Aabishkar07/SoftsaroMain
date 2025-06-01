@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Partner;
 use App\Models\Product;
 use App\Models\ProductEnquire;
@@ -16,7 +17,9 @@ class IndexController extends Controller
     public function index()
     {
         $clients = Partner::get();
-        return view("frontend.home.index", compact('clients'));
+        $banners = Banner::first();
+
+        return view("frontend.home.index", compact('clients','banners'));
     }
 
     public function portfolio()

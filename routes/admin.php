@@ -38,6 +38,8 @@ Route::middleware(["admin"])->group(function () {
     Route::resource('partners', PartnerController::class);
     Route::resource('store', StoreController::class);
     Route::resource('product', ProductController::class);
+    Route::resource('banner', BannerController::class);
+
     Route::resource('productenquire', ProductEnquireController::class);
     Route::get('contacts', [ContactController::class, 'contact'])->name('contact');
     Route::delete('contactdelete/{contact}', [ContactController::class, 'contactdelete'])->name('contactdelete');
