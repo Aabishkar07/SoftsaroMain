@@ -159,7 +159,7 @@ class EmailController extends Controller
 
         foreach ($emails as $email) {
             Mail::to($email)->send(new EmailMarketing($content, $mysubject));
-        }   
+        }
 
         return redirect()->route("admin.csvs.index")->with("popsuccess", "Email Send Successfully");
     }
