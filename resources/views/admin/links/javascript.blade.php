@@ -146,4 +146,13 @@
         old.classList.add("hidden");
 
     };
+
+    var loadFile2 = function(event) {
+        var output = document.getElementById('output2');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        var old = document.getElementsByClassName('oldimage2')[0];
+
+        old.classList.add("hidden");
+
+    };
 </script>

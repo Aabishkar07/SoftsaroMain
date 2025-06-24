@@ -8,6 +8,7 @@ use App\Models\Blog;
 use App\Models\Partner;
 use App\Models\Product;
 use App\Models\ProductEnquire;
+use App\Models\Service;
 use App\Models\Store;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -21,9 +22,11 @@ class IndexController extends Controller
         $clients = Partner::get();
         $teams = Team::orderBy("order", "asc")->get();
         $banners = Banner::first();
-        $blogs = Blog::orderBy("id", "desc")->latest()->take(3)->get();
+        $services = Service::orderBy("order", "asc")->get();
 
-        return view("frontend.home.index", compact('clients', 'banners','teams' ,'blogs'));
+        $blogs = Blog::orderBy("id", "desc")->latest()->take(3)->get();
+        return view("frontend.home.index", compact('clients', 'banners', 'teams', 'services', 'blogs'));
+
     }
 
     public function portfolio()
@@ -33,7 +36,7 @@ class IndexController extends Controller
     }
 
 
-       public function single(Request $request, Blog $blog)
+    public function single(Request $request, Blog $blog)
     {
 
         $allblogs = Blog::where('id', '!=', $blog->id)->paginate(4);
@@ -54,7 +57,7 @@ class IndexController extends Controller
         return view("frontend.blogs.singlepage", compact('blog', 'slug', 'allblogs'));
     }
 
-      public function getblog()
+    public function getblog()
     {
         $blogs = Blog::orderBy("id", "desc")->paginate(20);
         $title = "All Blogs";
@@ -82,7 +85,8 @@ class IndexController extends Controller
     public function team()
     {
 
-        return view("frontend.team.index");
+        $teams = Team::orderBy("order", "asc")->get();
+        return view("frontend.team.index", compact('teams'));
     }
 
     public function contact()
