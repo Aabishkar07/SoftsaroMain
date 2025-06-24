@@ -37,4 +37,13 @@ Mail::to('aaviscar09@gmail.com')->send(new MailContact($mailData));
 
 return redirect()->back()->with('popsuccess', 'Feedback Submitted Sucessfully');
     }
+
+
+
+
+
+
+
+
+
 }

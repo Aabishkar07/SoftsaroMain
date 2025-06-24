@@ -1,4 +1,8 @@
 @include('frontend.includes.messages')
+@php
+    use App\Models\Setting;
+    $setting = Setting::where('id', 1)->first();
+@endphp
 <section id="contact" class="contact section">
 
     <!-- Section Title -->
@@ -17,7 +21,7 @@
               <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
                 <i class="bi bi-geo-alt"></i>
                 <h3>Address</h3>
-                <p>Trade Tower 5th Floor , Kathmandu</p>
+                <p>{{ $setting->address }}</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -25,7 +29,7 @@
               <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
                 <i class="bi bi-telephone"></i>
                 <h3>Call Us</h3>
-                <p>9818439664</p>
+                <p>{{ $setting->contact_number }}</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -33,7 +37,7 @@
               <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
                 <i class="bi bi-envelope"></i>
                 <h3>Email Us</h3>
-                <p>info@softsaro.com</p>
+                <p>{{ $setting->email }}</p>
               </div>
             </div><!-- End Info Item -->
 

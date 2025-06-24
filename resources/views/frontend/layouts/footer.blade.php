@@ -1,3 +1,9 @@
+
+@php
+    use App\Models\Setting;
+    $setting = Setting::where('id', 1)->first();
+@endphp
+
 <footer id="footer" class="footer dark-background py-5">
     <div class="container footer-top">
         <div class="row gy-4">
@@ -29,17 +35,16 @@
             <div class="col-lg-2 col-md-6 footer-about text-center text-lg-start">
                 <h4>Contact</h4>
                 <div class="footer-contact pt-3">
-                    <p class="fs-6 mb-1">Trade Tower 5th Floor</p>
-                    <p class="fs-6 mb-1">Kathmandu, Nepal</p>
-                    <p class="fs-6 mb-1"><strong>Phone:</strong> <span>9818439664</span></p>
-                    <p class="fs-6"><strong>Email:</strong> <span>info@softsaro.com</span></p>
+                    <p class="fs-6 mb-1">{{ $setting->address }}</p>
+                    <p class="fs-6 mb-1"><strong>Phone:</strong> <span>{{ $setting->contact_number }}</span></p>
+                    <p class="fs-6"><strong>Email:</strong> <span>{{ $setting->email }}</span></p>
                 </div>
                 <div class="social-links d-flex justify-content-center justify-content-lg-start mt-4">
 
-                    <a href="https://www.facebook.com/softsaronepal" target="_blank" class="me-2"><i class="bi bi-facebook"></i></a>
-                    <a href="https://www.instagram.com/softsaronepal/" target="_blank" class="me-2"><i class="bi bi-instagram"></i></a>
-                    <a href="https://x.com/softsaronepal" target="_blank" class="me-2"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://www.linkedin.com/company/softsaro/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a href="{{ $setting->facebook }}" target="_blank" class="me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="{{ $setting->instagram }}" target="_blank" class="me-2"><i class="bi bi-instagram"></i></a>
+                    <a href="{{ $setting->twitter }}" target="_blank" class="me-2"><i class="bi bi-twitter-x"></i></a>
+                    <a href="{{ $setting->linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>

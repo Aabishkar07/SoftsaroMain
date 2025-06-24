@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Admin Login</title>
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     <link href="/dist/tailwind.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
@@ -46,12 +46,15 @@
 </head>
 
 <body>
-    <div class="flex justify-center pt-20">
+    <div class="flex justify-center mx-auto items-center h-screen">
         <form action="{{ route('admin.login') }}" method="post">
             @csrf
             <div class="flex flex-col border rounded-lg p-10 w-[30vw]">
+                <div class="flex justify-center">
+                    <img class="w-96" src="{{ asset('img/softsarologo.png') }}" />
+                </div>
                 <p class="text-2xl font-semibold text-center text-slate-700 pb-5">
-                    Login
+                   Login
                 </p>
                 <label for="username">Email</label>
                 <input type="text" name="email" id="username"
@@ -61,7 +64,7 @@
                     class="text-xs border border-gray-300 p-3 rounded mt-3 focus:border-green-500 hover:border-black">
                 <div class="flex justify-center mt-5">
                     <button type="submit"
-                        class="border mt-3 border-primary py-1 w-[100%] rounded-md mr-2 text-white bg-green-700  ">
+                        class="border mt-3 border-primary py-2 w-[100%] rounded-md mr-2 text-white bg-[#6a68AF]  ">
                         Login
                     </button>
                 </div>
