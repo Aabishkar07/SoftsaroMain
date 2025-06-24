@@ -16,6 +16,8 @@ return new class extends Migration {
             $table->string('image')->nullable();
             $table->string('designation')->nullable();
             $table->string('branch')->nullable();
+            $table->longText('website')->nullable();
+            $table->longText('linkedin')->nullable();
             $table->integer('order')->nullable();
             $table->timestamps();
         });

@@ -90,10 +90,11 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
+   
         if ($team->image) {
             $this->imageservice->imageDelete($team->image);
         }
         $team->delete();
-        return redirect()->route("admin.yteams.index")->with("popsuccess", "Team Deleted");
+        return redirect()->route("admin.teams.index")->with("popsuccess", "Team Deleted");
     }
 }
