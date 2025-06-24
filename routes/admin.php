@@ -49,6 +49,7 @@ Route::post('/settingdetails', [ContactController::class, 'settingdetails'])->na
     Route::post('/createnewsletter', [EmailController::class, "newslettercreate"])->name('newsletter.create');
     Route::post('/newsletteremail', [EmailController::class, 'email'])->name('newsletter.email');
 Route::get('/admin/contacts/export', [ContactController::class, 'export'])->name('admin.contacts.export');
+Route::resource('blogs', BlogController::class);
 
 
     // Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
