@@ -4,7 +4,7 @@
 @section('banner_select', 'bg-[#4456a6] text-white')
 @section('body')
     <div class="px-5 bg-background w-full">
-    @include('admin.include.toastmessage')
+        @include('admin.include.toastmessage')
 
         <div class="flex justify-between">
             <div class="text-2xl font-bold">Banner</div>

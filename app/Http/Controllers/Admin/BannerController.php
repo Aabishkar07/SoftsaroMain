@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\FileService\ImageService;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use Illuminate\Http\Request;
@@ -9,13 +10,18 @@ use Illuminate\Support\Str;
 
 class BannerController extends Controller
 {
+    public function __construct(
+        protected ImageService $imageservice
+    ) {
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
-          $banners = Banner::latest()->get();
+        $banners = Banner::latest()->get();
         return view("admin.sliders.index", compact("banners"));
     }
 
@@ -25,39 +31,18 @@ class BannerController extends Controller
     public function create()
     {
         //
-                return view("admin.sliders.create");
+        return view("admin.sliders.create");
 
     }
 
-      public function fileUpload(Request $request, $name)
-    {
-        $imageName = '';
-        if ($image = $request->file($name)) {
-            $destinationPath = public_path() . '/uploads/';
-            $imageName = date('YmdHis') . $name . "." . $image->getClientOriginalName();
-            $image->move($destinationPath, $imageName);
-            $image = $imageName;
-        }
-        return $imageName;
-    }
 
-
-     public function imageDelete($filePath)
-    {
-        $destinationPath = public_path('uploads/');
-
-        if (file_exists($destinationPath . $filePath)) {
-            unlink($destinationPath . $filePath);
-        }
-    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
-         $banner_image = $this->fileUpload($request, 'banner_image');
+        $banner_image = $this->imageservice->fileUpload($request->banner_image, "banner");
         $req = $request->all();
         $req['banner_image'] = $banner_image;
         $req['slug'] = Str::slug($request->title);
@@ -76,7 +61,7 @@ class BannerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-     public function edit(Banner $banner)
+    public function edit(Banner $banner)
     {
         return view("admin.sliders.edit", compact("banner"));
     }
@@ -86,17 +71,15 @@ class BannerController extends Controller
      */
     public function update(Request $request, Banner $banner)
     {
-        //
-              // dd($banner);
+        $req = $request->all();
         if ($request->hasFile('banner_image')) {
-            $this->imageDelete($banner->banner_image);
-            $banner_img = $this->fileUpload($request, 'banner_image');
-        } else {
-            $banner_img = $banner->banner_image;
+            if ($banner->banner_image) {
+                $this->imageservice->imageDelete($banner->banner_image);
+            }
+            $banner_img = $this->imageservice->fileUpload($request->banner_image, "banner");
+            $req['banner_image'] = $banner_img;
         }
 
-        $req = $request->all();
-        $req['banner_image'] = $banner_img;
         $req['slug'] = Str::slug($request->title);
         $banner->update($req);
 
@@ -106,9 +89,11 @@ class BannerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-   public function destroy(Banner $banner)
+    public function destroy(Banner $banner)
     {
-        $this->imageDelete($banner->banner_image);
+        if ($banner->banner_image) {
+            $this->imageservice->imageDelete($banner->banner_image);
+        }
         $banner->delete();
         return redirect()->route('admin.banner.index')->with('success', 'Banner Deleted');
     }
