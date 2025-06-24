@@ -8,6 +8,7 @@ use App\Models\Partner;
 use App\Models\Product;
 use App\Models\ProductEnquire;
 use App\Models\Store;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -17,9 +18,10 @@ class IndexController extends Controller
     public function index()
     {
         $clients = Partner::get();
+        $teams = Team::orderBy("order", "asc")->get();
         $banners = Banner::first();
 
-        return view("frontend.home.index", compact('clients','banners'));
+        return view("frontend.home.index", compact('clients', 'banners','teams'));
     }
 
     public function portfolio()
@@ -63,15 +65,16 @@ class IndexController extends Controller
     }
 
 
-    public function storeproduct(Request $request){
+    public function storeproduct(Request $request)
+    {
 
 
         ProductEnquire::create([
-        'name'=> $request->name,
-        'email' => $request->email,
-        'message' => $request->message,
-        'number' => $request->number,
-        'product_id'=>$request->product_id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+            'number' => $request->number,
+            'product_id' => $request->product_id,
         ]);
 
         // $mailData = [
@@ -88,17 +91,17 @@ class IndexController extends Controller
         return redirect()->back()->with('popsuccess', 'Your enquiry has been submitted successfully! Our team will contact you shortly.');
     }
 
-        public function storesingle($slug)
-        {
+    public function storesingle($slug)
+    {
 
 
 
-            $store = Store::where('slug', $slug)->firstOrFail();
+        $store = Store::where('slug', $slug)->firstOrFail();
 
-            $product = Product::where('service_id', $store->id)->get();
+        $product = Product::where('service_id', $store->id)->get();
 
-            return view('frontend.store.single', compact('store','product'));
-        }
+        return view('frontend.store.single', compact('store', 'product'));
+    }
 
 
 

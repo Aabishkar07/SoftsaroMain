@@ -11,6 +11,8 @@ class Team extends Model
         'image',
         'designation',
         'branch',
+        'website',
+        'linkedin',
         'order'
     ];
 }

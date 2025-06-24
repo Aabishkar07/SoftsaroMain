@@ -89,8 +89,7 @@
                                                     id="delete-form-{{ $team->id }}">
                                                     @csrf
                                                     @method('delete')
-                                                    <button type="button"
-                                                        onclick="deleteSingleImage(event, {{ $team->id }})"
+                                                    <button type="button" onclick="deleteItem({{ $team->id }})"
                                                         class="flex w-full items-center gap-2    px-4 py-1.5 text-md openModal text-white rounded text-center bg-red-700 hover:bg-red-600">
                                                         <span class="pl-2">
                                                             Delete
