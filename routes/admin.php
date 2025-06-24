@@ -43,6 +43,5 @@ Route::middleware(["admin"])->group(
         Route::resource('services', ServiceController::class);
         Route::resource('blogs', BlogController::class);
 
-
     }
 );
