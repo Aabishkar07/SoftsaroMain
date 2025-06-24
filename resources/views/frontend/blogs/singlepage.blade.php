@@ -47,7 +47,7 @@
                 </span>
                 @endif
               </div>
-              <h5 class="card-title fw-semibold mb-3 fs-5 text-primary">{{ $blog->title }}</h5>
+              <h5 class="card-title fw-semibold mb-3 fs-5">{{ $blog->title }}</h5>
               <p class="card-text text-secondary fs-6">
                 {!! Str::limit(strip_tags($blog->description), 120) !!}
               </p>
