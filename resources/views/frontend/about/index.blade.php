@@ -6,6 +6,8 @@
         @include('frontend.home.porject')
 
 
+@include('frontend.home.feature')
+
 
         {{-- @include('frontend.home.fact') --}}
 
