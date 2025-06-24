@@ -19,9 +19,10 @@ class ImageService
 
     public function fileUpload($file, $name)
     {
+        $extension = $file->getClientOriginalExtension();
         $destinationPath = public_path() . '/uploads/';
         $randomString = $this->randomString(8);
-        $imageName =  $name . "_" . $randomString . ".jpg";
+        $imageName = $name . "_" . $randomString . '.' . $extension;
         $file->move($destinationPath, $imageName);
         return $imageName;
     }

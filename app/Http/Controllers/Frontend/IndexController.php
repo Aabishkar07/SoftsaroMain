@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Partner;
 use App\Models\Product;
 use App\Models\ProductEnquire;
+use App\Models\Service;
 use App\Models\Store;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -20,8 +21,9 @@ class IndexController extends Controller
         $clients = Partner::get();
         $teams = Team::orderBy("order", "asc")->get();
         $banners = Banner::first();
+        $services = Service::orderBy("order", "asc")->get();
 
-        return view("frontend.home.index", compact('clients', 'banners','teams'));
+        return view("frontend.home.index", compact('clients', 'banners', 'teams', 'services'));
     }
 
     public function portfolio()
@@ -49,7 +51,8 @@ class IndexController extends Controller
     public function team()
     {
 
-        return view("frontend.team.index");
+        $teams = Team::orderBy("order", "asc")->get();
+        return view("frontend.team.index", compact('teams'));
     }
 
     public function contact()
