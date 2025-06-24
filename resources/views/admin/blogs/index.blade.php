@@ -34,19 +34,12 @@ dd(Auth::guard('user_profiles')->user()->email)
                                 <tr>
                                     <th class="px-5 py-3  text-left   font-semibold   ">
                                         Title</th>
-                                    {{-- <th
-                                    class="px-5 py-3  text-left   font-semibold   ">
-                                    Description</th> --}}
+
                                     <th class="px-5 py-3  text-left   font-semibold   ">
                                         Image</th>
                                     <th class="px-5 py-3  text-left   font-semibold   ">
                                         Created at</th>
-                                    {{-- <th
-                                        class="px-5 py-3  text-left   font-semibold   ">
-                                        Updated at</th> --}}
-                                    {{-- <th
-                                        class="px-5 py-3  text-left   font-semibold   ">
-                                        Status</th> --}}
+
                                     <th class="px-5 py-3  text-left   font-semibold   ">
                                         Actions</th>
                                 </tr>
@@ -62,7 +55,7 @@ dd(Auth::guard('user_profiles')->user()->email)
 
                                         <td class="p-2" style="width: 100px;">
                                             <img class="w-full h-full "
-                                                src="{{ asset('/images/blogs/' . $blog->featured_image) }}" alt="Card"
+                                                src="{{ asset('/uploads/' . $blog->featured_image) }}" alt="Card"
                                                 style="width: 70px;">
                                         </td>
 
@@ -73,10 +66,10 @@ dd(Auth::guard('user_profiles')->user()->email)
                                         </td>
 
 
-                                        <td>
-                                            <div class="flex p-2 justify-center items-center">
+                                        <td >
+                                            <div class="flex">
 
-                                                <a href='{{ route('blogs.show', $blog->id) }}'>
+                                                {{-- <a href='{{ route('admin.blogs.show', $blog->id) }}'>
 
                                                     <div class="bg-slate-500 py-1 px-2 mx-2 text-white flex  rounded-md">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24"
@@ -87,11 +80,11 @@ dd(Auth::guard('user_profiles')->user()->email)
                                                                 d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                                         </svg>
                                                     </div>
-                                                </a>
-                                                @can('Edit Blog')
+                                                </a> --}}
+
                                                     <a
                                                         href="
-                                                    {{ route('blogs.edit', $blog->id) }}
+                                                    {{ route('admin.blogs.edit', $blog->id) }}
                                                     ">
                                                         <div class="bg-slate-500 py-1 px-2 mx-2 text-white flex rounded-md">
                                                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -111,17 +104,17 @@ dd(Auth::guard('user_profiles')->user()->email)
 
                                                         </div>
                                                     </a>
-                                                @endcan
-                                                @can('Delete Blog')
+
+
                                                     <form
                                                         action="
-                                                {{ route('blogs.destroy', $blog->id) }}
+                                                {{ route('admin.blogs.destroy', $blog->id) }}
                                                 "
                                                         class="delete-form-{{ $blog->id }}" method="post">
                                                         @csrf
                                                         @method('delete')
                                                         <button type="button"
-                                                            class="bg-red-500 py-1 px-2 mx-2 mt-4 flex text-white rounded-md"
+                                                            class="bg-red-500 py-1 px-2 mx-2 flex text-white rounded-md"
                                                             onclick="deleteItem('{{ $blog->id }}')">
                                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                                 class="icon icon-tabler icon-tabler-trash" width="24"
@@ -137,7 +130,7 @@ dd(Auth::guard('user_profiles')->user()->email)
                                                             </svg>
                                                         </button>
                                                     </form>
-                                                @endcan
+
                                             </div>
                                         </td>
 

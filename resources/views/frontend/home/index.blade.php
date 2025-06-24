@@ -17,7 +17,7 @@
 
 
 
-{{-- @include('frontend.home.blog') --}}
+@include('frontend.home.blog')
 @include('frontend.home.contact')
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\Partner;
 use App\Models\Product;
 use App\Models\ProductEnquire;
@@ -18,8 +19,9 @@ class IndexController extends Controller
     {
         $clients = Partner::get();
         $banners = Banner::first();
+        $blogs = Blog::orderBy("id", "desc")->latest()->take(3)->get();
 
-        return view("frontend.home.index", compact('clients','banners'));
+        return view("frontend.home.index", compact('clients','banners','blogs'));
     }
 
     public function portfolio()
@@ -28,6 +30,37 @@ class IndexController extends Controller
         return view("frontend.portfolio.index");
     }
 
+
+       public function single(Request $request, Blog $blog)
+    {
+
+        $allblogs = Blog::where('id', '!=', $blog->id)->paginate(4);
+        // dd($allblogs);
+
+
+        $blog->views++;
+        $blog->save();
+        $slug = $blog->slug;
+        $ip = $request->ip();
+
+        $mailData = [
+
+            'blog' => $blog,
+            'status' => "view",
+        ];
+
+        return view("frontend.blogs.singlepage", compact('blog', 'slug', 'allblogs'));
+    }
+
+      public function getblog()
+    {
+        $blogs = Blog::orderBy("id", "desc")->paginate(20);
+        $title = "All Blogs";
+        $message = "Blogs found";
+        $searchterm = "";
+
+        return view("frontend.blogs.blogs", compact("blogs", "title", "message", "searchterm"));
+    }
 
     public function aboutus()
     {
