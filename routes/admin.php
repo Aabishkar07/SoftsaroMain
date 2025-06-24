@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EmailController;
@@ -40,6 +41,7 @@ Route::middleware(["admin"])->group(
         Route::get('/admin/contacts/export', [ContactController::class, 'export'])->name('admin.contacts.export');
         Route::resource('teams', TeamController::class);
         Route::resource('services', ServiceController::class);
+        Route::resource('blogs', BlogController::class);
 
 
     }

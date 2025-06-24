@@ -1,8 +1,12 @@
-<section class="ezy__blog10 light ">
+@extends('frontend.layouts.app')
+@section('body')
+
+
+<section class="ezy__blog10 light mt-5 pt-5">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center">
          <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
+        <div class="container section-title pt-5 mt-5" data-aos="fade-up">
           <h2>Softsaro Blog:</h2>
           <p style="color:#6a68AF">Our Thoughts & Stories</p>
         </div><!-- End Section Title -->
@@ -27,7 +31,7 @@
                 </span>
                 @endif
               </div>
-              <h5 class="card-title fw-semibold mb-3 fs-5">{{ $blog->title }}</h5>
+              <h5 class="card-title fw-semibold mb-3 fs-5 text-primary">{{ $blog->title }}</h5>
               <p class="card-text text-secondary fs-6">
                 {!! Str::limit(strip_tags($blog->description), 120) !!}
               </p>
@@ -38,10 +42,9 @@
       @endforeach
     </div>
 
-    <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="100">
-      <a href="{{ route('blog') }}" style="background-color: #6a68AF" class="btn text-white px-5 py-2 rounded-pill shadow-sm fs-5">
-        View All
-      </a>
-    </div>
   </div>
 </section>
+
+
+
+@endsection

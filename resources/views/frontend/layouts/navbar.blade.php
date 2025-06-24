@@ -30,9 +30,11 @@
                   <li><a class="fs-6" href="#">Deep Dropdown 5</a></li>
                 </ul>
               </li> --}}
-          <li><a class="fs-6" href="{{ route('aboutus') }}">About</a></li>
 
-          <li><a class="fs-6" href="{{ route('teams') }}">Team</a></li>
+              <li><a class="fs-6" href="{{ route('aboutus') }}">About</a></li>
+
+              <li><a class="fs-6" href="{{ route('teams') }}">Team</a></li>
+              <li><a class="fs-6" href="{{ route('blog') }}">Blogs</a></li>
 
               <li><a class="fs-6" href="{{ route('termsandcondition') }}">Terms and condition</a></li>
               <li><a class="fs-6" href="{{ route('privacypolicy') }}">Privacy Policy</a></li>
