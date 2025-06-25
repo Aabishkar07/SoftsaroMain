@@ -77,9 +77,4 @@
     </div>
 
 
-    <script src="https://cdn.ckeditor.com/4.25.1-lts/standard/ckeditor.js"></script>
-
-<script>
-    CKEDITOR.replace('description');
-</script>
 @endsection
