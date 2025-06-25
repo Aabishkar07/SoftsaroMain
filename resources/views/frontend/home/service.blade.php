@@ -20,7 +20,7 @@
                             <img src="{{ asset('uploads/' . $service->image) }}" class="img-fluid" alt="">
                         </div>
                         <div class="details position-relative">
-                            <div class="icon text-white">
+                            <div class="icon text-white p-3">
                                 <img src="{{ asset('uploads/' . $service->icon) }}" class="img-fluid" alt="">
                             </div>
                             <p class="stretched-link">
