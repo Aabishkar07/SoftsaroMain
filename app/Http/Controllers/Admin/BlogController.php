@@ -57,7 +57,7 @@ class BlogController extends Controller
         $req['featured_image'] = $blog_img;
         Blog::create($req);
 
-        return redirect()->route('admin.blogs.index')->with('success', 'Blog Added');
+        return redirect()->route('admin.blogs.index')->with('popsuccess', 'Blog Added');
     }
 
     /**
@@ -99,7 +99,7 @@ class BlogController extends Controller
         $req['slug'] = Str::slug($request->title);
         $blog->update($req);
 
-        return redirect()->route('admin.blogs.index')->with('success', 'Blog Edited');
+        return redirect()->route('admin.blogs.index')->with('popsuccess', 'Blog Edited');
     }
 
     public function destroy(Blog $blog)
@@ -111,6 +111,6 @@ class BlogController extends Controller
         }
         $blog->delete();
 
-        return redirect()->route('admin.blogs.index')->with('success', 'Blog Successfully Deleted');
+        return redirect()->route('admin.blogs.index')->with('popsuccess', 'Blog popSuccessfully Deleted');
     }
 }

@@ -1,6 +1,4 @@
 @extends('admin/layouts/app')
-@section('page_title', 'Blog')
-@section('blog_select', 'bg-black text-white')
 @section('body')
     {{-- @php
 dd(Auth::guard('user_profiles')->user()->email)
@@ -11,15 +9,15 @@ dd(Auth::guard('user_profiles')->user()->email)
 
 
         <div class="px-4 flex justify-between w-full">
-            <div class="text-xl font-bold"> Blogs</div>
+            <div class="text-xl font-bold"> Tag</div>
             <div class="flex">
-                <a href='{{ route('admin.blogs.create') }} '
+                <a href='{{ route('admin.tag.create') }} '
                     class=' bg-[#04033b] rounded-lg text-white px-3 py-1 text-sm flex gap-2 items-center '>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z" />
                     </svg>
-                    <span>Add Blogs</span>
+                    <span>Add Tags</span>
                 </a>
             </div>
         </div>
@@ -34,8 +32,7 @@ dd(Auth::guard('user_profiles')->user()->email)
                                 <th class="p-2 font-semibold   ">
                                     Title</th>
 
-                                <th class="p-2 font-semibold   ">
-                                    Image</th>
+
                                 <th class="p-2 font-semibold   ">
                                     Created at</th>
 
@@ -46,20 +43,17 @@ dd(Auth::guard('user_profiles')->user()->email)
 
 
                         <tbody class="bg-white divide-y divide-gray-200 ">
-                            @foreach ($blogs as $key => $blog)
-                                <tr class="hover:bg-[#eeeef7]  cursor-pointer ">
+                            @foreach ($tags as $key => $tag)
+                                <tr class="hover:bg-[#eeeef7] text-center cursor-pointer ">
                                     <td class="px-5 py-3  ">
-                                        <p class="text-black whitespace-no-wrap">{{ $blog->title }}</p>
+                                        <p class="text-black whitespace-no-wrap">{{ $tag->name }}</p>
                                     </td>
 
-                                    <td class="p-2" style="width: 100px;">
-                                        <img class="w-full h-full " src="{{ asset('/uploads/' . $blog->featured_image) }}"
-                                            alt="Card" style="width: 70px;">
-                                    </td>
+
 
                                     <td class="px-5 py-3  text-sm">
                                         <p class="text-gray-900 whitespace-no-wrap">
-                                            {{ $blog->updated_at->format('jS M Y') }}
+                                            {{ $tag->updated_at->format('jS M Y') }}
                                         </p>
                                     </td>
 
@@ -67,23 +61,8 @@ dd(Auth::guard('user_profiles')->user()->email)
                                     <td>
                                         <div class="flex">
 
-                                            {{-- <a href='{{ route('admin.blogs.show', $blog->id) }}'>
 
-                                                    <div class="bg-slate-500 py-1 px-2 mx-2 text-white flex  rounded-md">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" fill="currentColor" class="bi bi-eye-fill"
-                                                            viewBox="0 0 16 16">
-                                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                                            <path
-                                                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                                        </svg>
-                                                    </div>
-                                                </a> --}}
-
-                                            <a
-                                                href="
-                                                    {{ route('admin.blogs.edit', $blog->id) }}
-                                                    ">
+                                            <a href="  {{ route('admin.tag.edit', $tag->id) }}  ">
                                                 <div class="bg-slate-500 py-1 px-2 mx-2 text-white flex rounded-md">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                         class="icon icon-tabler icon-tabler-edit" width="24"
@@ -106,14 +85,14 @@ dd(Auth::guard('user_profiles')->user()->email)
 
                                             <form
                                                 action="
-                                                {{ route('admin.blogs.destroy', $blog->id) }}
+                                                {{ route('admin.tag.destroy', $tag->id) }}
                                                 "
-                                                class="delete-form-{{ $blog->id }}" method="post">
+                                                class="delete-form-{{ $tag->id }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="button"
                                                     class="bg-red-500 py-1 px-2 mx-2 flex text-white rounded-md"
-                                                    onclick="deleteItem('{{ $blog->id }}')">
+                                                    onclick="deleteItem('{{ $tag->id }}')">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                         class="icon icon-tabler icon-tabler-trash" width="24"
                                                         height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -140,14 +119,14 @@ dd(Auth::guard('user_profiles')->user()->email)
 
                 </div>
             </div>
-            @if ($blogs->isEmpty())
+            @if ($tags->isEmpty())
                 <div class="text-center bg-gray-100 font-semibold text-red-600 border p-10">
-                    No Blogs Found.
+                    No Tags Found.
                 </div>
             @endif
-            <div class="z-0 mt-3">
-                {{ $blogs->links('vendor.pagination.tailwind') }}
-            </div>
+            {{-- <div class="z-0 mt-3">
+                {{ $tags->links('vendor.pagination.tailwind') }}
+            </div> --}}
 
         </div>
 

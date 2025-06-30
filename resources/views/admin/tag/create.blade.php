@@ -4,7 +4,7 @@
     <div class="bg-white">
 
         <div class="flex gap-4 px-4 ">
-            <a href="{{ route('admin.blogs.index') }}">
+            <a href="{{ route('admin.tag.index') }}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="22"
                     height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -14,24 +14,25 @@
                     <path d="M5 12l6 -6"></path>
                 </svg>
             </a>
-            <div class="text-lg font-bold">Add Blog</div>
+            <div class="text-lg font-bold">Add Tag</div>
         </div>
         <div class="row  bg-white rounded-lg shadow-lg text-slate-600">
-            <form method="post" action="{{ route('admin.blogs.store') }} " enctype="multipart/form-data">
+            <form method="post" action="{{ route('admin.tag.store') }} " enctype="multipart/form-data">
                 @csrf
                 <div class="py-3 px-6  mt-3">
                     <div class="flex flex-col ">
                         <div>
                             <label class="text-xs font-semibold w-full" htmlFor="">
-                                Title
+                                Name
                             </label>
 
                             <div>
                                 <input
                                     class="text-xs focus:outline-none focus:ring-blue-500 focus:border-blue-500 border border-gray-300 p-2 rounded mt-1 hover:border-blue-500 w-full"
-                                    name="title" placeholder="Enter Title Here" type="text"
-                                    value="{{ old('title') }}" />
-                                @error('title')
+                                    name="name" placeholder="Enter name Here" type="text"
+                                    value="{{ old('name') }}" />
+                                    <span class="text-[10px]  text-gray-600">This name is how it appears on your sites</span>
+                                @error('name')
                                     <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
                                         * {{ $message }}
                                     </div>
@@ -39,21 +40,7 @@
                             </div>
                         </div>
 
-                        <div class="mt-3">
-                            <label class='text-xs font-semibold'>Blog Image</label>
-                            <div
-                                class='text-xs p-1.5 form-control border border-grey-400 w-full rounded-md shadow-sm mb-1 mt-2'>
-                                <input type="file" name="featured_image"
-                                    class="image hover:border-blue-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 "
-                                    onchange="loadFile(event)" />
-                            </div>
-                            <img id="output" style="width: 70px; margin-bottom: 2px;" />
-                            @error('featured_image')
-                                <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
-                                    * {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
+
 
 
 

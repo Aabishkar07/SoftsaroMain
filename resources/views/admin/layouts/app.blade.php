@@ -35,7 +35,7 @@
             </div>
 
             <!-- Page Content -->
-            <div class="w-full px-6 py-8 max-sm:px-4 mt-12">
+            <div class="w-full py-8  mt-8 bg-white">
                 @yield('body')
             </div>
         </main>

@@ -55,16 +55,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100">
+<body class="">
 
     <div class="">
 
         <!-- Top Navbar Section -->
         <section class="flex  justify-end items-center px-6 py-2  border-b-2 border-gray-200">
-
-
             <!-- Right Icons -->
-            <div class="flex gap-x-2">
+            <div class="flex gap-x-2 p-1">
+                <!-- Right Sidebar Open Button -->
+                <div class="relative  mr-3">
+                    <a href="{{route("admin.tag.index")}}">
+
+                        <div class="relative block overflow-hidden  focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <!-- User Dropdown -->
+            </div>
+            <div class="flex gap-x-2 p-1">
                 <!-- Right Sidebar Open Button -->
                 <div class="relative h-6 w-6 mr-3">
                     <button @click="rightSidebarOpen = true"
@@ -72,7 +88,6 @@
                         <img class="object-cover w-full h-full" src="{{ asset('icons/menu.png') }}" alt="tagphoto">
                     </button>
                 </div>
-
                 <!-- User Dropdown -->
             </div>
             <div x-data="{ dropdownOpen: false }" class="relative shadow-[0_3px_10px_rgb(0,0,0,0.2)] h-6 w-6 rounded-full mr-3">
@@ -115,9 +130,10 @@
                     <a class="  hover:text-[#201d67] flex-col justify-center text-center items-center px-6 py-1.5  text-[#201d67]"
                         href=" {{ route('admin.store.index') }}
                      ">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="text-center ml-10 flex justify-center items-center" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" width="20" height="20"
-                            stroke-width="1.25">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="text-center ml-10 flex justify-center items-center" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            width="20" height="20" stroke-width="1.25">
                             <path
                                 d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z">
                             </path>
