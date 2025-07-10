@@ -55,7 +55,7 @@
 </footer>
 
 <!-- Scroll Top -->
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" style="bottom: 70px; right: 20px; z-index: 1050;" >
     <i class="bi bi-arrow-up-short"></i>
 </a>
 
