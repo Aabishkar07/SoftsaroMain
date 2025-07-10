@@ -3,13 +3,13 @@
 @section('page_title', ' Banner')
 @section('banner_select', 'bg-[#4456a6] text-white')
 @section('body')
-    <div class="px-5 bg-background w-full">
+    <div class=" bg-background w-full">
         @include('admin.include.toastmessage')
 
-        <div class="flex items-center justify-between">
-            <div class="text-2xl font-bold">Banners</div>
+        <div class="px-5 flex items-center justify-between">
+            <div class="text-xl font-bold">Banners</div>
             <a href='{{ route('admin.banner.create') }}'
-                class='bg-[#4456a6] text-white  p-2 text-sm flex gap-2 items-center font-main rounded-lg'>
+                class='bg-[#04033b] rounded-lg text-white px-3 py-1 text-sm flex gap-2 items-center '>
                 <svg xmlns="http://www.w3.org/2000/svg" class="svgicon" height="1em" viewBox="0 0 448 512">
                     <style>
                         .svgicon {
@@ -22,12 +22,12 @@
                 <span>Add Banner</span>
             </a>
         </div>
-        <div class='product-table bg-white p-3 rounded-lg mt-3   shadow'>
+        <div class='product-table bg-[#e5e3e8]  mt-3   shadow'>
 
             <div class="relative overflow-x-auto">
                 <table class="w-full divide-y divide-gray-200">
                     <thead class="font-normal p-10">
-                        <tr class="">
+                                <tr class="text-xs text-gray-600 uppercase">
                             <th scope="col " class="p-2 font-semibold ">
                                 Banner Name
                             </th>
@@ -47,13 +47,13 @@
                             </th>
                         </tr>
                     </thead>
-                    @foreach ($banners as $key => $baner)
-                        <tbody class="bg-white divide-y divide-gray-200 text-center">
-                            <tr>
-                                <td class="w-[60vh]">
+                         <tbody class="bg-white divide-y divide-gray-200 ">
+                        @foreach ($banners as $key => $baner)
+                            <tr class="hover:bg-[#eeeef7] text-center cursor-pointer">
+                                <td class="w-[60vh] px-5 py-1  text-sm">
                                     <div>{{ $baner->title }}</div>
                                 </td>
-                                <td class="">
+                                <td class="px-5 py-1   text-sm">
                                     <div>{{ $baner->banner_order }}</div>
                                 </td>
 
@@ -62,7 +62,7 @@
                                     <img class="" src="{{ asset('/uploads/' . $baner->banner_image) }}" alt="Card"
                                         style="width: 70px;">
                                 </td>
-                                <td>
+                                <td class="px-5 py-1  text-sm">
                                     @if ($baner->created_at)
                                         <div>{{ $baner->created_at->format('F j, Y') }}</div>
                                     @else
@@ -71,7 +71,7 @@
                                 </td>
 
 
-                                <td>
+                                <td class="px-5 py-1  text-sm">
                                     <div class="flex p-2 justify-center">
                                         <a href="{{ route('admin.banner.edit', $baner->id) }}">
                                             <div class="bg-[#266688] py-1 px-2 mx-2 text-white flex rounded-md">
@@ -115,9 +115,8 @@
                                     </div>
                                 </td>
                             </tr>
-
-                        </tbody>
-                    @endforeach
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
 
