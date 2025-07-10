@@ -45,7 +45,8 @@
 
                     <div class="mt-1">
                         <label class='text-xs font-semibold'>Blog Image</label>
-                        <div class='text-xs p-1.5 form-control border border-grey-400 w-full rounded-md shadow-sm mb-1 mt-2'>
+                        <div
+                            class='text-xs p-1.5 form-control border border-grey-400 w-full rounded-md shadow-sm mb-1 mt-2'>
                             <input type="file" name="featured_image" id="image"
                                 class="image focus:border-[#7065d4] hover:border-[#7065d4]" onchange="loadFile(event)" />
                         </div>
@@ -71,6 +72,87 @@
                             </div>
                         @enderror
                     </div>
+
+
+                    <div>
+                        <label class="text-xs font-semibold w-full" htmlFor="">
+                            Image Alt
+                        </label>
+
+                        <div>
+                            <input
+                                class="text-xs border text-black border-gray-300 p-2 mb-2 rounded focus:border-[#7065d4] hover:border-[#7065d4] w-full"
+                                name="img_alt" placeholder="Enter Image Alt Here" type="text"
+                                value="{{ old('img_alt', $blog->img_alt) }}" />
+                            @error('img_alt')
+                                <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
+                                    * {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+
+
+
+                    <div>
+                        <label class="text-xs font-semibold w-full" htmlFor="">
+                            Meta Title
+                        </label>
+
+                        <div>
+                            <input
+                                class="text-xs border text-black border-gray-300 p-2 mb-2 rounded focus:border-[#7065d4] hover:border-[#7065d4] w-full"
+                                name="meta_title" placeholder="Enter  Meta Title Here" type="text"
+                                value="{{ old('meta_title', $blog->meta_title) }}" />
+                            @error('meta_title')
+                                <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
+                                    * {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+
+
+
+                    <div>
+                        <label class="text-xs font-semibold w-full" for="meta_description">
+                            Meta Description
+                        </label>
+
+                        <div>
+                            <textarea id="meta_description" name="meta_description" placeholder="Enter meta description here"
+                                class="text-xs border text-black border-gray-300 p-2 rounded focus:border-[#7065d4] hover:border-[#7065d4] w-full">{{ $blog->meta_description }}</textarea>
+
+                            @error('meta_description')
+                                <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
+                                    * {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+
+
+
+
+                    <div>
+                        <label class="text-xs font-semibold w-full" htmlFor="">
+                            keywords
+                        </label>
+
+                        <div>
+                            <input
+                                class="text-xs border text-black border-gray-300 p-2 mb-2 rounded focus:border-[#7065d4] hover:border-[#7065d4] w-full"
+                                name="keywords" placeholder="Enter keywords Here" type="text"
+                                value="{{ old('keywords', $blog->keywords) }}" />
+                            @error('keywords')
+                                <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
+                                    * {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+
+
 
 
 

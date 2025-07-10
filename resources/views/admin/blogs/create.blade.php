@@ -57,6 +57,82 @@
 
 
 
+
+
+                        <div>
+                            <label class="text-xs font-semibold w-full " htmlFor="">
+                                Image Alt
+                            </label>
+
+                            <div>
+                                <input
+                                    class="text-xs focus:outline-none focus:ring-blue-500 mb-2 focus:border-blue-500 border border-gray-300 p-2 rounded mt-1 hover:border-blue-500 w-full"
+                                    name="img_alt" placeholder="Enter image alt Here" type="text"
+                                    value="{{ old('img_alt') }}" />
+                                @error('img_alt')
+                                    <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
+                                        * {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <label class="text-xs font-semibold w-full " htmlFor="">
+                               Meta Title
+                            </label>
+
+                            <div>
+                                <input
+                                    class="text-xs focus:outline-none focus:ring-blue-500 mb-2 focus:border-blue-500 border border-gray-300 p-2 rounded mt-1 hover:border-blue-500 w-full"
+                                    name="meta_title" placeholder="Enter meta title Here" type="text"
+                                    value="{{ old('meta_title') }}" />
+                                @error('meta_title')
+                                    <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
+                                        * {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-semibold w-full mt-2" htmlFor="">
+                                Meta Description
+                            </label>
+
+                            <div>
+                                <textarea
+                                    class="text-xs focus:outline-none focus:ring-blue-500 mb-2 focus:border-blue-500 border border-gray-300 p-2 rounded mt-1 hover:border-blue-500 w-full"
+                                    name="meta_description" type="text"
+                                    value="{{ old('meta_description') }}" >
+                                </textarea>
+                                @error('meta_description')
+                                    <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
+                                        * {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+
+      <div>
+                            <label class="text-xs font-semibold w-full" htmlFor="">
+                               keywords
+                            </label>
+
+                            <div>
+                                <input
+                                    class="text-xs focus:outline-none focus:ring-blue-500 focus:border-blue-500 border border-gray-300 p-2 rounded mt-1 hover:border-blue-500 w-full"
+                                    name="keywords" placeholder="Enter Keywords Here" type="text"
+                                    value="{{ old('keywords') }}" />
+                                @error('keywords')
+                                    <div class="invalid-feedback text-red-400 text-xs" style="display: block;">
+                                        * {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class=" text-xs font-semibold w-full mt-2">
                             Description
                         </div>

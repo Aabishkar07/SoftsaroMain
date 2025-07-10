@@ -19,6 +19,11 @@ class Blog extends Model
         'views',
         'likes',
         'description',
-        'reading_time'
+        'reading_time',
+        'meta_title',
+        'meta_description',
+        'img_alt',
+        'keywords'
+
     ];
 }
