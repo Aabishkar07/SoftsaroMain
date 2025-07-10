@@ -6,10 +6,10 @@
     <div class="px-5 bg-background w-full">
         @include('admin.include.toastmessage')
 
-        <div class="flex justify-between">
-            <div class="text-2xl font-bold">Banner</div>
+        <div class="flex items-center justify-between">
+            <div class="text-2xl font-bold">Banners</div>
             <a href='{{ route('admin.banner.create') }}'
-                class='bg-[#4456a6] text-white h-10 p-2 text-sm flex gap-2 items-center font-main rounded-lg'>
+                class='bg-[#4456a6] text-white  p-2 text-sm flex gap-2 items-center font-main rounded-lg'>
                 <svg xmlns="http://www.w3.org/2000/svg" class="svgicon" height="1em" viewBox="0 0 448 512">
                     <style>
                         .svgicon {
@@ -22,7 +22,7 @@
                 <span>Add Banner</span>
             </a>
         </div>
-        <div class='product-table bg-white p-3 rounded-lg mt-10 font-main  shadow'>
+        <div class='product-table bg-white p-3 rounded-lg mt-3   shadow'>
 
             <div class="relative overflow-x-auto">
                 <table class="w-full divide-y divide-gray-200">
@@ -50,7 +50,7 @@
                     @foreach ($banners as $key => $baner)
                         <tbody class="bg-white divide-y divide-gray-200 text-center">
                             <tr>
-                                <td class="">
+                                <td class="w-[60vh]">
                                     <div>{{ $baner->title }}</div>
                                 </td>
                                 <td class="">

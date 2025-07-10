@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductEnquireController;
@@ -42,6 +43,13 @@ Route::middleware(["admin"])->group(
         Route::resource('teams', TeamController::class);
         Route::resource('services', ServiceController::class);
         Route::resource('blogs', BlogController::class);
+
+        Route::get('/setting', [TagController::class, 'index'])->name('tag.index');
+        Route::get('/setting/create', [TagController::class, 'create'])->name('tag.create');
+        Route::post('/setting/store', [TagController::class, 'store'])->name('tag.store');
+        Route::get('/setting/edit/{tag}', [TagController::class, 'edit'])->name('tag.edit');
+        Route::put('/setting/update/{tag}', [TagController::class, 'update'])->name('tag.update');
+        Route::delete('/setting/delete/{tag}', [TagController::class, 'destroy'])->name('tag.destroy');
 
 
     }

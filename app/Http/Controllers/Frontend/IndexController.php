@@ -78,8 +78,8 @@ class IndexController extends Controller
 
     public function services()
     {
-
-        return view("frontend.services.index");
+        $services = Service::orderBy("order", "asc")->get();
+        return view("frontend.services.index", compact('services'));
     }
 
     public function team()

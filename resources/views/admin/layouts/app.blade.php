@@ -14,19 +14,37 @@
 </head>
 
 <body>
-    <div x-cloak x-data="{ sidebarOpen: true }" class="flex ">
-        <div class="fixed w-full top-0 z-[999] bg-white">
-            {{-- @include('admin.message.index') --}}
+    <div x-cloak x-data="{ sidebarOpen: true }" class="relative flex">
 
-            @include('admin.layouts.navbar')
+        <!-- Sidebar -->
+        <div :class="sidebarOpen ? 'w-52' : 'w-14'"
+            class="fixed top-0 left-0 h-full bg-white shadow-lg z-[1000] overflow-hidden transition-[width] duration-700">
+            @include('admin.layouts.sidebar')
         </div>
-        @include('admin.layouts.sidebar')
-        <main :class="sidebarOpen ? 'ml-64' : 'ml-0'" class="flex-1  w-full mt-10 mb-2 overflow-x-hidden ">
-            <div class="w-full px-6 py-8 max-sm:px-4 mt-7">
+
+        <!-- Main Content Wrapper -->
+        <main :class="sidebarOpen ? 'ml-52' : 'ml-14'"
+            class="flex-1 w-full min-h-screen overflow-auto transition-[margin-left] duration-700">
+
+            <!-- Fixed Navbar under Sidebar -->
+            <div class="fixed top-0 left-0 right-0 z-[999] bg-[#eeeef7]">
+                <div :class="sidebarOpen ? 'ml-52' : 'ml-14'"
+                    class="flex justify-end pr-4 transition-[margin-left] duration-700">
+                    @include('admin.layouts.navbar')
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="w-full py-8  mt-8 bg-white">
                 @yield('body')
             </div>
         </main>
     </div>
+
+
+
+
+
 
 
 </body>
