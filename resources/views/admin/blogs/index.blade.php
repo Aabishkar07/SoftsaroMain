@@ -30,7 +30,7 @@ dd(Auth::guard('user_profiles')->user()->email)
                 <div class="relative overflow-x-auto">
                     <table class="w-full divide-y divide-gray-200">
                         <thead class="">
-                            <tr class="text-xs text-gray-600 uppercase">
+                            <tr class="text-xs text-center text-gray-600 uppercase">
                                 <th class="p-2 font-semibold   ">
                                     Title</th>
 
@@ -39,15 +39,15 @@ dd(Auth::guard('user_profiles')->user()->email)
                                 <th class="p-2 font-semibold   ">
                                     Created at</th>
 
-                                <th class="p-2 font-semibold   ">
+                                <th class="p-2 font-semibold text-left  ">
                                     Actions</th>
                             </tr>
                         </thead>
 
 
-                        <tbody class="bg-white divide-y divide-gray-200 ">
+                        <tbody class="bg-white  divide-y divide-gray-200 ">
                             @foreach ($blogs as $key => $blog)
-                                <tr class="hover:bg-[#eeeef7]  cursor-pointer ">
+                                <tr class="hover:bg-[#eeeef7] text-center cursor-pointer ">
                                     <td class="px-5 py-3  ">
                                         <p class="text-black whitespace-no-wrap">{{ $blog->title }}</p>
                                     </td>
