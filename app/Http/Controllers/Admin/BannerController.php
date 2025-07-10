@@ -47,7 +47,7 @@ class BannerController extends Controller
         $req['banner_image'] = $banner_image;
         $req['slug'] = Str::slug($request->title);
         Banner::create($req);
-        return redirect()->route('admin.banner.index')->with('success', 'Banner Added');
+        return redirect()->route('admin.banner.index')->with('popsuccess', 'Banner Added');
     }
 
     /**
@@ -83,7 +83,7 @@ class BannerController extends Controller
         $req['slug'] = Str::slug($request->title);
         $banner->update($req);
 
-        return redirect()->route('admin.banner.index')->with('success', 'Banner Updated');
+        return redirect()->route('admin.banner.index')->with('popsuccess', 'Banner Updated');
     }
 
     /**
@@ -95,6 +95,6 @@ class BannerController extends Controller
             $this->imageservice->imageDelete($banner->banner_image);
         }
         $banner->delete();
-        return redirect()->route('admin.banner.index')->with('success', 'Banner Deleted');
+        return redirect()->route('admin.banner.index')->with('popsuccess', 'Banner Deleted');
     }
 }

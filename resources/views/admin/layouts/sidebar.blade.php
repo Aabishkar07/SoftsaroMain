@@ -55,7 +55,7 @@
                         <span x-show="sidebarOpen" class="mx-3 text-xs">Home</span>
                     </a>
 
-                       <a class="{{ request()->segment(2) == 'blogs' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
+                    <a class="{{ request()->segment(2) == 'blogs' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="
                    {{ route('admin.blogs.index') }}
                      ">
@@ -93,6 +93,19 @@
                         <span x-show="sidebarOpen" class="mx-3 text-xs">Banner</span>
                     </a>
 
+                    <a class="{{ request()->segment(2) == 'contacts' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
+                        href="{{ route('admin.contact') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="icon icon-tabler icons-tabler-filled icon-tabler-layout-dashboard">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M9 3a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2zm10 -4a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 -8a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2z" />
+                        </svg>
+
+                        <span x-show="sidebarOpen" class="mx-3 text-xs">Contacts</span>
+                    </a>
+
                     <a class="{{ request()->segment(2) == 'partners' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="
                     {{ route('admin.partners.index') }}
@@ -111,7 +124,7 @@
 
 
 
-                    <a class="{{ request()->segment(2) == 'store' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
+                    {{-- <a class="{{ request()->segment(2) == 'store' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="
                     {{ route('admin.store.index') }}
                      ">
@@ -138,8 +151,6 @@
                         </svg>
                         <span x-show="sidebarOpen" class="mx-3 text-xs">softsaro Product</span>
                     </a>
-
-
                     <a class="{{ request()->segment(2) == 'productenquire' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="
                     {{ route('admin.productenquire.index') }}
@@ -157,14 +168,16 @@
                         </svg>
 
                         <span x-show="sidebarOpen" class="mx-3 text-xs"> Product Enquire</span>
-                    </a>
+                    </a> --}}
+
+
                     <a class="{{ request()->segment(2) == 'csvs' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="
                     {{ route('admin.csvs.index') }}
                      ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="20"
-                            height="20" stroke-width="1.25">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" width="20" height="20"
+                            stroke-width="1.25">
                             <path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z">
                             </path>
                             <path d="M10 16h6"></path>
@@ -177,18 +190,7 @@
                         <span x-show="sidebarOpen" class="mx-3 text-xs"> Email Marketing (CSV file)</span>
                     </a>
 
-                    <a class="{{ request()->segment(2) == 'contacts' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
-                        href="{{ route('admin.contact') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="currentColor"
-                            class="icon icon-tabler icons-tabler-filled icon-tabler-layout-dashboard">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M9 3a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2zm10 -4a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 -8a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2z" />
-                        </svg>
 
-                        <span x-show="sidebarOpen" class="mx-3 text-xs">Contacts</span>
-                    </a>
 
 
 
@@ -251,7 +253,9 @@
                 <button @click="sidebarOpen = !sidebarOpen" class="text-white bg-[#020123] focus:outline-none">
                     <div
                         class="bg-[#020123] py-2 text-center font-medium text-lg rounded-xl shadow-lg transition-transform duration-300">
-                        <div :class="sidebarOpen ? 'block transition ease-in-out duration-300' : 'rotate-180 transition ease-in-out duration-300'">
+                        <div
+                            :class="sidebarOpen ? 'block transition ease-in-out duration-300' :
+                                'rotate-180 transition ease-in-out duration-300'">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" fill="#ffffff"
                                 viewBox="0 0 384 512">
                                 <path

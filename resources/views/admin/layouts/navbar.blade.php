@@ -1,4 +1,4 @@
-{{-- <section class="flex items-center justify-between px-6 py-4 bg-white border-b-2 border-gray-200 ">
+{{-- <section class="flex items-center justify-between  py-4 bg-white border-b-2 border-gray-200 ">
     <div class="flex items-center justify-between space-x-3 ">
         <div class="">
             <button @click="sidebarOpen = !sidebarOpen" class="w-8 text-black focus:outline-none lg:block">
@@ -60,12 +60,12 @@
     <div class="">
 
         <!-- Top Navbar Section -->
-        <section class="flex  justify-end items-center px-6 py-2  border-b-2 border-gray-200">
+        <section class="flex  justify-end items-center  py-2  border-b-2 border-gray-200">
             <!-- Right Icons -->
             <div class="flex gap-x-2 p-1">
                 <!-- Right Sidebar Open Button -->
                 <div class="relative  mr-3">
-                    <a href="{{route("admin.tag.index")}}">
+                    <a href="{{ route('admin.tag.index') }}">
 
                         <div class="relative block overflow-hidden  focus:outline-none">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"
@@ -120,61 +120,56 @@
             x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200"
             x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full">
             <div class="flex items-center justify-between px-4 py-3 border-b">
-                <h2 class="text-lg font-semibold">Sidebar Title</h2>
+                <h2 class="text-lg font-semibold">Softsaro Store</h2>
                 <button @click="rightSidebarOpen = false"
                     class="text-gray-500 hover:text-black text-2xl font-bold">&times;</button>
             </div>
             <div class="p-4 space-y-3">
 
                 <ul class="text-sm space-y-2">
-                    <a class="  hover:text-[#201d67] flex-col justify-center text-center items-center px-6 py-1.5  text-[#201d67]"
-                        href=" {{ route('admin.store.index') }}
-                     ">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            class="text-center ml-10 flex justify-center items-center" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            width="20" height="20" stroke-width="1.25">
-                            <path
-                                d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z">
-                            </path>
-                            <path d="M9 11v-5a3 3 0 0 1 6 0v5"></path>
-                        </svg>
+                    <li>
+                        <a class="hover:text-[#201d67] flex items-center justify-start  py-2 text-[#201d67]"
+                            href="{{ route('admin.store.index') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.25">
+                                <path
+                                    d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" />
+                                <path d="M9 11v-5a3 3 0 0 1 6 0v5" />
+                            </svg>
+                            <span class="ml-3">softsaro Store</span>
+                        </a>
+                    </li>
 
-                        <span class="mx-3 text-sm">softsaro Store</span>
-                    </a>
-                    <a class="{{ request()->segment(2) == 'product' ? ' font-semibold  rounded bg-[#fafafc] text-[#201d67] flex items-center px-6 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-white hover:text-[#201d67] flex items-center px-6 py-1.5  text-white' }} "
-                        href="
-                    {{ route('admin.product.index') }}
-                     ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" width="20" height="20"
-                            stroke-width="1.25">
-                            <path d="M10 16v-8h2.5a2.5 2.5 0 1 1 0 5h-2.5"></path>
-                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-                        </svg>
-                        <span class="mx-3 text-sm">softsaro Product</span>
-                    </a>
+                    <li>
+                        <a class="hover:text-[#201d67] flex items-center justify-start  py-2 text-[#201d67]"
+                            href="{{ route('admin.product.index') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.25">
+                                <path d="M10 16v-8h2.5a2.5 2.5 0 1 1 0 5h-2.5" />
+                                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                            </svg>
+                            <span class="ml-3">softsaro Product</span>
+                        </a>
+                    </li>
 
-
-                    <a class="{{ request()->segment(2) == 'productenquire' ? ' font-semibold  rounded bg-[#fafafc] text-[#201d67] flex items-center px-6 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-white hover:text-[#201d67] flex items-center px-6 py-1.5  text-white' }} "
-                        href="
-                    {{ route('admin.productenquire.index') }}
-                     ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" width="20" height="20"
-                            stroke-width="1.25">
-                            <path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z">
-                            </path>
-                            <path d="M10 16h6"></path>
-                            <path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                            <path d="M4 8h3"></path>
-                            <path d="M4 12h3"></path>
-                            <path d="M4 16h3"></path>
-                        </svg>
-
-                        <span class="mx-3 text-sm"> Product Enquire</span>
-                    </a>
+                    <li>
+                        <a class="hover:text-[#201d67] flex items-center justify-start  py-2 text-[#201d67]"
+                            href="{{ route('admin.productenquire.index') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.25">
+                                <path
+                                    d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z" />
+                                <path d="M10 16h6" />
+                                <path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M4 8h3" />
+                                <path d="M4 12h3" />
+                                <path d="M4 16h3" />
+                            </svg>
+                            <span class="ml-3">Product Enquire</span>
+                        </a>
+                    </li>
                 </ul>
+
             </div>
         </div>
     </div>
