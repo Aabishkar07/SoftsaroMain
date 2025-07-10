@@ -76,7 +76,7 @@
                     <div class=" text-md font-semibold w-full mt-4">
                         Description
                     </div>
-                    <textarea class=" border block w-full mt-1 rounded-md focus:border-[#7065d4] hover:border-[#7065d4]"
+                    <textarea class=" border tinymce block w-full mt-1 rounded-md focus:border-[#7065d4] hover:border-[#7065d4]"
                         name="description" rows="6">{{ old('description',$blog->description ) }}</textarea>
 
                     @error('description')
@@ -98,8 +98,5 @@
         </form>
     </div>
 
-<script src="https://cdn.ckeditor.com/4.25.1-lts/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('description');
-</script>
+
 @endsection
