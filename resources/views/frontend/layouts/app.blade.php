@@ -74,6 +74,11 @@
             @include('frontend.layouts.navbar')
         </div>
 
+  <div class="position-relative">
+    @include('frontend.company.whatsapp')
+</div>
+
+
         <div class="">
             @yield('body')
         </div>
