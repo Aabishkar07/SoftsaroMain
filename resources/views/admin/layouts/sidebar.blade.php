@@ -212,6 +212,54 @@
 
 
 
+
+  <div x-data="{ dropdownOpen: false, activeRoute: '{{ request()->segment(2) }}' }" class="relative">
+                    <button @click="dropdownOpen = !dropdownOpen"
+                        class="{{ request()->segment(2) == 'page' ? 'w-full  bg-green-700 text-white flex items-center px-6 py-2  flex-1 mt-2 item ' : 'w-full flex-1 mt-2 item hover:bg-green-700 hover:text-white flex items-center px-6 py-2  text-gray-600' }}">
+                        <span class="material-symbols-outlined">
+                            dynamic_feed
+                        </span>
+                        <span class="flex flex-col items-start flex-shrink-0 h-full ml-2 leading-none translate-y-px">
+                            <span>CMS</span>
+
+                        </span>
+                        <svg class="absolute right-0 w-5 h-5 mx-3" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                        </svg>
+                    </button>
+                    <div x-show="dropdownOpen" @click.away="dropdownOpen=false"
+                        x-transition:enter="ease-out duration-200" x-transition:enter-start="-translate-y-2"
+                        x-transition:enter-end="translate-y-0"
+                        class="absolute top-0 z-50 w-56 mt-12 -translate-x-1/2 left-1/2" x-cloak>
+                        <div
+                            class="p-1 mt-1 bg-white border rounded-md shadow-md border-neutral-200/70 text-neutral-700">
+                            <a href="{{ route('admin.page.index') }}" x-init="dropdownOpen = (activeRoute == 'page') ? true : dropdownOpen"
+                                class="cursor-pointer {{ request()->segment(2) == 'page' ? 'bg-green-700 text-white relative flex cursor-default select-none hover:bg-neutral-100 hover:text-slate-700 items-center rounded px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' : 'relative flex cursor-default select-none hover:bg-neutral-100 items-center rounded px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' }}">
+                                <span class="text-xl material-symbols-outlined">
+                                    pages
+                                </span>
+                                <span class="mx-3">Pages</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
                     <a class="{{ request()->segment(2) == 'settings' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="{{ route('admin.setting') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
