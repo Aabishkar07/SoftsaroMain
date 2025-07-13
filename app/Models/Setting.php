@@ -15,5 +15,6 @@ class Setting extends Model
         'instagram',
         'twitter',
         'linkedin',
+        'google_site_key',
     ];
 }

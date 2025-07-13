@@ -5,11 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="google-site-verification" content="TcAWIZNoo9h55uknVsiQr_8AtT_4lC6-E5iWzTj5s0c" />
     @php
         $segment = request()->segment(1);
         $meta = getMetas(Request::segment(1), Request::segment(2));
+        $sitekey = getsiteKey();
+        // dd($meta);
     @endphp
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Softsaro Nepal",
+        "description": "{{ Str::limit(strip_tags($meta->description, 50)) }}",
+        "url": "{{ url('/') }}",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{ url('/search?q={search_term_string}') }}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <meta name="google-site-verification" content="{{ $sitekey }}"  />
 
     <meta name=description content="{{ Str::limit(strip_tags($meta->description, 2000)) }}">
     {{-- og --}}
@@ -57,11 +74,9 @@
     <meta name="twitter:data1" content="admin" />
     <meta name="twitter:label2" content="Time to read" />
     <meta name="twitter:data2" content="1 minute" />
-    <script type="application/ld+json" class="rank-math-schema">
-        {"@context":"https://schema.org","@graph":[{"@type":["Corporation","Organization"],"@id":"https://softsaro.com/#organization","name":"Softsaro","url":"https://softsaro.com","sameAs":["https://www.facebook.com/softsaronepal","https://twitter.com/softsaronepal"],"lo3
-        go":{"@type":"ImageObject","@id":"https://softsaro.com/#logo","url":"https://softsaro.com/wp-content/uploads/2024/07/Fab-icon.jpg","contentUrl":"https://softsaro.com/wp-content/uploads/2024/07/Fab-icon.jpg","caption":"Softsaro","inLanguage":"en-US","width":"500","height":"500"}},{"@type":"WebSite","@id":"https://softsaro.com/#website","url":"https://softsaro.com","name":"Softsaro","alternateName":"Digital Marketing Agency in Nepal","publisher":{"@id":"https://softsaro.com/#organization"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":"https://softsaro.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://softsaro.com/wp-content/uploads/2024/12/Dark-Blue-Simple-Dark-Tech-and-Gaming-Bio-Link-Website.png","url":"https://softsaro.com/wp-content/uploads/2024/12/Dark-Blue-Simple-Dark-Tech-and-Gaming-Bio-Link-Website.png","width":"200","height":"200","inLanguage":"en-US"},{"@type":"WebPage","@id":"https://softsaro.com/#webpage","url":"https://softsaro.com/","name":"Home | softsaro","datePublished":"2024-07-22T15:27:43+00:00","dateModified":"2025-03-07T07:17:26+00:00","about":{"@id":"https://softsaro.com/#organization"},"isPartOf":{"@id":"https://softsaro.com/#website"},"primaryImageOfPage":{"@id":"https://softsaro.com/wp-content/uploads/2024/12/Dark-Blue-Simple-Dark-Tech-and-Gaming-Bio-Link-Website.png"},"inLanguage":"en-US"},{"@type":"Person","@id":"https://softsaro.com/author/admin/","name":"admin","url":"https://softsaro.com/author/admin/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/4e3714dfc1b728f42ff40d058b049f11?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/4e3714dfc1b728f42ff40d058b049f11?s=96&amp;d=mm&amp;r=g","caption":"admin","inLanguage":"en-US"},"sameAs":["https://softsaro.com"],"worksFor":{"@id":"https://softsaro.com/#organization"}},{"@type":"Article","headline":"Home | softsaro","keywords":"Home","datePublished":"2024-07-22T15:27:43+00:00","dateModified":"2025-03-07T07:17:26+00:00","author":{"@id":"https://softsaro.com/author/admin/","name":"admin"},"publisher":{"@id":"https://softsaro.com/#organization"},"description":"Discover top IT solutions including IT services, Display Marketing, and SEO services at Home/SoftSaro. Boost your business efficiency today!","name":"Home | softsaro","@id":"https://softsaro.com/#richSnippet","isPartOf":{"@id":"https://softsaro.com/#webpage"},"image":{"@id":"https://softsaro.com/wp-content/uploads/2024/12/Dark-Blue-Simple-Dark-Tech-and-Gaming-Bio-Link-Website.png"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"https://softsaro.com/#webpage"}}]}</script>
 
-    <title>{{ $meta->title  ?? 'Softsaro Nepal' }}</title>
+
+    <title>{{ $meta->title ?? 'Softsaro Nepal' }}</title>
 
     <link rel='dns-prefetch' href='//www.googletagmanager.com' />
     <link rel="alternate" type="application/rss+xml" title="softsaro &raquo; Feed" href="https://softsaro.com/feed/" />

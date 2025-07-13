@@ -3,7 +3,7 @@
 @section('settings_select', 'bg-[#4456a6] text-white')
 @section('body')
     <div class="px-3 bg-background w-full">
-    @include('admin.include.toastmessage')
+        @include('admin.include.toastmessage')
         <div class="flex justify-between">
             <div class="text-2xl font-bold">Settings</div>
             {{-- <a href='{{ route('banner.create') }}'
@@ -25,8 +25,7 @@
             <div id="tab-contents">
                 <div id="first" class="p-4">
 
-                    <form class="w-full mt-5" method="post"
-                        action="{{ route('admin.settingdetails') }}">
+                    <form class="w-full mt-5" method="post" action="{{ route('admin.settingdetails') }}">
                         @csrf
                         @method('post')
                         <div class="flex flex-wrap -mx-3 mb-4">
@@ -53,13 +52,11 @@
                             <div class="w-full md:w-1/2 px-3 mt-6">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                     for="grid-last-name">
-                                     Address
+                                    Address
                                 </label>
                                 <input
                                     class="border bg-slate-50 font-normal border-gray-300 p-3 rounded focus:border-[#7065d4] hover:border-[#7065d4] w-full focus:outline-non "
-                                    id="grid-last-name" type="text"
-                                    value="{{$setting->address}}"
-                                    name="address">
+                                    id="grid-last-name" type="text" value="{{ $setting->address }}" name="address">
                             </div>
                         </div>
 
@@ -97,7 +94,7 @@
                                     id="grid-zip" type="text"value="{{ $setting->linkedin }}" name="linkedin">
                             </div>
 
-                             <div class="w-full md:w-1/3 px-3 my-6 md:mb-0">
+                            <div class="w-full md:w-1/3 px-3 my-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                     for="grid-zip">
                                     Twitter
@@ -105,6 +102,16 @@
                                 <input
                                     class="border bg-slate-50 font-normal border-gray-300 p-3 rounded focus:border-[#7065d4] hover:border-[#7065d4] w-full focus:outline-non "
                                     id="grid-zip" type="text"value="{{ $setting->twitter }}" name="twitter">
+                            </div>
+                            <div class="w-full md:w-1/3 px-3 my-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                    for="grid-zip">
+                                    Google Site Key
+                                </label>
+                                <input
+                                    class="border bg-slate-50 font-normal border-gray-300 p-3 rounded focus:border-[#7065d4] hover:border-[#7065d4] w-full focus:outline-non "
+                                    id="grid-zip" type="text"value="{{ $setting->google_site_key }}"
+                                    name="google_site_key">
                             </div>
 
 
