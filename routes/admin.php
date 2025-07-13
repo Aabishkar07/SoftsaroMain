@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\MetaPageController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TagController;
@@ -44,6 +45,7 @@ Route::middleware(["admin"])->group(
         Route::resource('teams', TeamController::class);
         Route::resource('services', ServiceController::class);
         Route::resource('blogs', BlogController::class);
+Route::resource('page', PageController::class);
 
         Route::get('/setting', [TagController::class, 'index'])->name('tag.index');
         Route::get('/setting/create', [TagController::class, 'create'])->name('tag.create');
