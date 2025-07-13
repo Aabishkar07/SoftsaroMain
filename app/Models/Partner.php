@@ -8,6 +8,7 @@ class Partner extends Model
 {
     //
     protected $fillable = [
+        'admin_id',
         'title',
         'featured_image',
         'order',

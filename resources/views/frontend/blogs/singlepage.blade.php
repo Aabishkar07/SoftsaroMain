@@ -1,13 +1,15 @@
 @extends('frontend.layouts.app')
 @section('body')
+<head>
+    <meta keyword=""/>
+</head>
     <main class=" bg-white">
-        <div class="container py-5" >
+        <div class="container py-5">
             <section class="ezy__blogdetails2 light" id="ezy__blogdetails2">
                 <div class="container ">
                     <div class="row">
                         <div class="col-12 col-md-8">
                             <h1 class="ezy__blogdetails2-heading">{{ $blog->title }} </h1>
-
                             <div class="py-3 ">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class=" mb-0">
@@ -23,7 +25,7 @@
 
                             </div>
 
-                            <img src="{{ asset('/uploads/' . $blog->featured_image) }}" alt=""
+                            <img src="{{ asset('/uploads/' . $blog->featured_image) }}" alt="{{ $blog->img_alt }}"
                                 class="img-fluid rounded" />
 
                             <div class="ezy__blogdetails2-content mt-5">
@@ -45,8 +47,9 @@
                                     @foreach ($allblogs as $key => $blog)
                                         <a href="{{ route('single', $blog->slug) }}" class="text-decoration-none text-dark">
                                             <div class="ezy__blogdetails2-item  d-flex gap-x-3 align-items-start">
-                                                <img src="{{ asset('/uploads/' . $blog->featured_image) }}" alt=""
-                                                    class="img-fluid rounded  " style="width: 120px;heignt:120px" />
+                                                <img src="{{ asset('/uploads/' . $blog->featured_image) }}"
+                                                    alt="{{ $blog->img_alt }}" class="img-fluid rounded  "
+                                                    style="width: 120px;heignt:120px" />
                                                 <div class="ms-3">
                                                     <div>{{ $blog->title }}</div>
                                                     <div class="d-flex flex-wrap opacity-50">
@@ -66,6 +69,9 @@
 
 
                                 </div>
+                            </div>
+                            <div class=" w-full pt-3">
+                                <img src="{{ asset('images/advertising-journey.gif') }}" alt="Adsaro" />
                             </div>
                         </div>
                     </div>

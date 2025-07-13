@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('csvs', function (Blueprint $table) {
             $table->id();
+            $table->string('admin_id')->nullable();
             $table->string('filename')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();

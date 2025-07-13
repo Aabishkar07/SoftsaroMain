@@ -15,21 +15,24 @@
             @foreach ($services as $service)
                 <!-- Web Development Service -->
                 <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-item">
-                        <div class="img">
-                            <img src="{{ asset('uploads/' . $service->image) }}" class="img-fluid" alt="">
-                        </div>
-                        <div class="details position-relative">
-                            <div class="icon text-white p-3">
-                                <img src="{{ asset('uploads/' . $service->icon) }}" class="img-fluid" alt="">
+                    <a  class="text-decoration-none" href="{{ route('servicesingle', $service->slug) }}">
+                        <div class="service-item">
+                            <div class="img">
+                                <img src="{{ asset('uploads/' . $service->image) }}" class="img-fluid" alt="">
                             </div>
-                            <p class="stretched-link">
-                            <h3>{{ $service->title }}</h3>
-                            </p>
-                            <p class="fs-6">{{ $service->description }}</p>
+                            <div class="details position-relative">
+                                <div class="icon text-white p-3">
+                                    <img src="{{ asset('uploads/' . $service->icon) }}" class="img-fluid"
+                                        alt="">
+                                </div>
+                                <p class="stretched-link">
+                                <h3>{{ $service->title }}</h3>
+                                </p>
+                                <p class="fs-6">{{ $service->description }}</p>
+                            </div>
                         </div>
-                    </div>
-                </div><!-- End Web Development -->
+                    </a>
+                </div>
             @endforeach
 
             <!-- Web Development Service -->

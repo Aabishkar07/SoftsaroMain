@@ -56,6 +56,14 @@ class IndexController extends Controller
 
         return view("frontend.blogs.singlepage", compact('blog', 'slug', 'allblogs'));
     }
+    public function servicesingle(Request $request, Service $service)
+    {
+
+        $services = Service::where('id', '!=', $service->id)->get();
+        // dd($allblogs);
+
+        return view("frontend.services.singleservice", compact('service', 'services'));
+    }
 
     public function getblog()
     {

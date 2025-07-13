@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
+            $table->string('admin_id')->nullable();
             $table->string('title')->nullable();
             $table->text('featured_image')->nullable();
             $table->integer('order')->nullable();

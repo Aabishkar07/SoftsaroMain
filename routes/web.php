@@ -23,6 +23,7 @@ Route::get('/store/{slug}', [IndexController::class, 'storesingle'])->name('stor
 Route::post('/storeproduct', [IndexController::class, 'storeproduct'])->name('storeproduct');
 Route::get('/blog/{blog:slug}', [IndexController::class, 'single'])->name('single');
 Route::get('/blogs', [IndexController::class, 'getblog'])->name('blog');
+Route::get('/service/{service:slug}', [IndexController::class, 'servicesingle'])->name('servicesingle');
 
 Route::get('/enquire', [EnquireController::class, 'enquire'])->name('enquire');
 Route::post('/enquire', [EnquireController::class, 'enquirestore'])->name('enquire.store');

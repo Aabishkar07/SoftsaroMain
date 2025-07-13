@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Service;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ServiceController extends Controller
 {
@@ -42,6 +43,7 @@ class ServiceController extends Controller
         $service_icon = $this->imageservice->fileUpload($request->icon, "icon");
         $req = $request->all();
         $req['image'] = $service_img;
+        $req['slug'] = Str::slug($request->title);
         $req['icon'] = $service_icon;
         Service::create($req);
 
@@ -86,6 +88,7 @@ class ServiceController extends Controller
             $req['icon'] = $icon_service;
         }
 
+        $req['slug'] = Str::slug($request->title);
 
         $service->update($req);
 
@@ -97,6 +100,10 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        if ($service->image) {
+            $this->imageservice->imageDelete($service->image);
+        }
+        $service->delete();
+        return redirect()->route('admin.services.index')->with('popsuccess', 'Services Deleted');
     }
 }

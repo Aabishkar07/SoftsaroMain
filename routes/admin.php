@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EmailController;
+use App\Http\Controllers\Admin\MetaPageController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TagController;
@@ -51,6 +52,7 @@ Route::middleware(["admin"])->group(
         Route::put('/setting/update/{tag}', [TagController::class, 'update'])->name('tag.update');
         Route::delete('/setting/delete/{tag}', [TagController::class, 'destroy'])->name('tag.destroy');
 
+        Route::resource('metapages', MetaPageController::class);
 
     }
 );

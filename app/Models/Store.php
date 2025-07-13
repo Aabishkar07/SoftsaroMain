@@ -8,6 +8,7 @@ class Store extends Model
 {
     //
     protected $fillable = [
+        'admin_id',
         'title',
         'package_id',
         'service',
