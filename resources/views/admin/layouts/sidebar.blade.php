@@ -111,6 +111,22 @@
                         <span x-show="sidebarOpen" class="mx-3 text-xs">Banner</span>
                     </a>
 
+
+
+  <a class="{{ request()->segment(2) == 'portfolio' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
+                        href="{{ route('admin.portfolio.index') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="icon icon-tabler icons-tabler-filled icon-tabler-layout-dashboard">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M9 3a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2zm10 -4a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 -8a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2z" />
+                        </svg>
+
+                        <span x-show="sidebarOpen" class="mx-3 text-xs">Portfolio</span>
+                    </a>
+
+
                     <a class="{{ request()->segment(2) == 'contacts' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="{{ route('admin.contact') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"

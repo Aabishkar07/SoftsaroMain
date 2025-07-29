@@ -7,7 +7,6 @@
 
         @include('frontend.home.feature')
 
-
         {{-- @include('frontend.home.fact') --}}
 
         @include('frontend.home.moreservices')

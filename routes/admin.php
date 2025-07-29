@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\MetaPageController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PartnerController;
+use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TeamController;
@@ -32,6 +33,7 @@ Route::middleware(["admin"])->group(
         Route::resource('store', StoreController::class);
         Route::resource('product', ProductController::class);
         Route::resource('banner', BannerController::class);
+        Route::resource('portfolio', PortfolioController    ::class);
         Route::resource('productenquire', ProductEnquireController::class);
         Route::get('/settings', [ContactController::class, 'setting'])->name('setting');
         Route::post('/settingdetails', [ContactController::class, 'settingdetails'])->name('settingdetails');
@@ -45,7 +47,7 @@ Route::middleware(["admin"])->group(
         Route::resource('teams', TeamController::class);
         Route::resource('services', ServiceController::class);
         Route::resource('blogs', BlogController::class);
-Route::resource('page', PageController::class);
+        Route::resource('page', PageController::class);
 
         Route::get('/setting', [TagController::class, 'index'])->name('tag.index');
         Route::get('/setting/create', [TagController::class, 'create'])->name('tag.create');
@@ -55,6 +57,5 @@ Route::resource('page', PageController::class);
         Route::delete('/setting/delete/{tag}', [TagController::class, 'destroy'])->name('tag.destroy');
 
         Route::resource('metapages', MetaPageController::class);
-
     }
 );

@@ -72,6 +72,7 @@ class PageController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'secondary_description' => 'nullable|string',
             'main_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'secondary_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
