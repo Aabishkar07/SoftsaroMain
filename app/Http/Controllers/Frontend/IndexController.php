@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Partner;
+use App\Models\Portfolio;
 use App\Models\Product;
 use App\Models\ProductEnquire;
 use App\Models\Service;
@@ -31,8 +32,8 @@ class IndexController extends Controller
 
     public function portfolio()
     {
-
-        return view("frontend.portfolio.index");
+        $portfolios = Portfolio::orderBy("banner_order", "asc")->get();
+        return view("frontend.portfolio.index", compact('portfolios'));
     }
 
 

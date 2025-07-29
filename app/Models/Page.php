@@ -12,6 +12,7 @@ class Page extends Model
         'description',
         'main_image',
         'secondary_image',
+        'secondary_description'
 
     ];
 }
