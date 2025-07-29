@@ -16,8 +16,8 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Softsaro Nepal",
-        "description": "{{ Str::limit(strip_tags($meta->description, 50)) }}",
+        "name": "{{$meta->title ?? 'Softsaro Nepal'}}",
+        "description": "{{strip_tags($meta->description) }}",
         "url": "{{ url('/') }}",
         "potentialAction": {
             "@type": "SearchAction",
@@ -28,10 +28,10 @@
     </script>
     <meta name="google-site-verification" content="{{ $sitekey }}"  />
 
-    <meta name=description content="{{ Str::limit(strip_tags($meta->description, 2000)) }}">
+    <meta name=description content="{{ strip_tags($meta->description) }}">
     {{-- og --}}
     <meta property=og:title content="{{ $meta->title ?? 'Softsaro Nepal' }}" />
-    <meta property=og:description content="{{ Str::limit(strip_tags($meta->description, 50)) }}" />
+    <meta property=og:description content="{{ strip_tags($meta->description) }}" />
     <meta property=og:image content="{{ 'https://softsaro.com' . $meta->image }}" />
     <meta name="keywords"
         content="{{ $meta->keymords ?? 'Softsaro, software development, custom software solutions, IT services, SaaS development, mobile app development, cloud software, enterprise applications, software consulting, tech company' }}">

@@ -58,7 +58,7 @@
                          </p>
                      </div>
                      <div class="col-lg-6 order-1 order-lg-2 text-center">
-                         <img src="{{ asset('img/working-1.jpg') }}" alt="" class="img-fluid">
+                         <img src="{{ asset('img/working-1.jpg') }}" alt="Empowering Businesses with Cutting-Edge Technology" class="img-fluid">
                      </div>
                  </div>
              </div><!-- End Tab Content Item -->
@@ -86,7 +86,7 @@
                          </ul>
                      </div>
                      <div class="col-lg-6 order-1 order-lg-2 text-center">
-                         <img src="{{ asset('img/working-2.jpg') }}" alt="" class="img-fluid">
+                         <img src="{{ asset('img/working-2.jpg') }}" alt="Collaboration, Innovation, and Excellence" class="img-fluid">
                      </div>
                  </div>
              </div><!-- End Tab Content Item -->
@@ -117,7 +117,7 @@
                          </p>
                      </div>
                      <div class="col-lg-6 order-1 order-lg-2 text-center">
-                         <img src="{{ asset('img/working-3.jpg') }}" alt="" class="img-fluid">
+                         <img src="{{ asset('img/working-3.jpg') }}" alt="Real Results, Real Impact" class="img-fluid">
                      </div>
                  </div>
              </div><!-- End Tab Content Item -->
@@ -146,7 +146,7 @@
                          </ul>
                      </div>
                      <div class="col-lg-6 order-1 order-lg-2 text-center">
-                         <img src="{{ asset('img/working-4.jpg') }}" alt="" class="img-fluid">
+                         <img src="{{ asset('img/working-4.jpg') }}" alt="Let’s Turn Your Ideas Into Reality" class="img-fluid">
                      </div>
                  </div>
              </div><!-- End Tab Content Item -->

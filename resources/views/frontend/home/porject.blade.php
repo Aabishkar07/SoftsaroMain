@@ -12,33 +12,45 @@
 <section id="clients" class="py-5 bg-light">
     <div class="container text-center" data-aos="fade-up">
         <div class="owl-carousel owl-theme">
-            @foreach ($clients as $key=>$client)
-            <div class="item ">
-                <div class="client-logo bg-white shadow-sm border rounded p-1 d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('uploads/'. $client->featured_image) }}" class="img-fluid" alt="">
+            @foreach ($clients as $key => $client)
+                <div class="item ">
+                    <div
+                        class="client-logo bg-white shadow-sm border rounded p-1 d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('uploads/' . $client->featured_image) }}" class="img-fluid"
+                            alt="{{ $client->title }}">
+                    </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
 </section>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         $(".owl-carousel").owlCarousel({
             items: 6,
             margin: 10,
-            dots:false,
+            dots: false,
             loop: true,
             autoplay: true,
             autoplayTimeout: 3000,
             autoplayHoverPause: true,
             responsive: {
-                0: { items: 1 },
-                576: { items: 2 },
-                768: { items: 3 },
-                992: { items: 4 },
-                1200: { items: 6 }
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 2
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1200: {
+                    items: 6
+                }
             }
         });
     });

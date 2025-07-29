@@ -18,12 +18,12 @@
                     <a  class="text-decoration-none" href="{{ route('servicesingle', $service->slug) }}">
                         <div class="service-item">
                             <div class="img">
-                                <img src="{{ asset('uploads/' . $service->image) }}" class="img-fluid" alt="">
+                                <img src="{{ asset('uploads/' . $service->image) }}" class="img-fluid" alt="{{ $service->title }}">
                             </div>
                             <div class="details position-relative">
                                 <div class="icon text-white p-3">
                                     <img src="{{ asset('uploads/' . $service->icon) }}" class="img-fluid"
-                                        alt="">
+                                        alt="{{ $service->title }}">
                                 </div>
                                 <p class="stretched-link">
                                 <h3>{{ $service->title }}</h3>

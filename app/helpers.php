@@ -22,14 +22,24 @@ function getMetas($segment1, $segment2)
 {
 
     if (!Request::segment(1)) {
-
-        $meta = (object) [
-            'title' => 'Softsaro Nepal',
-            'description' => '"Discover top IT solutions including IT services, Display Marketing, and SEO services at Home/SoftSaro. Boost your business efficiency today!',
-            'image' => 'images/defaultimage.png',
-            'keywords' => 'Softsaro, software development, custom software solutions, IT services, SaaS development, mobile app development, cloud software, enterprise applications, software consulting, tech company',
-        ];
-        return $meta;
+        $links = MetaPage::where("page_name", "home")->first();
+        if ($links) {
+            $meta = (object) [
+                'title' => ucfirst($links->meta_title) . ' | Softsaro Nepal',
+                'description' => $links->meta_description,
+                'image' => 'uploads/' . $links->ogimage,
+                'keywords' => $links->keywords,
+            ];
+            return $meta;
+        } else {
+            $meta = (object) [
+                'title' => 'Softsaro Nepal',
+                'description' => '"Discover top IT solutions including IT services, Display Marketing, and SEO services at Home/SoftSaro. Boost your business efficiency today!',
+                'image' => 'images/defaultimage.png',
+                'keywords' => 'Softsaro, software development, custom software solutions, IT services, SaaS development, mobile app development, cloud software, enterprise applications, software consulting, tech company',
+            ];
+            return $meta;
+        }
     }
     $links = MetaPage::where("page_name", "!=", "home")->where('page_name', $segment1)->first();
     if ($links) {
@@ -51,15 +61,25 @@ function getMetas($segment1, $segment2)
         ];
         return $meta;
     } else {
+        $links = MetaPage::where("page_name", "home")->first();
+        if ($links) {
+            $meta = (object) [
+                'title' => ucfirst($links->meta_title) . ' | Softsaro Nepal',
+                'description' => $links->meta_description,
+                'image' => 'uploads/' . $links->ogimage,
+                'keywords' => $links->keywords,
+            ];
+            return $meta;
+        } else {
+            $meta = (object) [
+                'title' => 'Softsaro Nepal',
+                'description' => '"Discover top IT solutions including IT services, Display Marketing, and SEO services at Home/SoftSaro. Boost your business efficiency today!',
+                'image' => 'images/defaultimage.png',
+                'keywords' => 'Softsaro, software development, custom software solutions, IT services, SaaS development, mobile app development, cloud software, enterprise applications, software consulting, tech company',
+            ];
 
-        $meta = (object) [
-            'title' => 'Softsaro Nepal',
-            'description' => '"Discover top IT solutions including IT services, Display Marketing, and SEO services at Home/SoftSaro. Boost your business efficiency today!',
-            'image' => 'images/defaultimage.png',
-            'keywords' => 'Softsaro, software development, custom software solutions, IT services, SaaS development, mobile app development, cloud software, enterprise applications, software consulting, tech company',
-        ];
-
-        return $meta;
+            return $meta;
+        }
 
     }
 

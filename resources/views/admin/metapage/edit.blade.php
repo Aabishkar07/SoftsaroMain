@@ -34,7 +34,7 @@
                                 class="text-xs border text-black border-gray-300 p-2 rounded focus:border-[#7065d4] hover:border-[#7065d4] w-full">
                                 {{ $metapage->page_name }}
                             </div>
-                           
+
                         </div>
                     </div>
 

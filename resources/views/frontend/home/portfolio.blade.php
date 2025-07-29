@@ -23,7 +23,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/daley bhai.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/daley bhai.jpg') }}" class="img-fluid" alt="Daley Bhai">
               <div class="portfolio-info">
                 <h4>Daley Bhai</h4>
                 <p>Real State</p>
@@ -38,7 +38,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/sajhaapp.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/sajhaapp.jpg') }}" class="img-fluid" alt="Sajha Marketplace App">
               <div class="portfolio-info">
                 <h4>Sajha Marketplace App</h4>
                 <p>Application</p>
@@ -51,7 +51,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/simrik.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/simrik.jpg') }}" class="img-fluid" alt="Simrik Cooperative">
               <div class="portfolio-info">
                 <h4>Simrik Cooperative</h4>
                 <p>Real State</p>
@@ -65,7 +65,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/adsaro.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/adsaro.jpg') }}" class="img-fluid" alt="Advertising Company">
               <div class="portfolio-info">
                 <h4>Adsaro</h4>
                 <p>Advertising Company</p>
@@ -77,7 +77,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/sajha courier.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/sajha courier.jpg') }}" class="img-fluid" alt="Sajha Courrier">
               <div class="portfolio-info">
                 <h4>Sajha Courrier</h4>
                 <p>Logistic System</p>
@@ -89,7 +89,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/arthakagaj.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/arthakagaj.jpg') }}" class="img-fluid" alt="Artha Kagaj">
               <div class="portfolio-info">
                 <h4>Artha Kagaj</h4>
                 <p>News Portal</p>
@@ -103,7 +103,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/zogad.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/zogad.jpg') }}" class="img-fluid" alt="Zogad">
               <div class="portfolio-info">
                 <h4>Zogad</h4>
                 <p>Marketplace</p>
@@ -115,7 +115,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-graphics">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/softsarographics.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/softsarographics.jpg') }}" class="img-fluid" alt="Softsaro Graphics">
               <div class="portfolio-info">
                 <h4>Softsaro Graphics</h4>
                 <p>Graphic Design</p>
@@ -126,7 +126,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/kosish.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/kosish.jpg') }}" class="img-fluid" alt="Kosish Loksewa">
               <div class="portfolio-info">
                 <h4>Kosish Loksewa</h4>
                 <p>Eductaional Website</p>
@@ -138,7 +138,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/sajha app.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/sajha app.jpg') }}" class="img-fluid" alt="Sajha Courrier">
               <div class="portfolio-info">
                 <h4>Sajha Courrier</h4>
                 <p>Logistic Application</p>
@@ -150,7 +150,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/sayumi.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/sayumi.jpg') }}" class="img-fluid" alt="Sayumi Global">
               <div class="portfolio-info">
                 <h4>Sayumi Global</h4>
                 <p>Travels and Tours</p>
@@ -162,7 +162,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/sajilo mobile.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/sajilo mobile.jpg') }}" class="img-fluid" alt="SajiloMobile">
               <div class="portfolio-info">
                 <h4>SajiloMobile</h4>
                 <p>Gadgets and Accessories</p>
@@ -174,7 +174,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/deglamora.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/deglamora.jpg') }}" class="img-fluid" alt="Deglamora">
               <div class="portfolio-info">
                 <h4>Deglamora</h4>
                 <p>Ecommerce</p>
@@ -186,7 +186,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/himalayan fabs.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/himalayan fabs.jpg') }}" class="img-fluid" alt="HimalayanFabs">
               <div class="portfolio-info">
                 <h4>HimalayanFabs</h4>
                 <p>Ecommerce</p>
@@ -200,7 +200,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/neerkart.jpeg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/neerkart.jpeg') }}" class="img-fluid" alt="Neerkart">
               <div class="portfolio-info">
                 <h4>Neerkart</h4>
                 <p>Marketplace</p>
@@ -212,7 +212,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/global ranking hub.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/global ranking hub.jpg') }}" class="img-fluid" alt="Global Ranking Hub">
               <div class="portfolio-info">
                 <h4>Global Ranking Hub</h4>
                 <p>Blog Website</p>
@@ -224,7 +224,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/sajha.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/sajha.jpg') }}" class="img-fluid" alt="Sajha MarketPlace">
               <div class="portfolio-info">
                 <h4>Sajha MarketPlace</h4>
                 <p>Marketplace</p>
@@ -236,7 +236,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-graphics">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/sayumigraphics.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/sayumigraphics.jpg') }}" class="img-fluid" alt="Sayumi Graphics">
               <div class="portfolio-info">
                 <h4>Sayumi Graphics</h4>
                 <p>Graphic Design</p>
@@ -247,7 +247,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/emperor.jpeg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/emperor.jpeg') }}" class="img-fluid" alt="Emperor Education Network">
               <div class="portfolio-info">
                 <h4>Emperor Education Network</h4>
                 <p>Consultancy</p>
@@ -260,7 +260,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/tcorp.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/tcorp.jpg') }}" class="img-fluid" alt="Tcorp">
               <div class="portfolio-info">
                 <h4>Tcorp</h4>
                 <p>Ecommerce</p>
@@ -273,7 +273,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/mero gantabya.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/mero gantabya.jpg') }}" class="img-fluid" alt="Mero Gantabya">
               <div class="portfolio-info">
                 <h4>Mero Gantabya</h4>
                 <p>Booking Sysytem</p>
@@ -286,7 +286,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/buyfresh.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/buyfresh.jpg') }}" class="img-fluid" alt="Buy Fresh">
               <div class="portfolio-info">
                 <h4>Buy Fresh</h4>
                 <p>Ecommerce</p>
@@ -298,7 +298,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/marketlab.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/marketlab.jpg') }}" class="img-fluid" alt="Market Lab">
               <div class="portfolio-info">
                 <h4>Market Lab</h4>
                 <p>Booking Sysytem</p>
@@ -310,7 +310,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/hopetohelp.jpeg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/hopetohelp.jpeg') }}" class="img-fluid" alt="Hope To Help">
               <div class="portfolio-info">
                 <h4>Hope To Help</h4>
                 <p>Informative</p>
@@ -322,7 +322,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/dakarmi.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/dakarmi.jpg') }}" class="img-fluid" alt="Dakarmi">
               <div class="portfolio-info">
                 <h4>Dakarmi</h4>
                 <p>CMS System</p>
@@ -334,7 +334,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/hamro jobs.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/hamro jobs.jpg') }}" class="img-fluid" alt="HamroJobs">
               <div class="portfolio-info">
                 <h4>HamroJobs</h4>
                 <p>Job Portal</p>
@@ -347,7 +347,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/travelbee.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/travelbee.jpg') }}" class="img-fluid" alt="Travel Bee">
               <div class="portfolio-info">
                 <h4>Travel Bee</h4>
                 <p>Travel Website</p>
@@ -361,7 +361,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/swissatrek.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/swissatrek.jpg') }}" class="img-fluid" alt="Swissa Trek">
               <div class="portfolio-info">
                 <h4>Swissa Trek</h4>
                 <p>Travel Website</p>
@@ -374,7 +374,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/plant variety.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/plant variety.jpg') }}" class="img-fluid" alt="Plant Variety">
               <div class="portfolio-info">
                 <h4>Plant Variety</h4>
                 <p>Marketplace</p>
@@ -386,7 +386,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-graphics">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/adsarographics.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/adsarographics.jpg') }}" class="img-fluid" alt="Adsaro Graphics">
               <div class="portfolio-info">
                 <h4>Adsaro Graphics</h4>
                 <p>Graphic Design</p>
@@ -397,7 +397,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/indreni mushroom farm.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/indreni mushroom farm.jpg') }}" class="img-fluid" alt="Indreni Mushroom Farm">
               <div class="portfolio-info">
                 <h4>Indreni Mushroom Farm</h4>
                 <p>Informative Website</p>
@@ -410,7 +410,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/darchula.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/darchula.jpg') }}" class="img-fluid" alt="Darchula Hydropower">
               <div class="portfolio-info">
                 <h4>Darchula Hydropower</h4>
                 <p>Informative Website</p>
@@ -422,7 +422,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/photostudio.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/photostudio.jpg') }}" class="img-fluid" alt="Photo Studio">
               <div class="portfolio-info">
                 <h4>Photo Studio</h4>
                 <p>Ecommerce</p>
@@ -434,7 +434,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/saurya krishi.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/saurya krishi.jpg') }}" class="img-fluid" alt="Saurya Krishi">
               <div class="portfolio-info">
                 <h4>Saurya Krishi</h4>
                 <p>Informative Website</p>
@@ -445,7 +445,7 @@
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-graphics">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/koshishgraphics.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/koshishgraphics.jpg') }}" class="img-fluid" alt="Loksewa Koshish Graphics">
               <div class="portfolio-info">
                 <h4>Loksewa Koshish Graphics</h4>
                 <p>Graphic Design</p>
@@ -456,7 +456,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/chandrasuryasports.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/chandrasuryasports.jpg') }}" class="img-fluid" alt="Chandra Surya Sports">
               <div class="portfolio-info">
                 <h4>Chandra Surya Sports</h4>
                 <p>Informative Website</p>
@@ -469,7 +469,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/csrlink.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/csrlink.jpg') }}" class="img-fluid" alt="CSR Link">
               <div class="portfolio-info">
                 <h4>CSR Link</h4>
                 <p>Informative Website</p>
@@ -481,7 +481,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-content h-100">
-              <img src="{{ asset('img/portfolio/suvlav.jpg') }}" class="img-fluid" alt="">
+              <img src="{{ asset('img/portfolio/suvlav.jpg') }}" class="img-fluid" alt="Suvlav">
               <div class="portfolio-info">
                 <h4>Suvlav</h4>
                 <p>Ecommerce Single Vendor</p>

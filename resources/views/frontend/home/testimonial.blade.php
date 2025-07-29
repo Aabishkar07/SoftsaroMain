@@ -1,17 +1,13 @@
    <!-- Testimonials Section -->
    <section id="testimonials" class="testimonials section dark-background">
 
-    <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+    <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="Testimonials">
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-
-
-
-
           <div class="swiper-slide">
             <div class="testimonial-item">
-              <img src="{{ asset('img/team/santosh.png') }}" class="testimonial-img" alt="">
+              <img src="{{ asset('img/team/santosh.png') }}" class="testimonial-img" alt="Santosh Rajbanshi">
               <h2>Santosh Rajbanshi</h2>
               <h3>CEO &amp; Founder</h3>
               <div class="stars">
