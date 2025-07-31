@@ -16,5 +16,7 @@
 
 
     @include('frontend.home.blog')
+    @include('frontend.home.faq')
+
     @include('frontend.home.contact')
 @endsection

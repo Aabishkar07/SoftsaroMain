@@ -10,7 +10,7 @@
         <div class="container">
             {{-- <div class="row gy-5 justify-content-center">
                 @foreach ($teams as $key => $team)
-                    @if ($key < 2)
+                    @if ($key < 3)
                         <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                             <div class="member">
                                 <div class="pic">
@@ -42,7 +42,7 @@
                 {{-- Top 2 --}}
                 <div class="row  justify-content-center">
                     @foreach ($teams as $key => $team)
-                        @if ($key < 2)
+                        @if ($key < 3)
                             <div class="col-lg-3 col-md-6 mt-3" data-aos="fade-up" data-aos-delay="100">
                                 @include('frontend.team.team-card', ['team' => $team])
                             </div>
@@ -53,7 +53,7 @@
                 {{-- Middle 3 --}}
                 <div class="row justify-content-center mt-4">
                     @foreach ($teams as $key => $team)
-                        @if ($key >= 2 && $key < 5)
+                        @if ($key >= 3 && $key < 6)
                             <div class="col-lg-3 col-md-6 mt-3" data-aos="fade-up" data-aos-delay="150">
                                 @include('frontend.team.team-card', ['team' => $team])
                             </div>
@@ -64,7 +64,7 @@
                 {{-- Bottom (rest) --}}
                 <div class="row justify-content-center mt-4">
                     @foreach ($teams as $key => $team)
-                        @if ($key >= 5)
+                        @if ($key >= 6)
                             <div class="col-lg-3 col-md-6 mt-3" data-aos="fade-up" data-aos-delay="200">
                                 @include('frontend.team.team-card', ['team' => $team])
                             </div>

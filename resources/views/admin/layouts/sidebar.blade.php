@@ -320,6 +320,16 @@
                         <span x-show="sidebarOpen" class="mx-3 text-xs">Services</span>
                     </a>
 
+                    <a class="{{ request()->segment(2) == 'clients' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} " href="{{ route('admin.clients.index') }}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="icon icon-tabler icon-tabler-chart-pie">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M21 12a9 9 0 1 0-9 9" />
+        <path d="M15 12a3 3 0 1 0-3 3" />
+        <path d="M12 3v9h9" />
+    </svg>
+    <span x-show="sidebarOpen" class="mx-3 text-xs">Client Tracking</span>
+</a>
+
                 </div>
 
 

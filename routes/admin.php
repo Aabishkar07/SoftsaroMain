@@ -35,6 +35,7 @@ Route::middleware(["admin"])->group(
         Route::resource('banner', BannerController::class);
         Route::resource('portfolio', PortfolioController    ::class);
         Route::resource('productenquire', ProductEnquireController::class);
+        Route::resource('clients', App\Http\Controllers\Admin\ClientController::class);
         Route::get('/settings', [ContactController::class, 'setting'])->name('setting');
         Route::post('/settingdetails', [ContactController::class, 'settingdetails'])->name('settingdetails');
         Route::get('contacts', [ContactController::class, 'contact'])->name('contact');
