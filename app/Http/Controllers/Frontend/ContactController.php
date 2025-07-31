@@ -14,28 +14,36 @@ class ContactController extends Controller
 {
     //
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
-Contact::create([
-'name'=> $request->name,
-'email' => $request->email,
-'subject' => $request->subject,
-'message' => $request->message,
-'phone' => $request->phone,
-]);
+        $request->validate([
+            'name' => "required",
+            'email' => "required",
+            'subject' => "required",
+            'message' => "required",
+            'phone' => "required",
+        ]);
+        Contact::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'phone' => $request->phone,
+        ]);
 
-$mailData = [
-    'name' => $request->name,
-    'email' => $request->email,
-    'subject' => $request->subject,
-    'message' => $request->message,
-    'phone' => $request->phone,
-];
+        $mailData = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'phone' => $request->phone,
+        ];
 
-Mail::to('aaviscar09@gmail.com')->send(new MailContact($mailData));
+        Mail::to('aaviscar09@gmail.com')->send(new MailContact($mailData));
 
 
-return redirect()->back()->with('popsuccess', 'Feedback Submitted Sucessfully');
+        return redirect()->back()->with('popsuccess', 'Feedback Submitted Sucessfully');
     }
 
 
