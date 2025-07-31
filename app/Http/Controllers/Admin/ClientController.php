@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Client;
+use App\Models\ClientDetail;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -28,18 +29,56 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'nullable|email',
-            'phone' => 'nullable|string|max:50',
-            'deal_done' => 'required|boolean',
-            'percentage' => 'required|numeric|min:0|max:100',
-        ]);
-        Client::create($request->all());
-        return redirect()->route('admin.clients.index')->with('popsuccess', 'Client added successfully.');
+public function store(Request $request)
+{
+
+    dd($request->all());
+    // Validate main client data
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'nullable|email',
+        'phone' => 'nullable|string|max:50',
+        'project_name' => 'nullable|string|max:255',
+        'start_date' => 'nullable|date',
+        'due_date' => 'nullable|date',
+        'status' => 'nullable|string',
+        'deal_done' => 'nullable|boolean',
+        // 'percentage' => 'required|numeric|min:0|max:100',
+        'priority' => 'nullable|string',
+        'remarks' => 'nullable|string',
+
+        // Optional client detail fields
+        'referred_by_name' => 'nullable|string|max:255',
+        'referred_by_phone' => 'nullable|string|max:50',
+        'bank_account' => 'nullable|string|max:255',
+        'amc' => 'nullable|string|max:255',
+        'quotation_file' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:2048',
+    ]);
+
+    // Create the main client
+    $client = Client::create($validated);
+
+    // Create client_details if deal is done
+    if ($request->deal_done) {
+        $clientDetail = new ClientDetail();
+        $clientDetail->client_id = $client->id;
+        $clientDetail->referred_by_name = $request->referred_by_name;
+        $clientDetail->referred_by_phone = $request->referred_by_phone;
+        $clientDetail->bank_account = $request->bank_account;
+        $clientDetail->amc = $request->amc;
+
+        // Handle quotation file upload
+        if ($request->hasFile('quotation_file')) {
+            $file = $request->file('quotation_file');
+            $filePath = $file->store('quotations', 'public');
+            $clientDetail->quotation_file = $filePath;
+        }
+
+        $clientDetail->save();
     }
+
+    return redirect()->route('admin.clients.index')->with('popsuccess', 'Client added successfully.');
+}
 
     /**
      * Show the form for editing the specified resource.
@@ -73,4 +112,4 @@ class ClientController extends Controller
         $client->delete();
         return redirect()->route('admin.clients.index')->with('popsuccess', 'Client deleted successfully.');
     }
-} 
+}

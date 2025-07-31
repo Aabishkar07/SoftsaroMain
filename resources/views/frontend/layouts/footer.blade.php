@@ -12,8 +12,7 @@
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <img src="{{ asset('img/softsaro white logo.png') }}"
                     style="width: 200px; height: auto; max-height: 80px;" alt="Softsaro Logo">
-                <p class="fs-6">Crafting seamless digital experiences with cutting-edge technology to empower
-                    businesses.</p>
+                <p class="fs-6">Delivering Seamless Digital Experiences With Advanced Technology. Your Trusted IT Company In US Driving Innovation, Growth, And Success. We Build Custom Solutions That Empower Businesses To Thrive In A Fast-Changing Digital World.</p>
             </div>
             <div class="col-lg-3 col-md-3 footer-links">
                 <h4>Useful Links</h4>

@@ -15,8 +15,14 @@ return new class extends Migration {
             $table->string('name');
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->string('project_name')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('due_date')->nullable();
+            $table->string('status')->default('Not Started'); // Can also use enum
             $table->boolean('deal_done')->default(false);
             $table->float('percentage')->default(0);
+            $table->string('priority')->default('Medium');
+            $table->text('remarks')->nullable();
             $table->timestamps();
         });
     }
@@ -28,4 +34,4 @@ return new class extends Migration {
     {
         Schema::dropIfExists('clients');
     }
-}; 
+};
