@@ -32,7 +32,7 @@ class ClientController extends Controller
 public function store(Request $request)
 {
 
-    dd($request->all());
+
     // Validate main client data
     $validated = $request->validate([
         'name' => 'required|string|max:255',
@@ -47,13 +47,14 @@ public function store(Request $request)
         'priority' => 'nullable|string',
         'remarks' => 'nullable|string',
 
-        // Optional client detail fields
         'referred_by_name' => 'nullable|string|max:255',
         'referred_by_phone' => 'nullable|string|max:50',
         'bank_account' => 'nullable|string|max:255',
         'amc' => 'nullable|string|max:255',
         'quotation_file' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:2048',
     ]);
+
+        dd($validated);
 
     // Create the main client
     $client = Client::create($validated);
