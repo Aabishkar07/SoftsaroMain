@@ -9,6 +9,7 @@
     @include('frontend.home.feature')
     @include('frontend.home.moreservices')
 
+    @include('frontend.home.dynamic_testimonials')
     @include('frontend.home.testimonial')
 
     {{-- @include('frontend.home.team') --}}

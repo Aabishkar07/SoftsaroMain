@@ -12,6 +12,7 @@ use App\Models\ProductEnquire;
 use App\Models\Service;
 use App\Models\Store;
 use App\Models\Team;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -24,9 +25,10 @@ class IndexController extends Controller
         $teams = Team::orderBy("order", "asc")->get();
         $banners = Banner::first();
         $services = Service::orderBy("order", "asc")->get();
+        $testimonials = Testimonial::active()->ordered()->get();
 
         $blogs = Blog::orderBy("id", "desc")->latest()->take(3)->get();
-        return view("frontend.home.index", compact('clients', 'banners', 'teams', 'services', 'blogs'));
+        return view("frontend.home.index", compact('clients', 'banners', 'teams', 'services', 'blogs', 'testimonials'));
 
     }
 

@@ -13,7 +13,7 @@
     @endphp
 
 
-    <script type="application/ld+json">
+    {{-- <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -26,7 +26,7 @@
             "query-input": "required name=search_term_string"
         }
     }
-    </script>
+    </script> --}}
     <meta name="google-site-verification" content="{{ $sitekey }}"  />
 
     <meta name=description content="{{ strip_tags($meta->description) }}">
