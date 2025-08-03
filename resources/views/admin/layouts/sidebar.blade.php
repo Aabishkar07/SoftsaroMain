@@ -350,6 +350,19 @@
                         </svg>
                         <span x-show="sidebarOpen" class="mx-3 text-xs">Testimonials</span>
                     </a>
+                    <a class="{{ request()->segment(2) == 'faqs' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
+                        href="{{ route('admin.faqs.index') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M8 9h8" />
+                            <path d="M8 12h8" />
+                            <path d="M8 15h5" />
+                            <path d="M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2z" />
+                        </svg>
+                        <span x-show="sidebarOpen" class="mx-3 text-xs">FAQs</span>
+                    </a>
                     <a class="{{ request()->segment(2) == 'services' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="{{ route('admin.services.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"

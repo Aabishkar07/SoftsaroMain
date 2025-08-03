@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\ProductEnquireController;
 use App\Http\Controllers\Admin\StoreController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\FaqController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -76,5 +77,10 @@ Route::middleware(["admin"])->group(
         Route::resource('metapages', MetaPageController::class);
         Route::resource('testimonials', TestimonialController::class);
         Route::post('/testimonials/update-order', [TestimonialController::class, 'updateOrder'])->name('testimonials.updateOrder');
+
+        // FAQ Routes
+        Route::resource('faqs', FaqController::class);
+        Route::post('/faqs/update-order', [FaqController::class, 'updateOrder'])->name('faqs.updateOrder');
+        Route::put('/faqs/{faq}/toggle-status', [FaqController::class, 'toggleStatus'])->name('faqs.toggleStatus');
     }
 );
