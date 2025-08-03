@@ -337,6 +337,19 @@
 
                         <span x-show="sidebarOpen" class="mx-3 text-xs">Teams</span>
                     </a>
+                    <a class="{{ request()->segment(2) == 'testimonials' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
+                        href="{{ route('admin.testimonials.index') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M8 12h.01" />
+                            <path d="M12 12h.01" />
+                            <path d="M16 12h.01" />
+                            <path d="M21 12c0 4.418 -4.03 8 -9 8a9.863 9.863 0 01 -4.255 -.949l3.255 -9.051a1 1 0 011.189 -.633l.113 .023a1 1 0 01.633 1.189l-3.255 9.051a9.863 9.863 0 004.255 .949c4.97 0 9 -3.582 9 -8z" />
+                        </svg>
+                        <span x-show="sidebarOpen" class="mx-3 text-xs">Testimonials</span>
+                    </a>
                     <a class="{{ request()->segment(2) == 'services' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="{{ route('admin.services.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"

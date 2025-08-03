@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('content')
+@section('body')
 <div class="container mx-auto px-4 py-8">
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
         <div class="px-6 py-4 border-b border-gray-200">
