@@ -113,7 +113,7 @@
 
 
 
-  <a class="{{ request()->segment(2) == 'portfolio' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
+                    <a class="{{ request()->segment(2) == 'portfolio' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
                         href="{{ route('admin.portfolio.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                             fill="currentColor"
@@ -144,9 +144,9 @@
                         href="
                     {{ route('admin.partners.index') }}
                      ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" width="20" height="20"
-                            stroke-width="1.25">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="20"
+                            height="20" stroke-width="1.25">
                             <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
                             <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
@@ -209,9 +209,9 @@
                         href="
                     {{ route('admin.csvs.index') }}
                      ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" width="20" height="20"
-                            stroke-width="1.25">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="20"
+                            height="20" stroke-width="1.25">
                             <path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z">
                             </path>
                             <path d="M10 16h6"></path>
@@ -229,41 +229,43 @@
 
 
 
-  <div x-data="{ dropdownOpen: false, activeRoute: '{{ request()->segment(2) }}' }" class="relative">
-                    <button @click="dropdownOpen = !dropdownOpen"
-                        class="{{ request()->segment(2) == 'page' ? 'w-full  bg-green-700 text-white flex items-center px-6 py-2  flex-1 mt-2 item ' : 'w-full flex-1 mt-2 item hover:bg-green-700 hover:text-white flex items-center px-6 py-2  text-gray-600' }}">
-                        <span class="material-symbols-outlined">
-                            dynamic_feed
-                        </span>
-                        <span class="flex flex-col items-start flex-shrink-0 h-full ml-2 leading-none translate-y-px">
-                            <span>CMS</span>
+                    <div x-data="{ dropdownOpen: false, activeRoute: '{{ request()->segment(2) }}' }" class="relative">
+                        <button @click="dropdownOpen = !dropdownOpen"
+                            class="{{ request()->segment(2) == 'page' ? 'w-full  bg-green-700 text-white flex items-center px-6 py-2  flex-1 mt-2 item ' : 'w-full flex-1 mt-2 item hover:bg-green-700 hover:text-white flex items-center px-6 py-2  text-gray-600' }}">
+                            <span class="material-symbols-outlined">
+                                dynamic_feed
+                            </span>
+                            <span
+                                class="flex flex-col items-start flex-shrink-0 h-full ml-2 leading-none translate-y-px">
+                                <span>CMS</span>
 
-                        </span>
-                        <svg class="absolute right-0 w-5 h-5 mx-3" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                        </svg>
-                    </button>
-                    <div x-show="dropdownOpen" @click.away="dropdownOpen=false"
-                        x-transition:enter="ease-out duration-200" x-transition:enter-start="-translate-y-2"
-                        x-transition:enter-end="translate-y-0"
-                        class="absolute top-0 z-50 w-56 mt-12 -translate-x-1/2 left-1/2" x-cloak>
-                        <div
-                            class="p-1 mt-1 bg-white border rounded-md shadow-md border-neutral-200/70 text-neutral-700">
-                            <a href="{{ route('admin.page.index') }}" x-init="dropdownOpen = (activeRoute == 'page') ? true : dropdownOpen"
-                                class="cursor-pointer {{ request()->segment(2) == 'page' ? 'bg-green-700 text-white relative flex cursor-default select-none hover:bg-neutral-100 hover:text-slate-700 items-center rounded px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' : 'relative flex cursor-default select-none hover:bg-neutral-100 items-center rounded px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' }}">
-                                <span class="text-xl material-symbols-outlined">
-                                    pages
-                                </span>
-                                <span class="mx-3">Pages</span>
-                            </a>
+                            </span>
+                            <svg class="absolute right-0 w-5 h-5 mx-3" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                            </svg>
+                        </button>
+                        <div x-show="dropdownOpen" @click.away="dropdownOpen=false"
+                            x-transition:enter="ease-out duration-200" x-transition:enter-start="-translate-y-2"
+                            x-transition:enter-end="translate-y-0"
+                            class="absolute top-0 z-50 w-56 mt-12 -translate-x-1/2 left-1/2" x-cloak>
+                            <div
+                                class="p-1 mt-1 bg-white border rounded-md shadow-md border-neutral-200/70 text-neutral-700">
+                                <a href="{{ route('admin.page.index') }}" x-init="dropdownOpen = (activeRoute == 'page') ? true : dropdownOpen"
+                                    class="cursor-pointer {{ request()->segment(2) == 'page' ? 'bg-green-700 text-white relative flex cursor-default select-none hover:bg-neutral-100 hover:text-slate-700 items-center rounded px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' : 'relative flex cursor-default select-none hover:bg-neutral-100 items-center rounded px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' }}">
+                                    <span class="text-xl material-symbols-outlined">
+                                        pages
+                                    </span>
+                                    <span class="mx-3">Pages</span>
+                                </a>
+
+                            </div>
 
                         </div>
 
                     </div>
-
-                </div>
 
 
 
@@ -320,15 +322,32 @@
                         <span x-show="sidebarOpen" class="mx-3 text-xs">Services</span>
                     </a>
 
-                    <a class="{{ request()->segment(2) == 'clients' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} " href="{{ route('admin.clients.index') }}">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="icon icon-tabler icon-tabler-chart-pie">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M21 12a9 9 0 1 0-9 9" />
-        <path d="M15 12a3 3 0 1 0-3 3" />
-        <path d="M12 3v9h9" />
-    </svg>
-    <span x-show="sidebarOpen" class="mx-3 text-xs">Client Tracking</span>
-</a>
+                    <a class="{{ request()->segment(2) == 'clients' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
+                        href="{{ route('admin.clients.index') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                            class="icon icon-tabler icon-tabler-chart-pie">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M21 12a9 9 0 1 0-9 9" />
+                            <path d="M15 12a3 3 0 1 0-3 3" />
+                            <path d="M12 3v9h9" />
+                        </svg>
+                        <span x-show="sidebarOpen" class="mx-3 text-xs">Client Tracking</span>
+                    </a>
+
+                    <a class="{{ request()->segment(2) == 'invoices' ? ' font-semibold  rounded bg-[#8380d4] text-white flex items-center px-2 py-1.5  flex-1  item  ' : 'rounded flex-1  item hover:bg-[#6a68AF] hover:text-white flex items-center px-2 py-1.5  text-white' }} "
+                        href="{{ route('admin.invoices.index') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                            <path d="M9 7h6" />
+                            <path d="M9 13h6" />
+                            <path d="M9 17h6" />
+                        </svg>
+                        <span x-show="sidebarOpen" class="mx-3 text-xs">Invoices</span>
+                    </a>
 
                 </div>
 

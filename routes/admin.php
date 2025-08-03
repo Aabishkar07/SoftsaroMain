@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductEnquireController;
 use App\Http\Controllers\Admin\StoreController;
+use App\Http\Controllers\Admin\InvoiceController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -56,6 +57,20 @@ Route::middleware(["admin"])->group(
         Route::get('/setting/edit/{tag}', [TagController::class, 'edit'])->name('tag.edit');
         Route::put('/setting/update/{tag}', [TagController::class, 'update'])->name('tag.update');
         Route::delete('/setting/delete/{tag}', [TagController::class, 'destroy'])->name('tag.destroy');
+
+        // Invoice Routes
+        Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoices.index');
+        Route::get('/invoices/create', [InvoiceController::class, 'create'])->name('invoices.create');
+        Route::post('/invoices', [InvoiceController::class, 'store'])->name('invoices.store');
+        Route::get('/invoices/{invoice}', [InvoiceController::class, 'show'])->name('invoices.show');
+        Route::get('/invoices/{invoice}/edit', [InvoiceController::class, 'edit'])->name('invoices.edit');
+        Route::put('/invoices/{invoice}', [InvoiceController::class, 'update'])->name('invoices.update');
+        Route::delete('/invoices/{invoice}', [InvoiceController::class, 'destroy'])->name('invoices.destroy');
+        Route::put('/invoices/{invoice}/status', [InvoiceController::class, 'updateStatus'])->name('invoices.updateStatus');
+        Route::get('/invoices/{invoice}/pdf', [InvoiceController::class, 'generatePdf'])->name('invoices.pdf');
+        Route::get('/invoices/{invoice}/preview', [InvoiceController::class, 'previewPdf'])->name('invoices.preview');
+
+
 
         Route::resource('metapages', MetaPageController::class);
     }

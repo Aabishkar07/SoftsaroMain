@@ -36,7 +36,7 @@
 
             <!-- Page Content -->
             <div class="w-full py-8  mt-8 bg-white">
-                @yield('body')
+                @yield('content')
             </div>
         </main>
     </div>
