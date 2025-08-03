@@ -25,7 +25,7 @@ function getMetas($segment1, $segment2)
         $links = MetaPage::where("page_name", "home")->first();
         if ($links) {
             $meta = (object) [
-                'title' => ucfirst($links->meta_title) . ' | Softsaro Nepal',
+                'title' => ucfirst($links->meta_title) . ' | Softsaro',
                 'description' => $links->meta_description,
                 'image' => 'uploads/' . $links->ogimage,
                 'keywords' => $links->keywords,
@@ -44,7 +44,7 @@ function getMetas($segment1, $segment2)
     $links = MetaPage::where("page_name", "!=", "home")->where('page_name', $segment1)->first();
     if ($links) {
         $meta = (object) [
-            'title' => ucfirst($links->meta_title) . ' | Softsaro Nepal',
+            'title' => ucfirst($links->meta_title) . ' | Softsaro',
             'description' => $links->meta_description,
             'image' => 'uploads/' . $links->ogimage,
             'keywords' => $links->keywords,
@@ -54,7 +54,7 @@ function getMetas($segment1, $segment2)
         $service = Service::where('slug', $segment2)->first();
 
         $meta = (object) [
-            'title' => $service->meta_title . ' | Softsaro Nepal',
+            'title' => $service->meta_title . ' | Softsaro',
             'description' => $service->meta_description,
             'image' => 'uploads/' . $service->image,
             'keywords' => $service->keywords,
@@ -64,7 +64,7 @@ function getMetas($segment1, $segment2)
         $links = MetaPage::where("page_name", "home")->first();
         if ($links) {
             $meta = (object) [
-                'title' => ucfirst($links->meta_title) . ' | Softsaro Nepal',
+                'title' => ucfirst($links->meta_title) . ' | Softsaro',
                 'description' => $links->meta_description,
                 'image' => 'uploads/' . $links->ogimage,
                 'keywords' => $links->keywords,
@@ -72,7 +72,7 @@ function getMetas($segment1, $segment2)
             return $meta;
         } else {
             $meta = (object) [
-                'title' => 'Softsaro Nepal',
+                'title' => 'Softsaro',
                 'description' => '"Discover top IT solutions including IT services, Display Marketing, and SEO services at Home/SoftSaro. Boost your business efficiency today!',
                 'image' => 'images/defaultimage.png',
                 'keywords' => 'Softsaro, software development, custom software solutions, IT services, SaaS development, mobile app development, cloud software, enterprise applications, software consulting, tech company',

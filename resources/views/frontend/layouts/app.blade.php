@@ -11,13 +11,13 @@
         $sitekey = getsiteKey();
         // dd($meta);
     @endphp
-   
+
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "{{$meta->title ?? 'Softsaro Nepal'}}",
+        "name": "{{$meta->title ?? 'Softsaro'}}",
         "description": "{{strip_tags($meta->description) }}",
         "url": "{{ url('/') }}",
         "potentialAction": {
@@ -31,7 +31,7 @@
 
     <meta name=description content="{{ strip_tags($meta->description) }}">
     {{-- og --}}
-    <meta property=og:title content="{{ $meta->title ?? 'Softsaro Nepal' }}" />
+    <meta property=og:title content="{{ $meta->title ?? 'Softsaro' }}" />
     <meta property=og:description content="{{ strip_tags($meta->description) }}" />
     <meta property=og:image content="{{ 'https://softsaro.com' . $meta->image }}" />
     <meta name="keywords"
@@ -45,7 +45,7 @@
 
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $meta->title ?? 'Softsaro Nepal' }}">
+    <meta name="twitter:title" content="{{ $meta->title ?? 'Softsaro' }}">
     <meta name="twitter:description" content="{{ Str::limit(strip_tags($meta->description, 50)) }}">
 
     {{-- <meta property="og:title" content="Home | softsaro" /> --}}
@@ -77,7 +77,7 @@
     <meta name="twitter:data2" content="1 minute" />
 
 
-    <title>{{ $meta->title ?? 'Softsaro Nepal' }}</title>
+    <title>{{ $meta->title ?? 'Softsaro' }}</title>
 
     <link rel='dns-prefetch' href='//www.googletagmanager.com' />
     <link rel="alternate" type="application/rss+xml" title="softsaro &raquo; Feed" href="https://softsaro.com/feed/" />

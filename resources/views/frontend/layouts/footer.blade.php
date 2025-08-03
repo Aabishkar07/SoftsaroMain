@@ -63,7 +63,7 @@
         </div>
     </div>
     <div class="container text-center mt-4">
-        <p class="fs-6 mb-0">© 2025 <strong class="px-1 sitename">Softsaro Nepal</strong> All Rights Reserved</p>
+        <p class="fs-6 mb-0">© 2025 <strong class="px-1 sitename">Softsaro</strong> All Rights Reserved</p>
     </div>
 </footer>
 

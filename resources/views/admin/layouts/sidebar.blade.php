@@ -231,10 +231,25 @@
 
                     <div x-data="{ dropdownOpen: false, activeRoute: '{{ request()->segment(2) }}' }" class="relative">
                         <button @click="dropdownOpen = !dropdownOpen"
-                            class="{{ request()->segment(2) == 'page' ? 'w-full  bg-green-700 text-white flex items-center px-6 py-2  flex-1 mt-2 item ' : 'w-full flex-1 mt-2 item hover:bg-green-700 hover:text-white flex items-center px-6 py-2  text-gray-600' }}">
-                            <span class="material-symbols-outlined">
-                                dynamic_feed
-                            </span>
+                            class="{{ request()->segment(2) == 'page' ? 'w-full  bg-green-700 text-white flex items-center px-2 py-2  flex-1 mt-2 item ' : 'w-full flex-1 mt-2 item hover:bg-green-700 hover:text-white flex items-center px-2 py-2  text-white' }}">
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.25"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <path d="M9 15h6" />
+  <path d="M12.5 17.5l2.5 -2.5l-2.5 -2.5" />
+</svg>
+
                             <span
                                 class="flex flex-col items-start flex-shrink-0 h-full ml-2 leading-none translate-y-px">
                                 <span>CMS</span>
@@ -254,10 +269,25 @@
                             <div
                                 class="p-1 mt-1 bg-white border rounded-md shadow-md border-neutral-200/70 text-neutral-700">
                                 <a href="{{ route('admin.page.index') }}" x-init="dropdownOpen = (activeRoute == 'page') ? true : dropdownOpen"
-                                    class="cursor-pointer {{ request()->segment(2) == 'page' ? 'bg-green-700 text-white relative flex cursor-default select-none hover:bg-neutral-100 hover:text-slate-700 items-center rounded px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' : 'relative flex cursor-default select-none hover:bg-neutral-100 items-center rounded px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' }}">
-                                    <span class="text-xl material-symbols-outlined">
-                                        pages
-                                    </span>
+                                    class="cursor-pointer {{ request()->segment(2) == 'page' ? 'bg-green-700 text-white relative flex cursor-default select-none px-5 hover:bg-neutral-100 hover:text-slate-700 items-center rounded  py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' : 'relative flex cursor-default select-none hover:bg-neutral-100 items-center rounded px-5 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' }}">
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#383838"
+  stroke-width="1.25"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+  <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+  <path d="M9 12h6" />
+  <path d="M9 16h6" />
+</svg>
+
                                     <span class="mx-3">Pages</span>
                                 </a>
 

@@ -40,7 +40,8 @@
               <li><a class="fs-6" href="{{ route('privacypolicy') }}">Privacy Policy</a></li>
             </ul>
           </li>
-          <li><a target="_blank" class="fs-6 {{ Route::is('store') ? 'active' :''}}" href="{{ route('store') }}">Softsaro Store</a></li>
+          {{-- <li><a target="_blank" class="fs-6 {{ Route::is('store') ? 'active' :''}}" href="{{ route('store') }}">Softsaro Store</a></li> --}}
+          <li><a  class="fs-6 {{ Route::is('blog') ? 'active' :''}}" href="{{ route('blog') }}">Blogs</a></li>
 
           <li><a class="fs-6 {{ Route::is('contact') ? 'active' :''}}" href="{{ route('contact') }}">Contact</a></li>
         </ul>
