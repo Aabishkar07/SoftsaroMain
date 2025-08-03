@@ -1,79 +1,231 @@
 @extends('admin.layouts.app')
 
 @section('head')
-<!-- Tailwind CSS CDN (if not already included in your layout) -->
+<!-- Tailwind CSS CDN -->
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 @endsection
 
 @section('body')
-<div class="container mx-auto p-4">
-    <h1 class="text-3xl font-bold mb-6">Clients</h1>
-
-    <a href="{{ route('admin.clients.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">+ Add Client</a>
-
-    <div class="mt-6 overflow-x-auto">
-        <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-            <thead class="bg-gray-100">
-                <tr>
-                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700">Name</th>
-                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700">Email</th>
-                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700">Phone</th>
-                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700">Deal Done</th>
-                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700">Percentage</th>
-                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($clients as $client)
-                    <tr class="border-b hover:bg-gray-50">
-                        <td class="px-6 py-4">{{ $client->name }}</td>
-                        <td class="px-6 py-4">{{ $client->email }}</td>
-                        <td class="px-6 py-4">{{ $client->phone }}</td>
-                        <td class="px-6 py-4">
-                            @if($client->deal_done)
-                                <span class="text-green-600 font-semibold">Deal Done</span>
-                            @else
-                                <span class="text-red-600 font-semibold">Not Done</span>
-                            @endif
-                        </td>
-                        <td class="px-6 py-4">{{ $client->percentage }}%</td>
-                        <td class="px-6 py-4 flex gap-2">
-                            <a href="{{ route('admin.clients.edit', $client) }}" class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded">Edit</a>
-                            <form action="{{ route('admin.clients.destroy', $client) }}" method="POST" onsubmit="return confirm('Are you sure?')" class="inline">
-                                @csrf
-                                @method('DELETE')
-                                <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-
-        <div class="mt-4">
-            {{ $clients->links('vendor.pagination.tailwind') }}
+<div class="min-h-screen bg-gray-50">
+    <!-- Header Section -->
+    <div class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Client Management</h1>
+                    <p class="mt-1 text-sm text-gray-600">Manage and track your client relationships</p>
+                </div>
+                <a href="{{ route('admin.clients.create') }}"
+                   class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-sm transition-colors duration-200">
+                    <i class="fas fa-plus mr-2"></i>
+                    Add New Client
+                </a>
+            </div>
         </div>
     </div>
 
-    <div class="mt-10 max-w-4xl mx-auto">
-        <h2 class="text-2xl font-bold mb-4 text-center">Deal Status Overview</h2>
-
-        <div class="flex justify-around gap-8">
-            <!-- Pie Chart -->
-            <div class="w-1/2">
-                <canvas id="dealPieChart" width="400" height="400" style="background-color: #f9fafb;"></canvas>
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-users text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Total Clients</p>
+                        <p class="text-2xl font-bold text-gray-900">{{ $clients->total() }}</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Bar Chart -->
-            <div class="w-1/2">
-                {{-- <canvas id="dealBarChart" width="400" height="400" style="background-color: #f9fafb;"></canvas> --}}
-                <canvas id="dealPieChart" width="400" height="400"></canvas>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-handshake text-green-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Deals Closed</p>
+                        <p class="text-2xl font-bold text-gray-900">{{ $clients->where('deal_done', 1)->count() }}</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-clock text-yellow-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Pending Deals</p>
+                        <p class="text-2xl font-bold text-gray-900">{{ $clients->where('deal_done', 0)->count() }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-percentage text-purple-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Success Rate</p>
+                        <p class="text-2xl font-bold text-gray-900">
+                            {{ $clients->count() > 0 ? round(($clients->where('deal_done', 1)->count() / $clients->count()) * 100) : 0 }}%
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        {{-- Debug counts --}}
-        <pre class="mt-6 text-center">Deal Done: {{ $clients->where('deal_done', 1)->count() }} | Not Done: {{ $clients->where('deal_done', 0)->count() }}</pre>
+        <!-- Charts Section -->
+        <div class="grid grid-cols-1  gap-8 mb-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900">Deal Status Distribution</h3>
+                    <div class="flex items-center space-x-4 text-sm">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                            <span class="text-gray-600">Completed</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                            <span class="text-gray-600">Pending</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <canvas id="dealPieChart" width="300" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clients Table -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900">Client Directory</h3>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <div class="flex items-center">
+                                    <i class="fas fa-user mr-2"></i>
+                                    Client
+                                </div>
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope mr-2"></i>
+                                    Contact
+                                </div>
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <div class="flex items-center">
+                                    <i class="fas fa-project-diagram mr-2"></i>
+                                    Project
+                                </div>
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-line mr-2"></i>
+                                    Status
+                                </div>
+                            </th>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        @foreach($clients as $client)
+                            <tr class="hover:bg-gray-50 transition-colors duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <div class="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                                                <span class="text-white font-semibold text-sm">
+                                                    {{ strtoupper(substr($client->name, 0, 2)) }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">{{ $client->name }}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">{{ $client->email }}</div>
+                                    <div class="text-sm text-gray-500">{{ $client->phone }}</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">{{ $client->project_name }}</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    @if($client->deal_done)
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            <i class="fas fa-check-circle mr-1"></i>
+                                            Deal Closed
+                                        </span>
+                                    @else
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                            <i class="fas fa-clock mr-1"></i>
+                                            In Progress
+                                        </span>
+                                    @endif
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <div class="flex items-center justify-end space-x-2">
+                                        <a href="{{ route('admin.clients.show', $client) }}"
+                                           class="inline-flex items-center px-3 py-1 bg-blue-100 hover:bg-blue-200 text-blue-700 text-xs font-medium rounded-md transition-colors duration-200"
+                                           title="View Details">
+                                            <i class="fas fa-eye mr-1"></i>
+                                            View
+                                        </a>
+                                        <a href="{{ route('admin.clients.edit', $client) }}"
+                                           class="inline-flex items-center px-3 py-1 bg-green-100 hover:bg-green-200 text-green-700 text-xs font-medium rounded-md transition-colors duration-200"
+                                           title="Edit Client">
+                                            <i class="fas fa-edit mr-1"></i>
+                                            Edit
+                                        </a>
+                                        <form action="{{ route('admin.clients.destroy', $client) }}" method="POST"
+                                              onsubmit="return confirm('Are you sure you want to delete this client?')" class="inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                    class="inline-flex items-center px-3 py-1 bg-red-100 hover:bg-red-200 text-red-700 text-xs font-medium rounded-md transition-colors duration-200"
+                                                    title="Delete Client">
+                                                <i class="fas fa-trash mr-1"></i>
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            @if($clients->hasPages())
+                <div class="px-6 py-4 border-t border-gray-200 bg-gray-50">
+                    {{ $clients->links('vendor.pagination.tailwind') }}
+                </div>
+            @endif
+        </div>
     </div>
 </div>
 @endsection
@@ -85,30 +237,52 @@ document.addEventListener('DOMContentLoaded', function() {
     const dataDone = @json($clients->where('deal_done', 1)->count());
     const dataNotDone = @json($clients->where('deal_done', 0)->count());
 
+    // Custom colors
+    const colors = {
+        green: '#10b981',
+        red: '#ef4444',
+        lightGreen: 'rgba(16, 185, 129, 0.1)',
+        lightRed: 'rgba(239, 68, 68, 0.1)'
+    };
+
     // Pie Chart
     const pieCanvas = document.getElementById('dealPieChart');
     if (pieCanvas) {
         new Chart(pieCanvas.getContext('2d'), {
-            type: 'pie',
+            type: 'doughnut',
             data: {
-                labels: ['Deal Done', 'Not Done'],
+                labels: ['Deals Closed', 'Pending Deals'],
                 datasets: [{
                     data: [dataDone, dataNotDone],
-                    backgroundColor: [
-                        'rgba(34, 197, 94, 0.8)',  // Green
-                        'rgba(239, 68, 68, 0.8)'   // Red
-                    ],
-                    borderColor: [
-                        'rgba(34, 197, 94, 1)',
-                        'rgba(239, 68, 68, 1)'
-                    ],
-                    borderWidth: 1
+                    backgroundColor: [colors.green, colors.red],
+                    borderColor: [colors.green, colors.red],
+                    borderWidth: 2,
+                    cutout: '60%'
                 }]
             },
             options: {
-                responsive: false,
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    legend: { position: 'top' }
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const total = context.dataset.data.reduce((sum, value) => sum + value, 0);
+                                const percentage = total > 0 ? Math.round((context.parsed * 100) / total) : 0;
+                                return `${context.label}: ${context.parsed} (${percentage}%)`;
+                            }
+                        }
+                    }
                 }
             }
         });
@@ -120,28 +294,53 @@ document.addEventListener('DOMContentLoaded', function() {
         new Chart(barCanvas.getContext('2d'), {
             type: 'bar',
             data: {
-                labels: ['Deal Done', 'Not Done'],
+                labels: ['Deal Status'],
                 datasets: [{
-                    label: 'Number of Clients',
-                    data: [dataDone, dataNotDone],
-                    backgroundColor: [
-                        'rgba(34, 197, 94, 0.8)',
-                        'rgba(239, 68, 68, 0.8)'
-                    ],
-                    borderColor: [
-                        'rgba(34, 197, 94, 1)',
-                        'rgba(239, 68, 68, 1)'
-                    ],
-                    borderWidth: 1
+                    label: 'Closed',
+                    data: [dataDone],
+                    backgroundColor: colors.lightGreen,
+                    borderColor: colors.green,
+                    borderWidth: 2,
+                    borderRadius: 8
+                }, {
+                    label: 'Pending',
+                    data: [dataNotDone],
+                    backgroundColor: colors.lightRed,
+                    borderColor: colors.red,
+                    borderWidth: 2,
+                    borderRadius: 8
                 }]
             },
             options: {
-                responsive: false,
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: false }
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
                 },
                 scales: {
-                    y: { beginAtZero: true }
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
                 }
             }
         });
@@ -149,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 @endsection
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
