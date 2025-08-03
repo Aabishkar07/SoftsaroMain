@@ -1,4 +1,4 @@
-<section class="ezy__blog10 light ">
+<section class="">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center">
          <!-- Section Title -->

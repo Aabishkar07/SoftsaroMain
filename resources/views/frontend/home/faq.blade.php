@@ -1,4 +1,4 @@
-<section class="ezy__faq4 light">
+<section class="">
     <div class="container">
         <div class="row justify-content-center mb-md-4">
             <div class="col-lg-8 col-xl-7 text-center">
@@ -15,7 +15,7 @@
                 <div class="ezy__faq4-item mt-4">
                     <a class="btn p-3 w-100 text-start d-flex justify-content-between align-items-center ezy__faq4-btn-collapse"
                         data-bs-toggle="collapse" href="#faq1" role="button" aria-expanded="false" aria-controls="faq1">
-                        <span>What services does Softsaro Nepal offer?</span>
+                        <span>What services does Softsaro  offer?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
                             fill="none" stroke="#383838" stroke-width="1.25" stroke-linecap="round"
                             stroke-linejoin="round">
@@ -25,7 +25,7 @@
                     <div class="collapse" id="faq1">
                         <div class="ezy__faq4-content p-3">
                             <p class="opacity-75 mb-0">
-                                Softsaro Nepal offers full IT services in Nepal under one place. We provide UI/UX design, web development, app development, SEO services, graphic design, digital marketing, and more.
+                                Softsaro  offers full IT services in USA under one place. We provide UI/UX design, web development, app development, SEO services, graphic design, digital marketing, and more.
                             </p>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
                 <div class="ezy__faq4-item mt-4">
                     <a class="btn p-3 w-100 text-start d-flex justify-content-between align-items-center ezy__faq4-btn-collapse"
                         data-bs-toggle="collapse" href="#faq6" role="button" aria-expanded="false" aria-controls="faq6">
-                        <span>Which is the best IT company in Nepal?</span>
+                        <span>Which is the best IT company in USA?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
                             fill="none" stroke="#383838" stroke-width="1.25" stroke-linecap="round"
                             stroke-linejoin="round">
@@ -135,7 +135,7 @@
                     <div class="collapse" id="faq6">
                         <div class="ezy__faq4-content p-3">
                             <p class="opacity-75 mb-0">
-                                Softsaro Nepal is one of the best IT companies in Nepal offering all services under one roof.
+                                Softsaro  is one of the best IT companies in USA offering all services under one roof.
                             </p>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
                 <div class="ezy__faq4-item mt-4">
                     <a class="btn p-3 w-100 text-start d-flex justify-content-between align-items-center ezy__faq4-btn-collapse"
                         data-bs-toggle="collapse" href="#faq9" role="button" aria-expanded="false" aria-controls="faq9">
-                        <span>How do I rank my website on Google from Nepal?</span>
+                        <span>How do I rank my website on Google from USA?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
                             fill="none" stroke="#383838" stroke-width="1.25" stroke-linecap="round"
                             stroke-linejoin="round">
@@ -213,7 +213,7 @@
                 <div class="ezy__faq4-item mt-4">
                     <a class="btn p-3 w-100 text-start d-flex justify-content-between align-items-center ezy__faq4-btn-collapse"
                         data-bs-toggle="collapse" href="#faq10" role="button" aria-expanded="false" aria-controls="faq10">
-                        <span>How can I contact Softsaro Nepal?</span>
+                        <span>How can I contact Softsaro ?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
                             fill="none" stroke="#383838" stroke-width="1.25" stroke-linecap="round"
                             stroke-linejoin="round">
@@ -223,9 +223,9 @@
                     <div class="collapse" id="faq10">
                         <div class="ezy__faq4-content p-3">
                             <p class="opacity-75 mb-0">
-                                📞 Call Us: 9818439664<br>
-                                📧 Email: info@softsaro.com<br>
-                                📍 Visit Us: Trade Tower, 5th Floor, Kathmandu
+                                Call Us: 13022725450<br>
+                                Email: info@softsaro.com<br>
+                                 Visit Us: Wilmington, Delaware, 19802
                             </p>
                         </div>
                     </div>
