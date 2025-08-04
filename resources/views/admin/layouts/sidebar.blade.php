@@ -231,7 +231,7 @@
 
                     <div x-data="{ dropdownOpen: false, activeRoute: '{{ request()->segment(2) }}' }" class="relative">
                         <button @click="dropdownOpen = !dropdownOpen"
-                            class="{{ request()->segment(2) == 'page' ? 'w-full  bg-green-700 text-white flex items-center px-2 py-2  flex-1 mt-2 item ' : 'w-full flex-1 mt-2 item hover:bg-green-700 hover:text-white flex items-center px-2 py-2  text-white' }}">
+                            class="{{ request()->segment(2) == 'page' ? 'w-full  bg-[#8380d4] text-white flex items-center px-2 py-2  flex-1 mt-2 item ' : 'w-full flex-1 mt-2 item hover:bg-[#8380d4] hover:text-white flex items-center px-2 py-2  text-white' }}">
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -269,7 +269,7 @@
                             <div
                                 class="p-1 mt-1 bg-white border rounded-md shadow-md border-neutral-200/70 text-neutral-700">
                                 <a href="{{ route('admin.page.index') }}" x-init="dropdownOpen = (activeRoute == 'page') ? true : dropdownOpen"
-                                    class="cursor-pointer {{ request()->segment(2) == 'page' ? 'bg-green-700 text-white relative flex cursor-default select-none px-5 hover:bg-neutral-100 hover:text-slate-700 items-center rounded  py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' : 'relative flex cursor-default select-none hover:bg-neutral-100 items-center rounded px-5 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' }}">
+                                    class="cursor-pointer {{ request()->segment(2) == 'page' ? 'bg-[#8380d4] text-white relative flex cursor-default select-none px-5 hover:bg-neutral-100 hover:text-slate-700 items-center rounded  py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' : 'relative flex cursor-default select-none hover:bg-neutral-100 items-center rounded px-5 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50' }}">
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
