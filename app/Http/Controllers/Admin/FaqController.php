@@ -68,13 +68,14 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
+
         $request->validate([
             'question' => 'required|string|max:500',
             'answer' => 'required|string',
             'order' => 'nullable|integer|min:0',
-            'is_active' => 'boolean'
+            // 'is_active' => 'boolean'
         ]);
-
+  
         $faq->question = $request->question;
         $faq->answer = $request->answer;
         $faq->order = $request->order ?? $faq->order;
