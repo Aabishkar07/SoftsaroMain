@@ -12,7 +12,7 @@
 
     .testimonial-title {
         font-weight: 700;
-        color: #343a40;
+        color: #6a68af;
         font-size: 2rem;
     }
 

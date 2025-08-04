@@ -113,7 +113,7 @@
     .ezy__faq4-heading {
         font-size: 32px;
         font-weight: 700;
-        color: var(--bs-body-color);
+        color: #6a68af;
     }
 
     .ezy__faq4-sub-heading {
