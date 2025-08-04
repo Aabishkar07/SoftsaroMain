@@ -22,8 +22,11 @@
                     </li>
                     <li><i class="bi bi-chevron-right text-white"></i> <a href="{{ route('services') }}">Services</a>
                     </li>
+                    <li><i class="bi bi-chevron-right text-white"></i> <a href="{{ route('blog') }}">Blogs</a>
+                    </li>
                     <li><i class="bi bi-chevron-right text-white"></i> <a href="{{ route('termsandcondition') }}">Terms
                             and Condition</a></li>
+
                     <li><i class="bi bi-chevron-right text-white"></i> <a href="{{ route('privacypolicy') }}">Privacy
                             policy</a></li>
                 </ul>
