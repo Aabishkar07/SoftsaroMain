@@ -24,6 +24,7 @@
             <div class="text-gray-700 text-xl font-medium p-2">Emails ({{ count($emails) }})</div>
         </div>
         <div class="text-right ">
+
             <div class="text-right ">
                 <a href="{{ route('admin.emailmarketing.create') }}"
                     class="flex items-center px-3 py-2 mb-1 mr-1  font-bold text-white uppercase transition-all ease-linear bg-[#6a68AF] border border-[#6a68AF] rounded outline-none hover:bg-transparent hover:text-[#6a68AF] focus:outline-none duration-400 ">

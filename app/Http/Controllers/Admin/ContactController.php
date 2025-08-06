@@ -6,16 +6,20 @@ use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ContactController extends Controller
 {
     public function contact()
     {
+        abort_unless(Gate::allows('View Contact'), 403);
+
         $contacts = Contact::latest()->paginate(20);
         return view("admin.contact.index", compact("contacts"));
     }
     public function contactdelete($contact)
     {
+        abort_unless(Gate::allows('Delete Contact'), 403);
         Contact::where("id", $contact)->delete();
         return redirect()->back()->with("popsuccess", "Contact Deleted");
     }

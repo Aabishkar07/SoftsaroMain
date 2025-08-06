@@ -6,6 +6,7 @@ use App\FileService\ImageService;
 use App\Http\Controllers\Controller;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 
 class PortfolioController extends Controller
@@ -13,14 +14,15 @@ class PortfolioController extends Controller
     /**
      * Display a listing of the resource.
      */
-     public function __construct(
+    public function __construct(
         protected ImageService $imageservice
     ) {
     }
     public function index()
     {
-        //
-           $banners = Portfolio::latest()->get();
+        abort_unless(Gate::allows('View Portfolio'), 403);
+
+        $banners = Portfolio::latest()->get();
         return view("admin.portfolio.index", compact("banners"));
     }
 
@@ -29,7 +31,8 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+
+        abort_unless(Gate::allows('Add Portfolio'), 403);
         return view("admin.portfolio.create");
 
     }
@@ -41,7 +44,8 @@ class PortfolioController extends Controller
     {
         //
 
-         $banner_image = $this->imageservice->fileUpload($request->banner_image, "portfolio");
+        abort_unless(Gate::allows('Add Portfolio'), 403);
+        $banner_image = $this->imageservice->fileUpload($request->banner_image, "portfolio");
         $req = $request->all();
         $req['banner_image'] = $banner_image;
         $req['slug'] = Str::slug($request->title);
@@ -62,6 +66,7 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
+        abort_unless(Gate::allows('Edit Portfolio'), 403);
         return view("admin.portfolio.edit", compact("portfolio"));
     }
 
@@ -71,6 +76,7 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, Portfolio $portfolio)
     {
+        abort_unless(Gate::allows('Edit Portfolio'), 403);
         $req = $request->all();
         if ($request->hasFile('banner_image')) {
             if ($portfolio->banner_image) {
@@ -90,8 +96,9 @@ class PortfolioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-  public function destroy(Portfolio $portfolio)
+    public function destroy(Portfolio $portfolio)
     {
+        abort_unless(Gate::allows('Delete Portfolio'), 403);
         if ($portfolio->banner_image) {
             $this->imageservice->imageDelete($portfolio->banner_image);
         }

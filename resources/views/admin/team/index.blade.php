@@ -8,19 +8,21 @@
             <div class="text-2xl font-bold"> Teams</div>
             <div class="flex">
 
-                <a href='{{ route('admin.teams.create') }}'
-                    class='bg-[#4456a6] text-white h-10 p-2 text-sm flex gap-2 items-center font-main rounded-lg'>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="svgicon" height="1em" viewBox="0 0 448 512">
-                        <style>
-                            .svgicon {
-                                fill: #ffffff;
-                            }
-                        </style>
-                        <path
-                            d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
-                    </svg>
-                    <span>Add Team</span>
-                </a>
+                @can('Add Team')
+                    <a href='{{ route('admin.teams.create') }}'
+                        class='bg-[#4456a6] text-white h-10 p-2 text-sm flex gap-2 items-center font-main rounded-lg'>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="svgicon" height="1em" viewBox="0 0 448 512">
+                            <style>
+                                .svgicon {
+                                    fill: #ffffff;
+                                }
+                            </style>
+                            <path
+                                d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                        </svg>
+                        <span>Add Team</span>
+                    </a>
+                @endcan
             </div>
         </div>
 
@@ -76,26 +78,27 @@
                                         <td class="z-[999]">
                                             <div class="flex gap-x-2">
 
-                                                <div class="">
+                                                @can('Edit Team')
+                                                    <div class="">
+                                                        <a href="{{ route('admin.teams.edit', $team->id) }}"
+                                                            class="block px-4 py-2 text-sm text-white rounded-md hover:bg-sky-500 bg-sky-600">Edit
+                                                        </a>
+                                                    </div>
+                                                @endcan
 
-                                                    <a href="{{ route('admin.teams.edit', $team->id) }}"
-                                                        class="block px-4 py-2 text-sm text-white rounded-md hover:bg-sky-500 bg-sky-600">Edit
-                                                    </a>
-
-
-
-                                                </div>
-                                                <form method="POST" action="{{ route('admin.teams.destroy', $team->id) }}"
-                                                    id="delete-form-{{ $team->id }}">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button type="button" onclick="deleteItem({{ $team->id }})"
-                                                        class="flex w-full items-center gap-2    px-4 py-1.5 text-md openModal text-white rounded text-center bg-red-700 hover:bg-red-600">
-                                                        <span class="pl-2">
-                                                            Delete
-                                                        </span>
-                                                    </button>
-                                                </form>
+                                                @can('Delete Team')
+                                                    <form method="POST" action="{{ route('admin.teams.destroy', $team->id) }}"
+                                                        id="delete-form-{{ $team->id }}">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="button" onclick="deleteItem({{ $team->id }})"
+                                                            class="flex w-full items-center gap-2    px-4 py-1.5 text-md openModal text-white rounded text-center bg-red-700 hover:bg-red-600">
+                                                            <span class="pl-2">
+                                                                Delete
+                                                            </span>
+                                                        </button>
+                                                    </form>
+                                                @endcan
                                             </div>
 
                                         </td>

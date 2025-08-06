@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Service;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 
 class ServiceController extends Controller
@@ -22,6 +23,8 @@ class ServiceController extends Controller
 
     public function index()
     {
+        abort_unless(Gate::allows('View Services'), 403);
+
         $services = Service::latest()->paginate(10);
         return view('admin.services.index', compact('services'));
     }
@@ -31,6 +34,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
+        abort_unless(Gate::allows('Add Services'), 403);
         return view('admin.services.create');
     }
 
@@ -39,6 +43,7 @@ class ServiceController extends Controller
      */
     public function store(StoreServiceRequest $request)
     {
+        abort_unless(Gate::allows('Add Services'), 403);
         $service_img = $this->imageservice->fileUpload($request->image, "service");
         $service_icon = $this->imageservice->fileUpload($request->icon, "icon");
         $req = $request->all();
@@ -63,6 +68,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
+        abort_unless(Gate::allows('Edit Services'), 403);
         return view('admin.services.edit', compact('service'));
     }
 
@@ -71,6 +77,7 @@ class ServiceController extends Controller
      */
     public function update(UpdateServiceRequest $request, Service $service)
     {
+        abort_unless(Gate::allows('Edit Services'), 403);
         $req = $request->all();
 
         if ($request->hasFile('image')) {
@@ -100,6 +107,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
+        abort_unless(Gate::allows('Delete Services'), 403);
         if ($service->image) {
             $this->imageservice->imageDelete($service->image);
         }

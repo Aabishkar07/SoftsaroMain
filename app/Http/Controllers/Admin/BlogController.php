@@ -8,6 +8,7 @@ use App\Http\Requests\StoreBlogRequest;
 use App\Http\Requests\UpdateBlogRequest;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
@@ -19,11 +20,14 @@ class BlogController extends Controller
     public function __construct(
         protected ImageService $imageservice
 
-    ) {}
+    ) {
+    }
 
     public function index()
     {
-        //
+        abort_unless(Gate::allows('View Blog'), 403);
+
+
         $blogs = Blog::orderBy('updated_at', 'DESC')->paginate(4);
 
         return view('admin.blogs.index', compact('blogs'));
@@ -34,7 +38,9 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        abort_unless(Gate::allows('Add Blog'), 403);
+
+
         return view('admin.blogs.create');
     }
 
@@ -46,6 +52,8 @@ class BlogController extends Controller
 
     public function store(StoreBlogRequest $request)
     {
+
+        abort_unless(Gate::allows('Add Blog'), 403);
 
 
 
@@ -65,6 +73,8 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
+        abort_unless(Gate::allows('View Blog'), 403);
+
         return view('admin.blogs.view', compact("blog"));
     }
 
@@ -73,6 +83,9 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
+        abort_unless(Gate::allows('Edit Blog'), 403);
+
+
         return view('admin.blogs.edit', compact("blog"));
     }
     /**
@@ -83,6 +96,8 @@ class BlogController extends Controller
 
     public function update(UpdateBlogRequest $request, Blog $blog)
     {
+
+        abort_unless(Gate::allows('Edit Blog'), 403);
 
 
         $req = $request->all();
@@ -104,6 +119,8 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog)
     {
+
+        abort_unless(Gate::allows('Delete Blog'), 403);
 
 
         if ($blog->featured_image) {
