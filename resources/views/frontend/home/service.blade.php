@@ -1,9 +1,20 @@
+@php
+    use App\Models\Page;
+
+    $pages = Page::where('id', 8)->first();
+@endphp
+
 
 <section id="services" class="services section">
 
     <div class="container section-title" data-aos="fade-up">
         <h2>Services</h2>
         <p style="color:#6a68AF">Featured Services<br></p>
+
+        <span style="font-size: 16px; line-height: 1.8; text-align: justify; margin: 0 auto; color: #444;">
+            {{ $pages->description }}
+        </span>
+
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -13,10 +24,11 @@
             @foreach ($services as $service)
                 <!-- Web Development Service -->
                 <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                    <a  class="text-decoration-none" href="{{ route('servicesingle', $service->slug) }}">
+                    <a class="text-decoration-none" href="{{ route('servicesingle', $service->slug) }}">
                         <div class="service-item">
                             <div class="img">
-                                <img src="{{ asset('uploads/' . $service->image) }}" class="img-fluid" alt="{{ $service->title }}">
+                                <img src="{{ asset('uploads/' . $service->image) }}" class="img-fluid"
+                                    alt="{{ $service->title }}">
                             </div>
                             <div class="details position-relative">
                                 <div class="icon text-white p-3">

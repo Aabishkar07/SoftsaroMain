@@ -1,8 +1,17 @@
+
+@php
+    use App\Models\Page;
+
+    $pages = Page::where('id', 10)->first();
+@endphp
 <section id="portfolio" class="portfolio section">
 
     <div class="container section-title pt-5">
         <h2>Portfolio</h2>
         <p>CHECK OUR PORTFOLIO</p>
+          <span style="font-size: 16px; line-height: 1.8; text-align: justify; margin: 0 auto; color: #444;">
+            {{ $pages->description }}
+        </span>
     </div>
 
     <div class="container">

@@ -1,3 +1,8 @@
+@php
+    use App\Models\Page;
+
+    $pages = Page::where('id', 11)->first();
+@endphp
 <section class="">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center">
@@ -5,6 +10,9 @@
         <div class="container section-title" data-aos="fade-up">
           <h2>Softsaro Blog:</h2>
           <p style="color:#6a68AF">Our Thoughts & Stories</p>
+             <span style="font-size: 16px; line-height: 1.8; text-align: justify; margin: 0 auto; color: #444;">
+            {{ $pages->description }}
+        </span>
         </div><!-- End Section Title -->
 
         <div class="container">

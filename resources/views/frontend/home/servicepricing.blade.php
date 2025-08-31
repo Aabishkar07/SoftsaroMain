@@ -1,7 +1,14 @@
+@php
+    use App\Models\Page;
+
+    $pages = Page::where('id', 9)->first();
+@endphp
 <body class="bg-light">
     <div class="container mt-4  p-4 ">
-        <h2 class="text-center fw-bold">Social Media Solution Package</h2>
-        <p class="text-center text-muted">Choose Your Subscription Plan</p>
+        <h2 class="text-center pb-4 fw-bold">Social Media Solution Package</h2>
+          <span class="mt-5 py-4 " style="font-size: 16px; line-height: 1.8; text-align: justify; margin: 0 auto; color: #444;">
+            {{ $pages->description }}
+        </span>
         <style>
             .hover-effect {
                 transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;

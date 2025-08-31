@@ -1,10 +1,19 @@
-    <!-- Team Section -->
-    <section id="team" class="team section light-background">
+
+   <!-- Team Section -->
+@php
+    use App\Models\Page;
+
+    $pages = Page::where('id', 12)->first();
+@endphp
+   <section id="team" class="team section light-background">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Team</h2>
             <p style="color:#6a68AF">CHECK OUR TEAM</p>
+                 <span style="font-size: 16px; line-height: 1.8; text-align: justify; margin: 0 auto; color: #444;">
+            {{ $pages->description }}
+        </span>
         </div><!-- End Section Title -->
 
         <div class="container">
