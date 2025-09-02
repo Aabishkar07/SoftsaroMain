@@ -7,33 +7,32 @@
 @endphp
 
 
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="row align-items-center">
+@if ($aboutus->third_description)
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
 
-            <!-- Text Section -->
-            <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
-                <div class="pe-lg-5">
-                    <p class="fs-5 text-muted mb-0 lh-lg">
-                        {!! $aboutus->third_description !!}
-                    </p>
+                <!-- Text Section -->
+                <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+                    <div class="pe-lg-5">
+                        <p class="fs-5 text-muted mb-0 lh-lg">
+                            {!! $aboutus->third_description !!}
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image Section -->
-            <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
-                <div class="text-center">
-                    <img src="{{ asset('uploads/' . $aboutus->third_image) }}" class="img-fluid "
-                        style="max-height: 600px; object-fit: contain;" alt="About Nepbyte">
+                <!-- Image Section -->
+                <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+                    <div class="text-center">
+                        <img src="{{ asset('uploads/' . $aboutus->third_image) }}" class="img-fluid "
+                            style="max-height: 600px; object-fit: contain;" alt="About Nepbyte">
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
-
-
-
+    </section>
+@endif
 
 
 

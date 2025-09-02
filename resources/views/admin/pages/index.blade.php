@@ -34,13 +34,14 @@
 
                                     <td class="p-2   border divide flex justify-center items-center">
 
+                                        @can('Edit Pages')
+                                            <a href="{{ route('admin.page.edit', $page->id) }}">
+                                                <button class="mr-2 py-1 px-3 bg-green-500 text-white rounded-md">
+                                                    Edit
+                                                </button>
+                                            </a>
+                                        @endcan
 
-
-                                        <a href="{{ route('admin.page.edit' , $page->id) }}">
-                                            <button class="mr-2 py-1 px-3 bg-green-500 text-white rounded-md">
-                                                Edit
-                                            </button>
-                                        </a>
 
 
 

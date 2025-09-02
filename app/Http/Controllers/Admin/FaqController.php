@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class FaqController extends Controller
 {
@@ -13,6 +14,8 @@ class FaqController extends Controller
      */
     public function index()
     {
+        abort_unless(Gate::allows('View FAQ'), 403);
+
         $faqs = Faq::orderBy('order', 'asc')->get();
         return view('admin.faqs.index', compact('faqs'));
     }
@@ -22,6 +25,8 @@ class FaqController extends Controller
      */
     public function create()
     {
+
+        abort_unless(Gate::allows('Add FAQ'), 403);
         return view('admin.faqs.create');
     }
 
@@ -30,6 +35,7 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
+        abort_unless(Gate::allows('Add FAQ'), 403);
         $request->validate([
             'question' => 'required|string|max:500',
             'answer' => 'required|string',
@@ -52,6 +58,7 @@ class FaqController extends Controller
      */
     public function show(Faq $faq)
     {
+        abort_unless(Gate::allows('View FAQ'), 403);
         return view('admin.faqs.show', compact('faq'));
     }
 
@@ -60,6 +67,7 @@ class FaqController extends Controller
      */
     public function edit(Faq $faq)
     {
+        abort_unless(Gate::allows('Edit FAQ'), 403);
         return view('admin.faqs.edit', compact('faq'));
     }
 
@@ -68,11 +76,13 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
+
+        abort_unless(Gate::allows('Edit FAQ'), 403);
         $request->validate([
             'question' => 'required|string|max:500',
             'answer' => 'required|string',
             'order' => 'nullable|integer|min:0',
-            'is_active' => 'boolean'
+            // 'is_active' => 'boolean'
         ]);
 
         $faq->question = $request->question;
@@ -89,6 +99,7 @@ class FaqController extends Controller
      */
     public function destroy(Faq $faq)
     {
+        abort_unless(Gate::allows('Delete FAQ'), 403);
         $faq->delete();
         return redirect()->route('admin.faqs.index')->with('success', 'FAQ deleted successfully!');
     }

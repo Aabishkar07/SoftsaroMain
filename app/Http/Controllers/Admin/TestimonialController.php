@@ -6,6 +6,7 @@ use App\FileService\ImageService;
 use App\Http\Controllers\Controller;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
@@ -19,6 +20,8 @@ class TestimonialController extends Controller
      */
     public function index()
     {
+        abort_unless(Gate::allows('View Testimonials'), 403);
+
         $testimonials = Testimonial::orderBy('order', 'asc')->get();
         return view('admin.testimonials.index', compact('testimonials'));
     }
@@ -28,6 +31,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
+        abort_unless(Gate::allows('Add Testimonial'), 403);
         return view('admin.testimonials.create');
     }
 
@@ -36,6 +40,7 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
+        abort_unless(Gate::allows('Add Testimonial'), 403);
         $request->validate([
             'name' => 'required|string|max:255',
             'designation' => 'required|string|max:255',
@@ -64,6 +69,8 @@ class TestimonialController extends Controller
      */
     public function show(Testimonial $testimonial)
     {
+        abort_unless(Gate::allows('View Testimonial'), 403);
+
         return view('admin.testimonials.show', compact('testimonial'));
     }
 
@@ -72,6 +79,7 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
+        abort_unless(Gate::allows('Edit Testimonial'), 403);
         return view('admin.testimonials.edit', compact('testimonial'));
     }
 
@@ -80,6 +88,7 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
+        abort_unless(Gate::allows('Edit Testimonial'), 403);
         $request->validate([
             'name' => 'required|string|max:255',
             'designation' => 'required|string|max:255',
@@ -113,6 +122,7 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
+        abort_unless(Gate::allows('Delete Testimonial'), 403);
         // Delete image if exists
         if ($testimonial->image) {
             $this->imageservice->imageDelete($testimonial->image);

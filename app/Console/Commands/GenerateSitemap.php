@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+// ...existing code...
+
 use Illuminate\Console\Command;
 use App\Services\SitemapService;
 

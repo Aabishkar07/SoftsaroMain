@@ -23,18 +23,20 @@
             <h2 class="w-full text-2xl font-bold text-secondary "> CSVs</h2>
         </div>
         <div class="text-right ">
-            <div class="text-right ">
-                <a href="{{ route('admin.csvs.create') }}"
-                    class="flex items-center px-3 py-2 mb-1 mr-1  font-bold text-white uppercase transition-all ease-linear bg-[#6a68AF] border border-[#6a68AF] rounded outline-none hover:bg-transparent hover:text-[#6a68AF] focus:outline-none duration-400 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
-                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M12 5l0 14"></path>
-                        <path d="M5 12l14 0"></path>
-                    </svg>
-                    Add CSV</a>
-            </div>
+            @can('Add Email Marketing')
+                <div class="text-right ">
+                    <a href="{{ route('admin.csvs.create') }}"
+                        class="flex items-center px-3 py-2 mb-1 mr-1  font-bold text-white uppercase transition-all ease-linear bg-[#6a68AF] border border-[#6a68AF] rounded outline-none hover:bg-transparent hover:text-[#6a68AF] focus:outline-none duration-400 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                        Add CSV</a>
+                </div>
+            @endcan
         </div>
     </div>
 
@@ -82,37 +84,37 @@
                                     <td>
                                         <div class="flex items-center p-2">
 
-                                            <a href="{{ route('admin.getemail', $data->id) }}" class="">
-                                                <div class="bg-green-500 rounded-md px-2 py-1 mx-2 text-white">
-                                                    Send Email
-                                                </div>
-                                            </a>
-                                            <form method="POST" action="{{ route('admin.csvs.destroy', $data->id) }}"
-                                                id="delete-form-{{ $data->id }}">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="button" onclick="deleteItem({{ $data->id }})"
-                                                    class="flex px-2 py-1 mx-2 text-white bg-red-500 rounded-md">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        class="icon icon-tabler icon-tabler-trash" width="24"
-                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                        <path d="M4 7l16 0"></path>
-                                                        <path d="M10 11l0 6"></path>
-                                                        <path d="M14 11l0 6"></path>
-                                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                                                    </svg>
-                                                </button>
-                                            </form>
+                                            @can('Send Email Marketing')
+                                                <a href="{{ route('admin.getemail', $data->id) }}" class="">
+                                                    <div class="bg-green-500 rounded-md px-2 py-1 mx-2 text-white">
+                                                        Send Email
+                                                    </div>
+                                                </a>
+                                            @endcan
 
+                                            @can('Delete Email Marketing')
+                                                <form method="POST" action="{{ route('admin.csvs.destroy', $data->id) }}"
+                                                    id="delete-form-{{ $data->id }}">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="button" onclick="deleteItem({{ $data->id }})"
+                                                        class="flex px-2 py-1 mx-2 text-white bg-red-500 rounded-md">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="icon icon-tabler icon-tabler-trash" width="24"
+                                                            height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                            stroke="currentColor" fill="none" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M4 7l16 0"></path>
+                                                            <path d="M10 11l0 6"></path>
+                                                            <path d="M14 11l0 6"></path>
+                                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            @endcan
                                         </div>
-
-
-
-
                                     </td>
 
                                 </tr>

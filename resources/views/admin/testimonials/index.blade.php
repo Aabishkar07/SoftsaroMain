@@ -7,16 +7,18 @@
 
         <div class="px-4 flex justify-between w-full">
             <div class="text-xl font-bold">Testimonials</div>
-            <div class="flex">
-                <a href="{{ route('admin.testimonials.create') }}"
-                    class="bg-[#04033b] rounded-lg text-white px-3 py-1 text-sm flex gap-2 items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z" />
-                    </svg>
-                    <span>Add Testimonial</span>
-                </a>
-            </div>
+            @can('Add Testimonials')
+                <div class="flex">
+                    <a href="{{ route('admin.testimonials.create') }}"
+                        class="bg-[#04033b] rounded-lg text-white px-3 py-1 text-sm flex gap-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z" />
+                        </svg>
+                        <span>Add Testimonial</span>
+                    </a>
+                </div>
+            @endcan
         </div>
 
         <div class="py-1">
@@ -79,40 +81,44 @@
 
                                     <td>
                                         <div class="flex">
-                                            <a href="{{ route('admin.testimonials.edit', $testimonial->id) }}">
-                                                <div class="bg-slate-500 py-1 px-2 mx-2 text-white flex rounded-md">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        class="icon icon-tabler icon-tabler-edit" width="24"
-                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                        <path
-                                                            d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1">
-                                                        </path>
-                                                        <path
-                                                            d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z">
-                                                        </path>
-                                                        <path d="M16 5l3 3"></path>
-                                                    </svg>
-                                                </div>
-                                            </a>
+                                            @can('Edit Testimonials')
+                                                <a href="{{ route('admin.testimonials.edit', $testimonial->id) }}">
+                                                    <div class="bg-slate-500 py-1 px-2 mx-2 text-white flex rounded-md">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="icon icon-tabler icon-tabler-edit" width="24"
+                                                            height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                            stroke="currentColor" fill="none" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path
+                                                                d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1">
+                                                            </path>
+                                                            <path
+                                                                d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z">
+                                                            </path>
+                                                            <path d="M16 5l3 3"></path>
+                                                        </svg>
+                                                    </div>
+                                                </a>
+                                            @endcan
 
-                                            <form action="{{ route('admin.testimonials.destroy', $testimonial->id) }}"
-                                                id="delete-form-{{ $testimonial->id }}" method="POST" class="inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="button" onclick="deleteItem({{ $testimonial->id }})"
-                                                    class="bg-red-500 py-1 px-2 mx-2 text-white flex rounded-md">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M3 6h18"></path>
-                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                    </svg>
-                                                </button>
-                                            </form>
+                                            @can('Delete Testimonials')
+                                                <form action="{{ route('admin.testimonials.destroy', $testimonial->id) }}"
+                                                    id="delete-form-{{ $testimonial->id }}" method="POST" class="inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button" onclick="deleteItem({{ $testimonial->id }})"
+                                                        class="bg-red-500 py-1 px-2 mx-2 text-white flex rounded-md">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M3 6h18"></path>
+                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            @endcan
                                         </div>
                                     </td>
                                 </tr>

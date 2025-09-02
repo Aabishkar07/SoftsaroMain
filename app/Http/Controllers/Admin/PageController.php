@@ -6,6 +6,7 @@ use App\FileService\ImageService;
 use App\Http\Controllers\Controller;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PageController extends Controller
 {
@@ -16,12 +17,15 @@ class PageController extends Controller
     public function __construct(
         protected ImageService $imageservice
 
-    ) {}
+    ) {
+    }
 
 
     public function index()
     {
         //
+
+        abort_unless(Gate::allows('View Pages'), 403);
 
         $pages = Page::get();
         // dd($page);
@@ -57,7 +61,7 @@ class PageController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        abort_unless(Gate::allows('Edit Pages'), 403);
         $pages = Page::find($id);
         return view('admin.pages.edit', compact('pages'));
     }
@@ -67,6 +71,7 @@ class PageController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        abort_unless(Gate::allows('Edit Pages'), 403);
         $page = Page::findOrFail($id);
 
         $validated = $request->validate([
@@ -85,7 +90,7 @@ class PageController extends Controller
         }
 
         if ($request->hasFile('secondary_image')) {
-                        $secondaryImage = $this->imageservice->fileUpload($request->secondary_image, "secondary_image");
+            $secondaryImage = $this->imageservice->fileUpload($request->secondary_image, "secondary_image");
 
             $validated['secondary_image'] = $secondaryImage;
         }

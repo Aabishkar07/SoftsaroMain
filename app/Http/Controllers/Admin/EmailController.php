@@ -7,6 +7,7 @@ use App\Mail\EmailMarketing;
 use App\Models\csv;
 use App\Models\Email;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Mail;
 use Validator;
 
@@ -17,8 +18,10 @@ class EmailController extends Controller
      */
     public function index()
     {
+        abort_unless(Gate::allows('View Email Marketing'), 403);
+
         $csvs = csv::latest()->get();
-        return view('admin.emailmarketing.csv', compact('csvs'));
+        return view('admin.emailmaradketing.csv', compact('csvs'));
     }
 
     /**
@@ -26,6 +29,8 @@ class EmailController extends Controller
      */
     public function create()
     {
+        abort_unless(Gate::allows('Add Email Marketing'), 403);
+
         return view("admin.emailmarketing.create");
     }
     public function getemail(csv $getemail)
@@ -77,6 +82,8 @@ class EmailController extends Controller
 
     public function store(Request $request)
     {
+        abort_unless(Gate::allows('Add Email Marketing'), 403);
+
         $request->validate([
             'filename' => 'required',
             'csv_file' => 'required',
@@ -137,6 +144,7 @@ class EmailController extends Controller
     public function newslettercreate(Request $request)
     {
 
+        abort_unless(Gate::allows('Send Email Marketing'), 403);
         $emails = $request->email;
 
         return view('admin.emailmarketing.newsletter', compact('emails'));
@@ -193,6 +201,8 @@ class EmailController extends Controller
      */
     public function destroy(csv $csv)
     {
+
+        abort_unless(Gate::allows('Delete Email Marketing'), 403);
         // dd($csv);
         if ($csv->file) {
             $this->imageDelete($csv->file);

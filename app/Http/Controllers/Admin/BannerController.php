@@ -6,6 +6,7 @@ use App\FileService\ImageService;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 
 class BannerController extends Controller
@@ -20,7 +21,8 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //
+        abort_unless(Gate::allows('View Banner'), 403);
+
         $banners = Banner::latest()->get();
         return view("admin.sliders.index", compact("banners"));
     }
@@ -30,7 +32,8 @@ class BannerController extends Controller
      */
     public function create()
     {
-        //
+        abort_unless(Gate::allows('Add Banner'), 403);
+
         return view("admin.sliders.create");
 
     }
@@ -42,6 +45,7 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
+        abort_unless(Gate::allows('Add Banner'), 403);
         $banner_image = $this->imageservice->fileUpload($request->banner_image, "banner");
         $req = $request->all();
         $req['banner_image'] = $banner_image;
@@ -63,6 +67,7 @@ class BannerController extends Controller
      */
     public function edit(Banner $banner)
     {
+        abort_unless(Gate::allows('Edit Banner'), 403);
         return view("admin.sliders.edit", compact("banner"));
     }
 
@@ -71,6 +76,7 @@ class BannerController extends Controller
      */
     public function update(Request $request, Banner $banner)
     {
+        abort_unless(Gate::allows('Edit Banner'), 403);
         $req = $request->all();
         if ($request->hasFile('banner_image')) {
             if ($banner->banner_image) {
@@ -91,6 +97,7 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner)
     {
+        abort_unless(Gate::allows('Delete Banner'), 403);
         if ($banner->banner_image) {
             $this->imageservice->imageDelete($banner->banner_image);
         }

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\MetaPageController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PartnerController;
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TagController;
@@ -19,6 +20,8 @@ use App\Http\Controllers\Admin\StoreController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\UserManagementController;
+use App\Http\Controllers\Admin\UserRoleController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -36,7 +39,7 @@ Route::middleware(["admin"])->group(
         Route::resource('store', StoreController::class);
         Route::resource('product', ProductController::class);
         Route::resource('banner', BannerController::class);
-        Route::resource('portfolio', PortfolioController    ::class);
+        Route::resource('portfolio', PortfolioController::class);
         Route::resource('productenquire', ProductEnquireController::class);
         Route::resource('clients', App\Http\Controllers\Admin\ClientController::class);
         Route::get('/settings', [ContactController::class, 'setting'])->name('setting');
@@ -82,5 +85,12 @@ Route::middleware(["admin"])->group(
         Route::resource('faqs', FaqController::class);
         Route::post('/faqs/update-order', [FaqController::class, 'updateOrder'])->name('faqs.updateOrder');
         Route::put('/faqs/{faq}/toggle-status', [FaqController::class, 'toggleStatus'])->name('faqs.toggleStatus');
+
+        Route::resource('permissions', PermissionController::class);
+        Route::resource('usermanagement', UserManagementController::class);
+        Route::get('/usermanagement/{usermanagement}/change-password', [UserManagementController::class, 'changePassword'])->name('usermanagement.changePassword');
+        Route::put('/usermanagement/{usermanagement}/update-password', [UserManagementController::class, 'updatePassword'])->name('usermanagement.updatePassword');
+        Route::put('/usermanagement/{usermanagement}/update-status', [UserManagementController::class, 'updateStatus'])->name('usermanagement.updateStatus');
+        Route::resource('userrole', UserRoleController::class);
     }
 );

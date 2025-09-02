@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateTeamRequest;
 use App\Models\Team;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class TeamController extends Controller
 {
@@ -20,6 +21,8 @@ class TeamController extends Controller
      */
     public function index()
     {
+        abort_unless(Gate::allows('View Team'), 403);
+
         $teams = Team::latest()->paginate(10);
         return view('admin.team.index', compact('teams'));
     }
@@ -29,6 +32,7 @@ class TeamController extends Controller
      */
     public function create()
     {
+        abort_unless(Gate::allows('Add Team'), 403);
         return view('admin.team.create');
     }
 
@@ -39,6 +43,7 @@ class TeamController extends Controller
     public function store(StoreTeamRequest $request)
     {
 
+        abort_unless(Gate::allows('Add Team'), 403);
         $team_img = $this->imageservice->fileUpload($request->image, "team");
         $req = $request->all();
         $req['image'] = $team_img;
@@ -60,6 +65,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
+        abort_unless(Gate::allows('Edit Team'), 403);
         return view('admin.team.edit', compact('team'));
     }
 
@@ -68,6 +74,7 @@ class TeamController extends Controller
      */
     public function update(UpdateTeamRequest $request, Team $team)
     {
+        abort_unless(Gate::allows('Edit Team'), 403);
         $req = $request->all();
 
         if ($request->hasFile('image')) {
@@ -90,7 +97,8 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-   
+        abort_unless(Gate::allows('Delete Team'), 403);
+
         if ($team->image) {
             $this->imageservice->imageDelete($team->image);
         }

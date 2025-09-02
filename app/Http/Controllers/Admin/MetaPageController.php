@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateMetaPageRequest;
 use App\Models\MetaPage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class MetaPageController extends Controller
 {
@@ -21,6 +22,8 @@ class MetaPageController extends Controller
     }
     public function index()
     {
+        abort_unless(Gate::allows('View Meta Page'), 403);
+
         $metapages = MetaPage::paginate(10);
 
         return view('admin.metapage.index', compact('metapages'));
@@ -31,6 +34,7 @@ class MetaPageController extends Controller
      */
     public function create()
     {
+
         return view('admin.metapage.create');
     }
 
@@ -62,6 +66,7 @@ class MetaPageController extends Controller
      */
     public function edit(MetaPage $metapage)
     {
+        abort_unless(Gate::allows('Edit Meta Page'), 403);
         return view('admin.metapage.edit', compact('metapage'));
     }
 
@@ -70,6 +75,7 @@ class MetaPageController extends Controller
      */
     public function update(UpdateMetaPageRequest $request, MetaPage $metapage)
     {
+        abort_unless(Gate::allows('Edit Meta Page'), 403);
         $req = $request->all();
         if ($request->hasFile('ogimage')) {
             if ($metapage->ogimage) {
