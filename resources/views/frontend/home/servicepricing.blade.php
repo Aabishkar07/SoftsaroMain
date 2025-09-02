@@ -6,9 +6,10 @@
 <body class="bg-light">
     <div class="container mt-4  p-4 ">
         <h2 class="text-center pb-4 fw-bold">Social Media Solution Package</h2>
-          <span class="mt-5 py-4 " style="font-size: 16px; line-height: 1.8; text-align: justify; margin: 0 auto; color: #444;">
-            {{ $pages->description }}
-        </span>
+           <div class="container section-description" data-aos="fade-up">
+
+        {!! $pages->description !!}
+    </div>
         <style>
             .hover-effect {
                 transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;

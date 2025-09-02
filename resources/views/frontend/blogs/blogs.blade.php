@@ -13,15 +13,15 @@
         <div class="container section-title pt-5 mt-5" data-aos="fade-up">
           <h2>Softsaro Blog:</h2>
           <p style="color:#6a68AF">Our Thoughts & Stories</p>
-              <span style="font-size: 16px; line-height: 1.8; text-align: justify; margin: 0 auto; color: #444;">
-            {{ $pages->description }}
-        </span>
+
         </div><!-- End Section Title -->
 
-        <div class="container">
+        <div class="container section-description" data-aos="fade-up">
+
+        {!! $pages->description !!}
     </div>
 
-    <div class="row " data-aos="fade-up" data-aos-delay="100">
+    <div class="row mt-5" data-aos="fade-up" data-aos-delay="100">
       @foreach ($blogs as $key => $blog)
       <div class="col-md-6 col-lg-4 mb-5">
         <a href="{{ route('single', $blog->slug) }}" class="text-decoration-none text-dark">

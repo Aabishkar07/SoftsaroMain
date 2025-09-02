@@ -9,9 +9,11 @@
     <div class="container section-title pt-5">
         <h2>Portfolio</h2>
         <p>CHECK OUR PORTFOLIO</p>
-          <span style="font-size: 16px; line-height: 1.8; text-align: justify; margin: 0 auto; color: #444;">
-            {{ $pages->description }}
-        </span>
+
+    </div>
+        <div class="container section-description" >
+
+        {!! $pages->description !!}
     </div>
 
     <div class="container">

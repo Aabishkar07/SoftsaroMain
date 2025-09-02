@@ -11,10 +11,10 @@
         <h2>Services</h2>
         <p style="color:#6a68AF">Featured Services<br></p>
 
-        <span style="font-size: 16px; line-height: 1.8; text-align: justify; margin: 0 auto; color: #444;">
-            {{ $pages->description }}
-        </span>
+    </div>
+    <div class="container section-description" data-aos="fade-up">
 
+        {!! $pages->description !!}
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
